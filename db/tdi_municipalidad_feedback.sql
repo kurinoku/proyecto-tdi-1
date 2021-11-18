@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 18, 2021 at 01:12 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 18-11-2021 a las 04:03:23
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tdi_municipalidad_feedback`
+-- Base de datos: `municipalidad`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `administrador`
+-- Estructura de tabla para la tabla `administrador`
 --
 
 CREATE TABLE `administrador` (
@@ -35,10 +35,17 @@ CREATE TABLE `administrador` (
   `Clave_ingreso` varchar(14) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
+INSERT INTO `administrador` (`Rut_administrador`, `Nombre_administrador`, `Numero_administrador`, `Correo_trabajo`, `Clave_ingreso`) VALUES
+('33333', 'admin', '234', 'yyy', 'ad23');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ciudadano`
+-- Estructura de tabla para la tabla `ciudadano`
 --
 
 CREATE TABLE `ciudadano` (
@@ -50,10 +57,17 @@ CREATE TABLE `ciudadano` (
   `Clave_persona` varchar(14) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `ciudadano`
+--
+
+INSERT INTO `ciudadano` (`Rut_persona`, `Id_municipalidad`, `Nombre_persona`, `Numero_persona`, `Correo_persona`, `Clave_persona`) VALUES
+('12345678', '111', 'aaa', '1234', 'asadad', '4444');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `departamento`
+-- Estructura de tabla para la tabla `departamento`
 --
 
 CREATE TABLE `departamento` (
@@ -64,10 +78,17 @@ CREATE TABLE `departamento` (
   `Encargado_departamento` varchar(40) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `departamento`
+--
+
+INSERT INTO `departamento` (`Codigo_dep`, `Id_municipalidad`, `Rut_administrador`, `Nombre_dep`, `Encargado_departamento`) VALUES
+('678', '111', '33333', 'afg', 'mmm');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `municipalidad`
+-- Estructura de tabla para la tabla `municipalidad`
 --
 
 CREATE TABLE `municipalidad` (
@@ -77,10 +98,17 @@ CREATE TABLE `municipalidad` (
   `Numero_municipalidad` varchar(9) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `municipalidad`
+--
+
+INSERT INTO `municipalidad` (`Id_municipalidad`, `Nombre_municipalidad`, `Direccion_municipalidad`, `Numero_municipalidad`) VALUES
+('111', 'aaaa', 'asdf', '123');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `solicitud`
+-- Estructura de tabla para la tabla `solicitud`
 --
 
 CREATE TABLE `solicitud` (
@@ -93,24 +121,31 @@ CREATE TABLE `solicitud` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Indexes for dumped tables
+-- Volcado de datos para la tabla `solicitud`
+--
+
+INSERT INTO `solicitud` (`Codigo`, `Codigo_dep`, `Rut_persona`, `Tipo_retroalimentacion`, `Descripcion`, `Estado_msg`) VALUES
+('', '678', '12345678', 'sugerencia', 'asdasddads', 'sss');
+
+--
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `administrador`
+-- Indices de la tabla `administrador`
 --
 ALTER TABLE `administrador`
   ADD PRIMARY KEY (`Rut_administrador`);
 
 --
--- Indexes for table `ciudadano`
+-- Indices de la tabla `ciudadano`
 --
 ALTER TABLE `ciudadano`
   ADD PRIMARY KEY (`Rut_persona`),
   ADD KEY `fk_ciudadano_municipalidad` (`Id_municipalidad`);
 
 --
--- Indexes for table `departamento`
+-- Indices de la tabla `departamento`
 --
 ALTER TABLE `departamento`
   ADD PRIMARY KEY (`Codigo_dep`),
@@ -118,13 +153,13 @@ ALTER TABLE `departamento`
   ADD KEY `fk_departamento_id_municipalidad` (`Id_municipalidad`);
 
 --
--- Indexes for table `municipalidad`
+-- Indices de la tabla `municipalidad`
 --
 ALTER TABLE `municipalidad`
   ADD PRIMARY KEY (`Id_municipalidad`);
 
 --
--- Indexes for table `solicitud`
+-- Indices de la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
   ADD PRIMARY KEY (`Codigo`),
@@ -132,24 +167,24 @@ ALTER TABLE `solicitud`
   ADD KEY `fk_solicitud_rut_ciudadano` (`Rut_persona`);
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `ciudadano`
+-- Filtros para la tabla `ciudadano`
 --
 ALTER TABLE `ciudadano`
   ADD CONSTRAINT `fk_ciudadano_municipalidad` FOREIGN KEY (`Id_municipalidad`) REFERENCES `municipalidad` (`Id_municipalidad`);
 
 --
--- Constraints for table `departamento`
+-- Filtros para la tabla `departamento`
 --
 ALTER TABLE `departamento`
   ADD CONSTRAINT `fk_departamento_id_municipalidad` FOREIGN KEY (`Id_municipalidad`) REFERENCES `municipalidad` (`Id_municipalidad`),
   ADD CONSTRAINT `fk_departamento_rut_administrador` FOREIGN KEY (`Rut_administrador`) REFERENCES `administrador` (`Rut_administrador`);
 
 --
--- Constraints for table `solicitud`
+-- Filtros para la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
   ADD CONSTRAINT `fk_solicitud_codigo_departamento` FOREIGN KEY (`Codigo_dep`) REFERENCES `departamento` (`Codigo_dep`),
