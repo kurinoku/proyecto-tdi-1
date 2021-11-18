@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2021 a las 04:03:23
+-- Tiempo de generación: 18-11-2021 a las 04:07:23
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -112,7 +112,7 @@ INSERT INTO `municipalidad` (`Id_municipalidad`, `Nombre_municipalidad`, `Direcc
 --
 
 CREATE TABLE `solicitud` (
-  `Codigo` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Codigo` int(10) NOT NULL,
   `Codigo_dep` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
   `Rut_persona` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
   `Tipo_retroalimentacion` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
@@ -125,7 +125,7 @@ CREATE TABLE `solicitud` (
 --
 
 INSERT INTO `solicitud` (`Codigo`, `Codigo_dep`, `Rut_persona`, `Tipo_retroalimentacion`, `Descripcion`, `Estado_msg`) VALUES
-('', '678', '12345678', 'sugerencia', 'asdasddads', 'sss');
+(1, '678', '12345678', 'sugerencia', 'asdasddads', 'sss');
 
 --
 -- Índices para tablas volcadas
@@ -165,6 +165,16 @@ ALTER TABLE `solicitud`
   ADD PRIMARY KEY (`Codigo`),
   ADD KEY `fk_solicitud_codigo_departamento` (`Codigo_dep`),
   ADD KEY `fk_solicitud_rut_ciudadano` (`Rut_persona`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `solicitud`
+--
+ALTER TABLE `solicitud`
+  MODIFY `Codigo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
