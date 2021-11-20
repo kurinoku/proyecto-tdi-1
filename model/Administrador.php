@@ -14,24 +14,21 @@ class Administrador
         $this->correo = $correo;
         $this->clave = $clave;
     }
-    static function select($conn)
+    static function makeFromAssocRow($row)
     {
-        $consulta = "SELECT * FROM administrador;";
-        $resultado = mysqli_query($conn, $consulta);
-        $row = mysqli_fetch_assoc($resultado);
         $rut = $row["Rut_administrador"];
         $nombre = $row["Nombre_administrador"];
         $numero = $row["Numero_administrador"];
         $correo = $row["Correo_trabajo"];
         $clave = $row["Clave_ingreso"];
-        $newObject = new Administrador($rut, $nombre, $numero, $correo, $clave);
+        $newObject = new self($rut, $nombre, $numero, $correo, $clave);
         return $newObject;
     }
     static function insertNuevo($conn, $rut, $nombre, $numero, $correo, $clave)
     {
         $sql = "INSERT INTO administrador(`Rut_administrador`, `Nombre_administrador`, `Numero_administrador`, `Correo_trabajo`, `Clave_ingreso`) VALUES ('$rut', '$nombre', '$numero', '$correo', '$clave');";
         $resultado = mysqli_query($conn, $sql);
-        $newObject = new Administrador($rut, $nombre, $numero, $correo, $clave);
+        $newObject = new self($rut, $nombre, $numero, $correo, $clave);
         return $newObject;
     }
     static function delete($conn, $rut)
