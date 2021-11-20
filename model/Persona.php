@@ -14,24 +14,21 @@ class Persona
         $this->numero = $numero;
         $this->correo = $correo;
     }
-    static function select($conn)
+    static function makeFromAssocRow($row)
     {
-        $consulta = "SELECT * FROM ciudadano;";
-        $resultado = mysqli_query($conn, $consulta);
-        $row = mysqli_fetch_assoc($resultado);
         $rut = $row["Rut_persona"];
         $idMunicipalidad = $row["Id_municipalidad"];
         $nombre = $row["Nombre_persona"];
         $numero = $row["Numero_persona"];
         $correo = $row["Correo_persona"];
-        $newObject = new Persona($rut, $idMunicipalidad, $nombre, $numero, $correo);
+        $newObject = new self($rut, $idMunicipalidad, $nombre, $numero, $correo);
         return $newObject;
     }
     static function insertNuevo($conn, $rut, $idMunicipalidad, $nombre, $numero, $correo)
     {
         $sql = "INSERT INTO ciudadano(`Rut_persona`, `Id_municipalidad`, `Nombre_persona`, `Numero_persona`, `Correo_persona`, `Clave_persona`) VALUES ('$rut', '$idMunicipalidad', '$nombre', '$numero', '$correo');";
         $resultado = mysqli_query($conn, $sql);
-        $newObject = new Persona($rut, $idMunicipalidad, $nombre, $numero, $correo);
+        $newObject = new self($rut, $idMunicipalidad, $nombre, $numero, $correo);
         return $newObject;
     }
     static function delete($conn, $rut)
