@@ -22,7 +22,7 @@ require('conexion_p.php');
                     <label class="form-label d-block">Id municipalidad:</label>
                     <input type="text" name="Id_municipalidad" placeholder="12345678"/>
                     <label class="form-label d-block">Rut administrador:</label>
-                    <input type="text" name="Rut_administrador" placeholder="11111111-1"/>
+                    <input type="text" name="Rut_administrador" placeholder="11111111"/>
                     <label class="form-label d-block">Nombre departamento:</label>
                     <input type="text" name="Nombre_dep" placeholder="Departamento Las Rosas"/>
                     <label class="form-label d-block">Encargado:</label>

@@ -18,7 +18,7 @@ require('conexion_p.php');
                 <h4>Formulario para añadir una persona</h4>
                 <form action="ingresar_persona.php" method="post">
                     <label class="form-label d-block">Rut:</label>
-                    <input type="text" name="Rut_persona" placeholder="11111111-1"/>
+                    <input type="text" name="Rut_persona" placeholder="11111111"/>
                     <label class="form-label d-block">Id municipalidad:</label>
                     <input type="text" name="Id_municipalidad" placeholder="12345"/>
                     <label class="form-label d-block">Nombre:</label>

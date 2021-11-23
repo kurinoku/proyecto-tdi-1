@@ -18,7 +18,7 @@ require('conexion_p.php');
                 <h4>Formulario para añadir un administrador</h4>
                 <form action="ingresar_administrador.php" method="post">
                     <label class="form-label d-block">Rut: </label>
-                    <input type="text" name="Rut_administrador" placeholder="11111111-1"/>
+                    <input type="text" name="Rut_administrador" placeholder="11111111"/>
                     <label class="form-label d-block">Nombre:</label>
                     <input type="text" name="Nombre_administrador" placeholder="Juan Perez Del Campo"/>
                     <label class="form-label d-block">Numero:</label>

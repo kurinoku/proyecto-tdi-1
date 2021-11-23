@@ -20,7 +20,7 @@ require('conexion_p.php');
                     <label class="form-label d-block">Codigo departamento:</label>
                     <input type="text" name="Codigo_dep" placeholder="12345"/>
                     <label class="form-label d-block">Rut persona:</label>
-                    <input type="text" name="Rut_persona" placeholder="11111111-1"/>
+                    <input type="text" name="Rut_persona" placeholder="11111111"/>
                     <label class="form-label d-block">Tipo retroalimentacion:</label>
                     <input type="text" name="Tipo_retroalimentacion" placeholder="Felicitación"/>
                     <label class="form-label d-block">Descripcion:</label>
