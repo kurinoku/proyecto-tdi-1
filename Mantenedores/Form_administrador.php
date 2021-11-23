@@ -11,6 +11,7 @@ require('conexion_p.php');
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
+
 <div class="container-fluid bg-success">
     <div class="card-body bg-info">
         <div class="mb-3" style="width: 230px;">

@@ -34,6 +34,7 @@ require('conexion_p.php');
     </div>
 </div>   
     
+
     <br><br>
 
     <table style="width:80%">
