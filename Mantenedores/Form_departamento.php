@@ -6,7 +6,7 @@ require('conexion_p.php');
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Formulario administrador</title>
+    <title>Formulario departamento</title>
 </head>
 <body>
     
@@ -61,5 +61,7 @@ require('conexion_p.php');
     ?>
 
     </table>
+    <br>
+    <a href="javascript: history.go(-1)">Volver</a>
 </body>
 </html>
