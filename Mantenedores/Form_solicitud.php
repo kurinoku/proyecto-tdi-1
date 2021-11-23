@@ -30,6 +30,7 @@ require('conexion_p.php');
 
     <table style="width:80%">
         <tr>
+            <th>Codigo</th>
             <th>Codigo departamento</th>
             <th>Rut persona</th>
             <th>Tipo retroalimentacion</th>
@@ -43,6 +44,7 @@ require('conexion_p.php');
         $resultado = mysqli_query($conexion,$consulta);
 
         while($row = mysqli_fetch_assoc($resultado)){
+            $Cod = $row['Codigo'];
             $Codigo = $row['Codigo_dep'];
             $Rut = $row['Rut_persona'];
             $Tipo = $row['Tipo_retroalimentacion'];
@@ -51,6 +53,7 @@ require('conexion_p.php');
 
 
             echo "<tr>";
+            echo "<td>".$Cod."</td>";
             echo "<td>".$Codigo."</td>";
             echo "<td>".$Rut."</td>";
             echo "<td>".$Tipo."</td>";
