@@ -6,7 +6,7 @@ require('conexion_p.php');
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Formulario administrador</title>
+    <title>Formulario departamento</title>
 </head>
 <body>
     
