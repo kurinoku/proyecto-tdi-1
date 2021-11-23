@@ -7,24 +7,32 @@ require('conexion_p.php');
 <head>
     <meta charset="UTF-8">
     <title>Formulario administrador</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-    
-    <form action="ingresar_administrador.php" method="post">
-        <label>Rut:</label>
-        <input type="text" name="Rut_administrador"/>
-        <label>Nombre:</label>
-        <input type="text" name="Nombre_administrador"/>
-        <label>Numero:</label>
-        <input type="text" name="Numero_administrador"/>
-        <label>Correo:</label>
-        <input type="text" name="Correo_trabajo"/>
-        <label>Clave:</label>
-        <input type="text" name="Clave_ingreso"/>
-        
-
-        <button type="submit">Guardar</button>
-    </form>
+<div class="container-fluid bg-success">
+    <div class="card-body bg-info">
+        <div class="mb-3" style="width: 230px;">
+            <div class="bg-warning m-1 ps-3 pb-2">
+                <h4>Formulario para añadir un administrador</h4>
+                <form action="ingresar_administrador.php" method="post">
+                    <label class="form-label d-block">Rut: </label>
+                    <input type="text" name="Rut_administrador" placeholder="11111111"/>
+                    <label class="form-label d-block">Nombre:</label>
+                    <input type="text" name="Nombre_administrador" placeholder="Juan Perez Del Campo"/>
+                    <label class="form-label d-block">Numero:</label>
+                    <input type="text" name="Numero_administrador" placeholder="978945612"/>
+                    <label class="form-label d-block">Correo:</label>
+                    <input type="text" name="Correo_trabajo" placeholder="juancampo@gmail.com"/>
+                    <label class="form-label d-block">Clave:</label>
+                    <input type="password" name="Clave_ingreso" placeholder="**********"/>
+                    <button type="submit" class="d-block mt-2" style="width: 188px;">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>    
 
     <br><br>
 

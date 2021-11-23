@@ -7,25 +7,33 @@ require('conexion_p.php');
 <head>
     <meta charset="UTF-8">
     <title>Formulario solicitudes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
+<div class="container-fluid bg-success">
+    <div class="card-body bg-info">
+        <div class="mb-3" style="width: 230px;">
+            <div class="bg-warning m-1 ps-3 pb-2">
+                <h4>Formulario para añadir una solicitud</h4>
+                <form action="ingresar_solicitud.php" method="post">
+                    <label class="form-label d-block">Codigo departamento:</label>
+                    <input type="text" name="Codigo_dep" placeholder="12345"/>
+                    <label class="form-label d-block">Rut persona:</label>
+                    <input type="text" name="Rut_persona" placeholder="11111111"/>
+                    <label class="form-label d-block">Tipo retroalimentacion:</label>
+                    <input type="text" name="Tipo_retroalimentacion" placeholder="Felicitación"/>
+                    <label class="form-label d-block">Descripcion:</label>
+                    <input type="text" name="Descripcion" placeholder="Muy buen servicio, Kappa."/>
+                    <label class="form-label d-block">Estado:</label>
+                    <input type="text" name="Estado_msg" placeholder="En espera"/>
+                    <button type="submit" class="d-block mt-2" style="width: 188px;">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>   
     
-    <form action="ingresar_solicitud.php" method="post">
-        <label>Codigo departamento:</label>
-        <input type="text" name="Codigo_dep"/>
-        <label>Rut persona:</label>
-        <input type="text" name="Rut_persona"/>
-        <label>Tipo retroalimentacion:</label>
-        <input type="text" name="Tipo_retroalimentacion"/>
-        <label>Descripcion:</label>
-        <input type="text" name="Descripcion"/>
-        <label>Estado:</label>
-        <input type="text" name="Estado_msg"/>
-        
-
-        <button type="submit">Guardar</button>
-    </form>
-
     <br><br>
 
     <table style="width:80%">
