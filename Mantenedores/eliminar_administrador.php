@@ -3,4 +3,5 @@
 	$Rut=$_POST['Rut_administrador'];
 	$sql = "DELETE FROM administrador WHERE Rut_administrador='$Rut'";
 	$result = mysqli_query($conexion, $sql);
+	header('Location: delete_admin.php');
 ?>
