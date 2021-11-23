@@ -10,9 +10,12 @@ require('conexion_p.php');
 </head>
 <body>
     
-    <form action="" method="post">
-        <label>Rut:</label>
-        <input type="text" name="Rut_administrador"/>
+    <form action="actualizar_administrador.php" method="post">
+        <label>Rut</label><input type="text" name="Rut_administrador">
+        <label>Nombre</label><input type="text" name="Nombre_administrador">
+        <label>Numero</label><input type="text" name="Numero_administrador">
+        <label>Correo</label><input type="text" name="Correo_trabajo">
+        <label>Clave</label><input type="text" name="Clave_ingreso">
         <button type="submit">Editar</button>
     </form>
 
@@ -53,5 +56,14 @@ require('conexion_p.php');
     </table>
     <br>
     <a href="javascript: history.go(-1)">Volver</a>
+    <script src="filtrar_form.js"></script>
+    <script>
+        let form = document.querySelector('form');
+        filtrarFormHook(
+            form, 
+            form.querySelector('input[type="text"]'),
+            () => alert('Rut no ingresado')
+        );
+    </script>
 </body>
 </html>
