@@ -9,7 +9,9 @@ require('conexion_p.php');
     <title>Formulario administrador</title>
 </head>
 <body>
-    
+        
+    <?php require('Navbar.html') ?>
+
     <form action="ingresar_administrador.php" method="post">
         <label>Rut:</label>
         <input type="text" name="Rut_administrador"/>

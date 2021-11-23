@@ -10,6 +10,8 @@ require('conexion_p.php');
 </head>
 <body>
     
+    <?php require('Navbar.html') ?>
+
     <form action="ingresar_persona.php" method="post">
         <label>Rut:</label>
         <input type="text" name="Rut_persona"/>

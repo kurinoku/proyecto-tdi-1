@@ -9,7 +9,9 @@ require('conexion_p.php');
     <title>Formulario solicitudes</title>
 </head>
 <body>
-    
+        
+    <?php require('Navbar.html') ?>
+
     <form action="ingresar_solicitud.php" method="post">
         <label>Codigo departamento:</label>
         <input type="text" name="Codigo_dep"/>

@@ -9,7 +9,9 @@ require('conexion_p.php');
     <title>Formulario municipalidad</title>
 </head>
 <body>
-    
+        
+    <?php require('Navbar.html') ?>
+
     <form action="ingresar_municipalidad.php" method="post">
         <label>Id municipalidad:</label>
         <input type="text" name="Id_municipalidad"/>
