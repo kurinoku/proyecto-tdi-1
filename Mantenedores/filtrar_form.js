@@ -19,6 +19,7 @@ var filtrarFormHook = (() => {
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
+            doSend = true;
             new FormData(form);
         });
 
