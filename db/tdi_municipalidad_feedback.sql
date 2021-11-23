@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2021 a las 04:07:23
--- Versión del servidor: 10.4.20-MariaDB
--- Versión de PHP: 8.0.9
+-- Tiempo de generación: 23-11-2021 a las 01:09:45
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `municipalidad`
+-- Base de datos: `tdi_municipalidad_feedback`
 --
 
 -- --------------------------------------------------------
@@ -34,13 +34,6 @@ CREATE TABLE `administrador` (
   `Correo_trabajo` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `Clave_ingreso` varchar(14) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `administrador`
---
-
-INSERT INTO `administrador` (`Rut_administrador`, `Nombre_administrador`, `Numero_administrador`, `Correo_trabajo`, `Clave_ingreso`) VALUES
-('33333', 'admin', '234', 'yyy', 'ad23');
 
 -- --------------------------------------------------------
 
@@ -78,13 +71,6 @@ CREATE TABLE `departamento` (
   `Encargado_departamento` varchar(40) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Volcado de datos para la tabla `departamento`
---
-
-INSERT INTO `departamento` (`Codigo_dep`, `Id_municipalidad`, `Rut_administrador`, `Nombre_dep`, `Encargado_departamento`) VALUES
-('678', '111', '33333', 'afg', 'mmm');
-
 -- --------------------------------------------------------
 
 --
@@ -119,13 +105,6 @@ CREATE TABLE `solicitud` (
   `Descripcion` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `Estado_msg` varchar(15) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `solicitud`
---
-
-INSERT INTO `solicitud` (`Codigo`, `Codigo_dep`, `Rut_persona`, `Tipo_retroalimentacion`, `Descripcion`, `Estado_msg`) VALUES
-(1, '678', '12345678', 'sugerencia', 'asdasddads', 'sss');
 
 --
 -- Índices para tablas volcadas
@@ -184,21 +163,21 @@ ALTER TABLE `solicitud`
 -- Filtros para la tabla `ciudadano`
 --
 ALTER TABLE `ciudadano`
-  ADD CONSTRAINT `fk_ciudadano_municipalidad` FOREIGN KEY (`Id_municipalidad`) REFERENCES `municipalidad` (`Id_municipalidad`);
+  ADD CONSTRAINT `fk_ciudadano_municipalidad` FOREIGN KEY (`Id_municipalidad`) REFERENCES `municipalidad` (`Id_municipalidad`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `departamento`
 --
 ALTER TABLE `departamento`
-  ADD CONSTRAINT `fk_departamento_id_municipalidad` FOREIGN KEY (`Id_municipalidad`) REFERENCES `municipalidad` (`Id_municipalidad`),
-  ADD CONSTRAINT `fk_departamento_rut_administrador` FOREIGN KEY (`Rut_administrador`) REFERENCES `administrador` (`Rut_administrador`);
+  ADD CONSTRAINT `fk_departamento_id_municipalidad` FOREIGN KEY (`Id_municipalidad`) REFERENCES `municipalidad` (`Id_municipalidad`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_departamento_rut_administrador` FOREIGN KEY (`Rut_administrador`) REFERENCES `administrador` (`Rut_administrador`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
-  ADD CONSTRAINT `fk_solicitud_codigo_departamento` FOREIGN KEY (`Codigo_dep`) REFERENCES `departamento` (`Codigo_dep`),
-  ADD CONSTRAINT `fk_solicitud_rut_ciudadano` FOREIGN KEY (`Rut_persona`) REFERENCES `ciudadano` (`Rut_persona`);
+  ADD CONSTRAINT `fk_solicitud_codigo_departamento` FOREIGN KEY (`Codigo_dep`) REFERENCES `departamento` (`Codigo_dep`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_solicitud_rut_ciudadano` FOREIGN KEY (`Rut_persona`) REFERENCES `ciudadano` (`Rut_persona`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
