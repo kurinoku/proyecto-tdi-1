@@ -10,10 +10,11 @@ require('conexion_p.php');
 </head>
 <body>
     
-    <form action="ingresar_municipalidad.php" method="post">
-        <label>Id municipalidad:</label>
-        <input type="text" name="Id_municipalidad"/>        
-
+    <form action="actualizar_municipalidad.php" method="post">
+        <label>Id</label><input type="text" name="Id_municipalidad">
+        <label>Nombre</label><input type="text" name="Nombre_municipalidad">
+        <label>Direccion</label><input type="text" name="Direccion_municipalidad">
+        <label>Numero</label><input type="text" name="Numero_municipalidad">
         <button type="submit">Editar</button>
     </form>
 
@@ -50,5 +51,14 @@ require('conexion_p.php');
     </table>
     <br>
     <a href="javascript: history.go(-1)">Volver</a>
+    <script src="filtrar_form.js"></script>
+    <script>
+        let form = document.querySelector('form');
+        filtrarFormHook(
+            form, 
+            form.querySelector('input[type="text"]'),
+            () => alert('Id no ingresado')
+        );
+    </script>
 </body>
 </html>
