@@ -61,5 +61,7 @@ require('conexion_p.php');
     ?>
 
     </table>
+    <br>
+    <a href="javascript: history.go(-1)">Volver</a>
 </body>
 </html>
