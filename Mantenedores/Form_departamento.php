@@ -15,10 +15,10 @@ require('conexion_p.php');
     require('Navbar.html');
     ?>
 
-<div class="container-fluid bg-success">
-    <div class="card-body bg-info">
+<div class="container-fluid">
+    <div class="card-body">
         <div class="mb-3" style="width: 230px;">
-            <div class="bg-warning ps-3 m-1 pb-2">
+            <div class="ps-3 m-1 pb-2">
                 <h4>Formulario para añadir un departamento</h4>
                 <form action="ingresar_departamento.php" method="post">
                     <label class="form-label d-block">Codigo:</label>
