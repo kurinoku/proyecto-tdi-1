@@ -15,10 +15,10 @@ require('conexion_p.php');
     require('Navbar.html');
     ?>
 
-<div class="container-fluid bg-success">
-    <div class="card-body bg-info">
+<div class="container-fluid pantalla-principal">
+    <div class="card-body">
         <div class="mb-3" style="width: 230px;">
-            <div class="bg-warning m-1 ps-3 pb-2">
+            <div class="form m-1 ps-3 pb-2">
                 <h4>Formulario para añadir un administrador</h4>
                 <form action="ingresar_administrador.php" method="post">
                     <label class="form-label d-block">Rut: </label>
