@@ -1,7 +1,7 @@
 <?php
 	require('conexion_p.php');
-	$Rut=$_POST['Rut_administrador'];
+	$Rut=$_GET['seleccionado'];
 	$sql = "DELETE FROM administrador WHERE Rut_administrador='$Rut'";
 	$result = mysqli_query($conexion, $sql);
-	header('Location: delete_admin.php');
+	header('Location: Form_administrador.php');
 ?>

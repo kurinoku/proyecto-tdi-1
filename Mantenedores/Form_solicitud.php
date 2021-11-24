@@ -15,12 +15,18 @@ require('conexion_p.php');
     require('Navbar.html');
     ?>
 
-<div class="container-fluid">
-    <div class="card-body">
-        <div class="mb-3" style="width: 230px;">
-            <div class="m-1 ps-3 pb-2">
-                <h4>Formulario para añadir una solicitud</h4>
-                <form action="ingresar_solicitud.php" method="post">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+        <h4>Formulario para añadir una solicitud</h4>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <h4>Listado de Solicitudes</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+        <form action="ingresar_solicitud.php" method="post">
                     <label class="form-label d-block">Codigo departamento:</label>
                     <input type="text" name="Codigo_dep" placeholder="12345"/>
                     <label class="form-label d-block">Rut persona:</label>
@@ -33,14 +39,9 @@ require('conexion_p.php');
                     <input type="text" name="Estado_msg" placeholder="En espera"/>
                     <button type="submit" class="d-block mt-2" style="width: 188px;">Guardar</button>
                 </form>
-            </div>
         </div>
-    </div>
-</div>   
-    
-    <br><br>
-
-    <table style="width:80%">
+        <div class="col-lg-6">
+        <table class="table table-striped">
         <tr>
             <th>Codigo</th>
             <th>Codigo departamento</th>
@@ -48,6 +49,7 @@ require('conexion_p.php');
             <th>Tipo retroalimentacion</th>
             <th>Descripcion</th>
             <th>Estado</th>
+            <th>Opciones</th>
         </tr>
     
 
@@ -71,11 +73,18 @@ require('conexion_p.php');
             echo "<td>".$Tipo."</td>";
             echo "<td>".$Descripcion."</td>";
             echo "<td>".$Estado."</td>";
+            echo "<td><a href='editar_solicitud.php?seleccionado=".$Cod."'>Editar</a></td>";
             echo "</tr>";
         }
     ?>
 
-    </table>
+        </table>
+    </div>
+    </div>
+                
+
+</div>
+
     <br>
     <a href="javascript: history.go(-1)">Volver</a>
 </body>

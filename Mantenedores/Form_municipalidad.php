@@ -15,12 +15,18 @@ require('conexion_p.php');
     require('Navbar.html');
     ?>
 
-<div class="container-fluid">
-    <div class="card-body">
-        <div class="mb-3" style="width: 230px;">
-            <div class="m-1 ps-3 pb-2">
-                <h4>Formulario para añadir una municipalidad</h4>
-                <form action="ingresar_municipalidad.php" method="post">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+        <h4>Formulario para añadir una municipalidad</h4>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <h4>Listado de Municipalidades</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+        <form action="ingresar_municipalidad.php" method="post">
                     <label class="form-label d-block">Id municipalidad:</label>
                     <input type="text" name="Id_municipalidad" placeholder="12345"/>
                     <label class="form-label d-block">Nombre municipalidad:</label>
@@ -31,20 +37,15 @@ require('conexion_p.php');
                     <input type="text" name="Numero_municipalidad" placeholder="9252524"/>
                     <button type="submit" class="d-block mt-2" style="width: 188px;">Guardar</button>
                 </form>
-            </div>
         </div>
-    </div>
-</div>    
-    
-
-    <br><br>
-
-    <table style="width:80%">
+        <div class="col-lg-6">
+        <table class="table table-striped">
         <tr>
             <th>Id municipalidad</th>
             <th>Nombre municipalidad</th>
             <th>Direccion municipalidad</th>
             <th>Numero municipalidad</th>
+            <th>Opciones</th>
         </tr>
     
 
@@ -63,11 +64,19 @@ require('conexion_p.php');
             echo "<td>".$nombre."</td>";
             echo "<td>".$direccion."</td>";
             echo "<td>".$numero."</td>";
+            echo "<td> <a href='editar_municipalidad.php?seleccionado=".$id."'>Editar</a></td>";
             echo "</tr>";
         }
     ?>
 
-    </table>
+        </table>
+    </div>
+    </div>
+                
+
+</div>
+
+
     <br>
     <a href="javascript: history.go(-1)">Volver</a>
 </body>
