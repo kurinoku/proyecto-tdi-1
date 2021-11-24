@@ -13,7 +13,7 @@ if ($clave and $usuario and !($clave == "" or $usuario == "")) {
         $dest = "index.php"; // la idea es que vaya a la pagina principal para personas
         $sql = "SELECT `Clave_persona` FROM ciudadano WHERE `Rut_persona`='$usuario'";
     } else {
-        $dest = "index.php"; // idem, tiene que ser cambiado despues
+        $dest = "Mantenedores/index_administrador.php"; // idem, tiene que ser cambiado despues
         $sql = "SELECT `Clave_ingreso` FROM administrador WHERE `Rut_administrador`='$usuario'";
     }
     

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50mm"
+   height="50mm"
+   viewBox="0 0 50 50"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="usuario.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.7318182"
+     inkscape:cx="112.021"
+     inkscape:cy="91.233596"
+     inkscape:window-width="1366"
+     inkscape:window-height="739"
+     inkscape:window-x="1366"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1681">
+      <ellipse
+         style="fill:#808080;stroke:none;stroke-width:2.89134"
+         id="ellipse1683"
+         ry="23.451389"
+         rx="22.993055"
+         cy="19.479168"
+         cx="24.673609" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1679"
+       clip-path="url(#clipPath1681)"
+       transform="translate(0.91666666,5.3472223)">
+      <ellipse
+         style="fill:#808080;stroke:#000000;stroke-width:2.89134"
+         id="path1285"
+         ry="23.451389"
+         rx="22.993055"
+         cy="19.479168"
+         cx="24.673609" />
+      <path
+         id="path846"
+         style="fill:#cccccc;stroke:#333333;stroke-width:0.731106"
+         d="M 24.847246,5.7855785 A 9.3958329,8.5816793 0 0 0 15.451437,14.367236 9.3958329,8.5816793 0 0 0 17.518494,19.736081 16.729166,13.744641 0 0 0 8.1180352,32.088909 16.729166,13.744641 0 0 0 24.847246,45.833154 16.729166,13.744641 0 0 0 41.576458,32.088909 16.729166,13.744641 0 0 0 32.177032,19.734665 9.3958329,8.5816793 0 0 0 34.243055,14.367236 9.3958329,8.5816793 0 0 0 24.847246,5.7855785 Z" />
+    </g>
+  </g>
+</svg>

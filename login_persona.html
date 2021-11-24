@@ -9,18 +9,23 @@
     <title>Login ciudadano</title>
 </head>
 <body class="text-center">
-    <form method="POST" action="login.php" class="form-signin">
-        <h1 class="h3 mb-3 font-weight-normal">Identificación de ciudadano</h1>
-        <input id="usuarioInput" type="text" placeholder="Rut: XX XXX XX" name="usuario"  class="form-control" required autofocus>
-        <input id="claveInput" type="password" placeholder="Contraseña" name="clave" class="form-control" required autofocus>
-        <div class="d-grid gap-2 mt-3">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+    <div class="container">
+        <div class="row"><a href="index.php">&lt;&lt; Volver a pagina principal</a></div>
+        <div class="row">
+            <form method="POST" action="login.php" class="form-signin">
+                <h1 class="h3 mb-3 font-weight-normal">Identificación de ciudadano</h1>
+                <input id="usuarioInput" type="text" placeholder="Rut: XX XXX XX" name="usuario"  class="form-control" required autofocus>
+                <input id="claveInput" type="password" placeholder="Contraseña" name="clave" class="form-control" required autofocus>
+                <div class="d-grid gap-2 mt-3">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+                </div>
+        
+                <div class="mt-3">
+                    <a href="login_administrador.html">Ingresar como administrador</a>
+                </div>
+            </form>
         </div>
-
-        <div class="mt-3">
-            <a href="login_administrador.html">Ingresar como administrador</a>
-        </div>
-    </form>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="login.js"></script>
     <script>loginHook('form');</script>

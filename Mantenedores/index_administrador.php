@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+FIX TEMPORAL
+deberia estar en root, pero para que el navbar funcione 
+debe estar en la misma carpeta que mantenedores
+-->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,10 +27,10 @@
                 <img src="usuario.svg" class="" alt="" srcset="">
             </div>
         </div> -->
-        <button type="button" class="col btn btn-primary" onclick="location.href = 'login_persona.html'">Ingresar</button>
+        <button type="button" class="col btn btn-primary" disabled>Log out</button>
     </div>
-    <?php //require "Mantenedores/Navbar.html" ; ?>
-
+    <?php require "Navbar.html" ; ?>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
