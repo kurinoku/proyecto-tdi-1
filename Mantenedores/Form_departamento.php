@@ -14,13 +14,18 @@ require('conexion_p.php');
     <?php
     require('Navbar.html');
     ?>
-
-<div class="container-fluid">
-    <div class="card-body">
-        <div class="mb-3" style="width: 230px;">
-            <div class="ps-3 m-1 pb-2">
-                <h4>Formulario para añadir un departamento</h4>
-                <form action="ingresar_departamento.php" method="post">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <h4>Formulario para añadir un departamento</h4>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <h4>Listado de Departamentos</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+        <form action="ingresar_departamento.php" method="post">
                     <label class="form-label d-block">Codigo:</label>
                     <input type="text" name="Codigo_dep" placeholder="12345678"/>
                     <label class="form-label d-block">Id municipalidad:</label>
@@ -33,21 +38,16 @@ require('conexion_p.php');
                     <input type="text" name="Encargado_departamento" placeholder="Carlos Candia"/>
                     <button type="submit" class="d-block mt-2" style="width: 188px;">Guardar</button>
                 </form>
-            </div>
         </div>
-    </div>
-</div>
-    
-
-    <br><br>
-
-    <table style="width:80%">
+        <div class="col-lg-6">
+        <table class="table table-striped">
         <tr>
             <th>Codigo</th>
             <th>Id municipalidad</th>
             <th>Rut administrador</th>
             <th>Nombre departamento</th>
             <th>Encargado</th>
+            <th>Opciones</th>
         </tr>
     
 
@@ -69,11 +69,21 @@ require('conexion_p.php');
             echo "<td>".$Rut."</td>";
             echo "<td>".$Nombre."</td>";
             echo "<td>".$Encargado."</td>";
+            echo "<td><a href='eliminar_departamento.php?seleccionado=".$Codigo."'>Eliminar</a> <a href='editar_departamento.php?seleccionado=".$Codigo."'>Editar</a></td>";
             echo "</tr>";
         }
     ?>
 
-    </table>
+        </table>
+    </div>
+    </div>
+                
+
+</div>
+                
+                
+
+    
     <br>
     <a href="javascript: history.go(-1)">Volver</a>
 </body>

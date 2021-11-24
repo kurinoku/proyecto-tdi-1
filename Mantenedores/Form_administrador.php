@@ -14,13 +14,18 @@ require('conexion_p.php');
     <?php
     require('Navbar.html');
     ?>
-
-<div class="container-fluid pantalla-principal">
-    <div class="card-body">
-        <div class="mb-3" style="width: 230px;">
-            <div class="form m-1 ps-3 pb-2">
-                <h4>Formulario para añadir un administrador</h4>
-                <form action="ingresar_administrador.php" method="post">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <h4>Formulario para añadir un administrador</h4>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <h4>Listado de Administradores</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+        <form action="ingresar_administrador.php" method="post">
                     <label class="form-label d-block">Rut: </label>
                     <input type="text" name="Rut_administrador" placeholder="11111111"/>
                     <label class="form-label d-block">Nombre:</label>
@@ -32,21 +37,16 @@ require('conexion_p.php');
                     <label class="form-label d-block">Clave:</label>
                     <input type="password" name="Clave_ingreso" placeholder="**********"/>
                     <button type="submit" class="d-block mt-2" style="width: 188px;">Guardar</button>
-                </form>
-            </div>
+                </form> 
         </div>
-    </div>
-</div>    
-
-    <br><br>
-
-    <table style="width:80%">
+        <div class="col-lg-6">
+        <table class="table table-striped">
         <tr>
             <th>Rut</th>
             <th>Nombre</th>
             <th>Numero</th>
             <th>Correo</th>
-            <th>Clave</th>
+            <th>Opciones</th>
         </tr>
     
 
@@ -67,12 +67,19 @@ require('conexion_p.php');
             echo "<td>".$Nombre."</td>";
             echo "<td>".$Numero."</td>";
             echo "<td>".$Correo."</td>";
-            echo "<td>".$Clave."</td>";
+            echo "<td><a href='eliminar_administrador.php?seleccionado=".$Rut."'>Eliminar</a> <a href='editar_administrador.php?seleccionado=".$Rut."'>Editar</a></td>";
             echo "</tr>";
         }
     ?>
 
-    </table>
+        </table>
+    </div>
+    </div>
+                
+
+</div>
+
+
     <br>
     <a href="javascript: history.go(-1)">Volver</a>
 </body>
