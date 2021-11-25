@@ -1,74 +1,62 @@
 <?php
-require('conexion_p.php');
+require "conexion_p.php";
+$codigo = $_GET["seleccionado"];
+$consulta = "SELECT * FROM solicitud WHERE `Codigo`=$codigo";
+$resultado = mysqli_query($conexion, $consulta);
+$row = mysqli_fetch_assoc($resultado);
+$codigoDep = $row["Codigo_dep"];
+$rutPersona = $row["Rut_persona"];
+$tipo = $row["Tipo_retroalimentacion"];
+$descripcion = $row["Descripcion"];
+$estado = $row["Estado_msg"];
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Editar solicitudes</title>
+    <title>Editar Solicitud</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body>
-    
-    <form action="actualizar_solicitud.php" method="post">
-        <label>Codigo</label><input type="text" name="Codigo">
-        <label>Codigo Dep</label><input type="text" name="Codigo_dep">
-        <label>Rut Persona</label><input type="text" name="Rut_persona">
-        <label>Tipo</label><input type="text" name="Tipo_retroalimentacion">
-        <label>Descripcion</label><input type="text" name="Descripcion">
-        <label>Estado</label><input type="text" name="Estado_msg">
-        
-        <button type="submit">Editar</button>
-    </form>
 
-    <br><br>
-
-    <table style="width:80%">
-        <tr>
-            <th>Codigo</th>
-            <th>Codigo departamento</th>
-            <th>Rut persona</th>
-            <th>Tipo retroalimentacion</th>
-            <th>Descripcion</th>
-            <th>Estado</th>
-        </tr>
-    
-
-    <?php
-        $consulta = "SELECT * FROM solicitud";
-        $resultado = mysqli_query($conexion,$consulta);
-
-        while($row = mysqli_fetch_assoc($resultado)){
-            $Cod = $row['Codigo'];
-            $Codigo = $row['Codigo_dep'];
-            $Rut = $row['Rut_persona'];
-            $Tipo = $row['Tipo_retroalimentacion'];
-            $Descripcion = $row['Descripcion'];
-            $Estado = $row['Estado_msg'];
-
-
-            echo "<tr>";
-            echo "<td>".$Cod."</td>";
-            echo "<td>".$Codigo."</td>";
-            echo "<td>".$Rut."</td>";
-            echo "<td>".$Tipo."</td>";
-            echo "<td>".$Descripcion."</td>";
-            echo "<td>".$Estado."</td>";
-            echo "</tr>";
-        }
-    ?>
-
-    </table>
-    <br>
-    <a href="javascript: history.go(-1)">Volver</a>
-    <script src="filtrar_form.js"></script>
-    <script>
-        let form = document.querySelector('form');
-        filtrarFormHook(
-            form, 
-            form.querySelector('input[type="text"]'),
-            () => alert('Codigo no ingresado')
-        );
-    </script>
+<body><?php require 'Navbar.html'; ?><div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <h4>Formulario para editar un solicitud</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <form action="ingresar_solicitud.php" method="post"><label class="form-label d-block">Codigo:</label>
+                    <input name="Codigo" type="text" placeholder="" value="<?php
+                                                                            echo ($codigo);
+                                                                            ?>">
+                    <label class="form-label d-block">Codigo Dep:</label>
+                    <input name="Codigo_dep" type="text" placeholder="" value="<?php
+                                                                                echo ($codigoDep);
+                                                                                ?>">
+                    <label class="form-label d-block">Rut Persona:</label>
+                    <input name="Rut_persona" type="text" placeholder="" value="<?php
+                                                                                echo ($rutPersona);
+                                                                                ?>">
+                    <label class="form-label d-block">Tipo Retroalimentacion:</label>
+                    <input name="Tipo_retroalimentacion" type="text" placeholder="" value="<?php
+                                                                                            echo ($tipo);
+                                                                                            ?>">
+                    <label class="form-label d-block">Descripcion:</label>
+                    <input name="Descripcion" type="text" placeholder="" value="<?php
+                                                                                echo ($descripcion);
+                                                                                ?>">
+                    <label class="form-label d-block">Estado Msg:</label>
+                    <input name="Estado_msg" type="text" placeholder="" value="<?php
+                                                                                echo ($estado);
+                                                                                ?>">
+                    <button type="submit" class="d-block mt-2">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+
 </html>
