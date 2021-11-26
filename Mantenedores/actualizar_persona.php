@@ -28,5 +28,6 @@ if (empty($columns)) {
 }
 $pk = $_POST["Rut_persona"];
 $columns = implode(", ", $columns);
-$sql = "UPDATE persona SET $columns WHERE `Rut_persona`='$pk'";
+$sql = "UPDATE ciudadano SET $columns WHERE `Rut_persona`='$pk'";
 mysqli_query($conn, $sql);
+header("Location: Form_persona.php");

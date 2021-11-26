@@ -1,4 +1,4 @@
-<?php
+<?php 
 require "conexion_p.php";
 $rut = $_GET["seleccionado"];
 $consulta = "SELECT * FROM administrador WHERE `Rut_administrador`='$rut'";
@@ -26,26 +26,16 @@ $clave = $row["Clave_ingreso"];
         </div>
         <div class="row">
             <div class="col-lg-6 mb-4">
-                <form action="ingresar_administrador.php" method="post"><label class="form-label d-block">Rut Administrador:</label>
-                    <input name="Rut_administrador" type="text" placeholder="" value="<?php
-                                                                                        echo ($rut);
-                                                                                        ?>">
+                <form action="actualizar_administrador.php" method="post"><label class="form-label d-block">Rut Administrador:</label>
+                    <input name="Rut_administrador" type="text" placeholder="" value="<?php echo ($rut); ?>">
                     <label class="form-label d-block">Nombre Administrador:</label>
-                    <input name="Nombre_administrador" type="text" placeholder="" value="<?php
-                                                                                            echo ($nombre);
-                                                                                            ?>">
+                    <input name="Nombre_administrador" type="text" placeholder="" value="<?php echo ($nombre); ?>">
                     <label class="form-label d-block">Numero Administrador:</label>
-                    <input name="Numero_administrador" type="text" placeholder="" value="<?php
-                                                                                            echo ($numero);
-                                                                                            ?>">
+                    <input name="Numero_administrador" type="text" placeholder="" value="<?php echo ($numero); ?>">
                     <label class="form-label d-block">Correo Trabajo:</label>
-                    <input name="Correo_trabajo" type="text" placeholder="" value="<?php
-                                                                                    echo ($correo);
-                                                                                    ?>">
+                    <input name="Correo_trabajo" type="text" placeholder="" value="<?php echo ($correo); ?>">
                     <label class="form-label d-block">Clave Ingreso:</label>
-                    <input name="Clave_ingreso" type="password" placeholder="" value="<?php
-                                                                                        echo ($clave);
-                                                                                        ?>">
+                    <input name="Clave_ingreso" type="password" placeholder="" value="<?php echo ($clave); ?>">
                     <button type="submit" class="d-block mt-2">Guardar</button>
                 </form>
             </div>

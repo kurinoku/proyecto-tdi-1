@@ -1,4 +1,4 @@
-<?php
+<?php 
 require "conexion_p.php";
 $rut = $_GET["seleccionado"];
 $consulta = "SELECT * FROM ciudadano WHERE `Rut_persona`='$rut'";
@@ -27,30 +27,18 @@ $clavePersona = $row["Clave_persona"];
         </div>
         <div class="row">
             <div class="col-lg-6 mb-4">
-                <form action="ingresar_persona.php" method="post"><label class="form-label d-block">Rut Persona:</label>
-                    <input name="Rut_persona" type="text" placeholder="" value="<?php
-                                                                                echo ($rut);
-                                                                                ?>">
+                <form action="actualizar_persona.php" method="post"><label class="form-label d-block">Rut Persona:</label>
+                    <input name="Rut_persona" type="text" placeholder="" value="<?php echo ($rut); ?>">
                     <label class="form-label d-block">Id Municipalidad:</label>
-                    <input name="Id_municipalidad" type="text" placeholder="" value="<?php
-                                                                                        echo ($idMunicipalidad);
-                                                                                        ?>">
+                    <input name="Id_municipalidad" type="text" placeholder="" value="<?php echo ($idMunicipalidad); ?>">
                     <label class="form-label d-block">Nombre Persona:</label>
-                    <input name="Nombre_persona" type="text" placeholder="" value="<?php
-                                                                                    echo ($nombre);
-                                                                                    ?>">
+                    <input name="Nombre_persona" type="text" placeholder="" value="<?php echo ($nombre); ?>">
                     <label class="form-label d-block">Numero Persona:</label>
-                    <input name="Numero_persona" type="text" placeholder="" value="<?php
-                                                                                    echo ($numero);
-                                                                                    ?>">
+                    <input name="Numero_persona" type="text" placeholder="" value="<?php echo ($numero); ?>">
                     <label class="form-label d-block">Correo Persona:</label>
-                    <input name="Correo_persona" type="text" placeholder="" value="<?php
-                                                                                    echo ($correo);
-                                                                                    ?>">
+                    <input name="Correo_persona" type="text" placeholder="" value="<?php echo ($correo); ?>">
                     <label class="form-label d-block">Clave Persona:</label>
-                    <input name="Clave_persona" type="password" placeholder="" value="<?php
-                                                                                        echo ($clavePersona);
-                                                                                        ?>">
+                    <input name="Clave_persona" type="password" placeholder="" value="<?php echo ($clavePersona); ?>">
                     <button type="submit" class="d-block mt-2">Guardar</button>
                 </form>
             </div>

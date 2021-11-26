@@ -26,3 +26,4 @@ $pk = $_POST["Rut_administrador"];
 $columns = implode(", ", $columns);
 $sql = "UPDATE administrador SET $columns WHERE `Rut_administrador`='$pk'";
 mysqli_query($conn, $sql);
+header("Location: Form_administrador.php");

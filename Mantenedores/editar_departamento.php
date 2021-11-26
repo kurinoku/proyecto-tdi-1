@@ -1,4 +1,4 @@
-<?php
+<?php 
 require "conexion_p.php";
 $codigo = $_GET["seleccionado"];
 $consulta = "SELECT * FROM departamento WHERE `Codigo_dep`='$codigo'";
@@ -26,26 +26,16 @@ $encargado = $row["Encargado_departamento"];
         </div>
         <div class="row">
             <div class="col-lg-6 mb-4">
-                <form action="ingresar_departamento.php" method="post"><label class="form-label d-block">Codigo Dep:</label>
-                    <input name="Codigo_dep" type="text" placeholder="" value="<?php
-                                                                                echo ($codigo);
-                                                                                ?>">
+                <form action="actualizar_departamento.php" method="post"><label class="form-label d-block">Codigo Dep:</label>
+                    <input name="Codigo_dep" type="text" placeholder="" value="<?php echo ($codigo); ?>">
                     <label class="form-label d-block">Id Municipalidad:</label>
-                    <input name="Id_municipalidad" type="text" placeholder="" value="<?php
-                                                                                        echo ($idMunicipalidad);
-                                                                                        ?>">
+                    <input name="Id_municipalidad" type="text" placeholder="" value="<?php echo ($idMunicipalidad); ?>">
                     <label class="form-label d-block">Rut Administrador:</label>
-                    <input name="Rut_administrador" type="text" placeholder="" value="<?php
-                                                                                        echo ($rutAdministrador);
-                                                                                        ?>">
+                    <input name="Rut_administrador" type="text" placeholder="" value="<?php echo ($rutAdministrador); ?>">
                     <label class="form-label d-block">Nombre Dep:</label>
-                    <input name="Nombre_dep" type="text" placeholder="" value="<?php
-                                                                                echo ($nombre);
-                                                                                ?>">
+                    <input name="Nombre_dep" type="text" placeholder="" value="<?php echo ($nombre); ?>">
                     <label class="form-label d-block">Encargado Departamento:</label>
-                    <input name="Encargado_departamento" type="text" placeholder="" value="<?php
-                                                                                            echo ($encargado);
-                                                                                            ?>">
+                    <input name="Encargado_departamento" type="text" placeholder="" value="<?php echo ($encargado); ?>">
                     <button type="submit" class="d-block mt-2">Guardar</button>
                 </form>
             </div>

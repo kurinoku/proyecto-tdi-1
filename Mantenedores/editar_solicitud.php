@@ -1,4 +1,4 @@
-<?php
+<?php 
 require "conexion_p.php";
 $codigo = $_GET["seleccionado"];
 $consulta = "SELECT * FROM solicitud WHERE `Codigo`=$codigo";
@@ -27,30 +27,18 @@ $estado = $row["Estado_msg"];
         </div>
         <div class="row">
             <div class="col-lg-6 mb-4">
-                <form action="ingresar_solicitud.php" method="post"><label class="form-label d-block">Codigo:</label>
-                    <input name="Codigo" type="text" placeholder="" value="<?php
-                                                                            echo ($codigo);
-                                                                            ?>">
+                <form action="actualizar_solicitud.php" method="post"><label class="form-label d-block">Codigo:</label>
+                    <input name="Codigo" type="text" placeholder="" value="<?php echo ($codigo); ?>">
                     <label class="form-label d-block">Codigo Dep:</label>
-                    <input name="Codigo_dep" type="text" placeholder="" value="<?php
-                                                                                echo ($codigoDep);
-                                                                                ?>">
+                    <input name="Codigo_dep" type="text" placeholder="" value="<?php echo ($codigoDep); ?>">
                     <label class="form-label d-block">Rut Persona:</label>
-                    <input name="Rut_persona" type="text" placeholder="" value="<?php
-                                                                                echo ($rutPersona);
-                                                                                ?>">
+                    <input name="Rut_persona" type="text" placeholder="" value="<?php echo ($rutPersona); ?>">
                     <label class="form-label d-block">Tipo Retroalimentacion:</label>
-                    <input name="Tipo_retroalimentacion" type="text" placeholder="" value="<?php
-                                                                                            echo ($tipo);
-                                                                                            ?>">
+                    <input name="Tipo_retroalimentacion" type="text" placeholder="" value="<?php echo ($tipo); ?>">
                     <label class="form-label d-block">Descripcion:</label>
-                    <input name="Descripcion" type="text" placeholder="" value="<?php
-                                                                                echo ($descripcion);
-                                                                                ?>">
+                    <input name="Descripcion" type="text" placeholder="" value="<?php echo ($descripcion); ?>">
                     <label class="form-label d-block">Estado Msg:</label>
-                    <input name="Estado_msg" type="text" placeholder="" value="<?php
-                                                                                echo ($estado);
-                                                                                ?>">
+                    <input name="Estado_msg" type="text" placeholder="" value="<?php echo ($estado); ?>">
                     <button type="submit" class="d-block mt-2">Guardar</button>
                 </form>
             </div>

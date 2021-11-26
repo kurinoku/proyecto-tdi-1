@@ -26,3 +26,4 @@ $pk = $_POST["Codigo_dep"];
 $columns = implode(", ", $columns);
 $sql = "UPDATE departamento SET $columns WHERE `Codigo_dep`='$pk'";
 mysqli_query($conn, $sql);
+header("Location: Form_departamento.php");
