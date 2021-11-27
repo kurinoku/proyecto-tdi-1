@@ -22,3 +22,4 @@ $pk = $_POST["Id_municipalidad"];
 $columns = implode(", ", $columns);
 $sql = "UPDATE municipalidad SET $columns WHERE `Id_municipalidad`='$pk'";
 mysqli_query($conn, $sql);
+header("Location: Form_municipalidad.php");

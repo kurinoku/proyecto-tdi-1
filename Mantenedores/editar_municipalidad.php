@@ -1,4 +1,4 @@
-<?php
+<?php 
 require "conexion_p.php";
 $id = $_GET["seleccionado"];
 $consulta = "SELECT * FROM municipalidad WHERE `Id_municipalidad`='$id'";
@@ -25,22 +25,14 @@ $numero = $row["Numero_municipalidad"];
         </div>
         <div class="row">
             <div class="col-lg-6 mb-4">
-                <form action="ingresar_municipalidad.php" method="post"><label class="form-label d-block">Id Municipalidad:</label>
-                    <input name="Id_municipalidad" type="text" placeholder="" value="<?php
-                                                                                        echo ($id);
-                                                                                        ?>">
+                <form action="actualizar_municipalidad.php" method="post"><label class="form-label d-block">Id Municipalidad:</label>
+                    <input name="Id_municipalidad" type="text" placeholder="" value="<?php echo ($id); ?>">
                     <label class="form-label d-block">Nombre Municipalidad:</label>
-                    <input name="Nombre_municipalidad" type="text" placeholder="" value="<?php
-                                                                                            echo ($nombre);
-                                                                                            ?>">
+                    <input name="Nombre_municipalidad" type="text" placeholder="" value="<?php echo ($nombre); ?>">
                     <label class="form-label d-block">Direccion Municipalidad:</label>
-                    <input name="Direccion_municipalidad" type="text" placeholder="" value="<?php
-                                                                                            echo ($direccion);
-                                                                                            ?>">
+                    <input name="Direccion_municipalidad" type="text" placeholder="" value="<?php echo ($direccion); ?>">
                     <label class="form-label d-block">Numero Municipalidad:</label>
-                    <input name="Numero_municipalidad" type="text" placeholder="" value="<?php
-                                                                                            echo ($numero);
-                                                                                            ?>">
+                    <input name="Numero_municipalidad" type="text" placeholder="" value="<?php echo ($numero); ?>">
                     <button type="submit" class="d-block mt-2">Guardar</button>
                 </form>
             </div>
