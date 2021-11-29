@@ -21,7 +21,7 @@
                 <img src="usuario.svg" class="" alt="" srcset="">
             </div>
         </div> -->
-        <button type="button" class="col btn btn-primary" onclick="location.href = 'login_persona.html'">Ingresar</button>
+        <button type="button" class="col btn btn-primary" onclick="location.href = 'login_persona.php'">Ingresar</button>
     </div>
     <?php //require "Mantenedores/Navbar.html" ; ?>
 
