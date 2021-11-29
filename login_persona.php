@@ -15,6 +15,7 @@
         <div class="row">
             <?php
             require('Mantenedores/conexion_p.php');
+            session_start();
             if (isset($_POST['usuario'])){
 
                 $username = stripslashes($_REQUEST['usuario']); // removes backslashes
