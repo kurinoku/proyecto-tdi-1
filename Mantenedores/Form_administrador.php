@@ -45,12 +45,12 @@ require('conexion_p.php');
                             </div>
                             <div class="form-group mt-2">
                                 <label>E-mail</label>
-                                <input type="email" name="Correo_trabajo" class="form-control" placeholder="alguien@example.com" required>
+                                <input type="email" name="Correo_administrador" class="form-control" placeholder="alguien@example.com" required>
                                 <small class="form-text text-muted">Utiliza un correo principal y no lo compartas con nadie.</small>
                             </div>
                             <div class="form-group mt-2">
                                 <label>Contraseña</label>
-                                <input type="password" name="Clave_ingreso" class="form-control" placeholder="********" required>
+                                <input type="password" name="Clave_administrador" class="form-control" placeholder="********" required>
                                 <small class="form-text text-muted">Utiliza contraseña segura entre 8 y 16 caracteres.</small>
                             </div>
                     </fieldset>
@@ -80,8 +80,8 @@ require('conexion_p.php');
                         $Rut = $row['Rut_administrador'];
                         $Nombre = $row['Nombre_administrador'];
                         $Numero = $row['Numero_administrador'];
-                        $Correo = $row['Correo_trabajo'];
-                        $Clave = $row['Clave_ingreso'];
+                        $Correo = $row['Correo_administrador'];
+                        $Clave = $row['Clave_administrador'];
 
                         echo "<tr>";
                         echo "<td>" . $Rut . "</td>";

@@ -6,8 +6,8 @@ $resultado = mysqli_query($conexion, $consulta);
 $row = mysqli_fetch_assoc($resultado);
 $nombre = $row["Nombre_administrador"];
 $numero = $row["Numero_administrador"];
-$correo = $row["Correo_trabajo"];
-$clave = $row["Clave_ingreso"];
+$correo = $row["Correo_administrador"];
+$clave = $row["Clave_administrador"];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -33,9 +33,9 @@ $clave = $row["Clave_ingreso"];
                     <label class="form-label d-block">Numero Administrador:</label>
                     <input name="Numero_administrador" type="text" placeholder="" value="<?php echo ($numero); ?>">
                     <label class="form-label d-block">Correo Trabajo:</label>
-                    <input name="Correo_trabajo" type="text" placeholder="" value="<?php echo ($correo); ?>">
+                    <input name="Correo_administrador" type="text" placeholder="" value="<?php echo ($correo); ?>">
                     <label class="form-label d-block">Clave Ingreso:</label>
-                    <input name="Clave_ingreso" type="password" placeholder="" value="<?php echo ($clave); ?>">
+                    <input name="Clave_administrador" type="password" placeholder="" value="<?php echo ($clave); ?>">
                     <button type="submit" class="d-block mt-2">Guardar</button>
                 </form>
             </div>

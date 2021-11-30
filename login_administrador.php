@@ -20,12 +20,12 @@
 
                 $username = stripslashes($_REQUEST['admin']); // removes backslashes
                 $username = mysqli_real_escape_string($conexion,$username); //escapes special characters in a string
-                $password = stripslashes($_REQUEST['clave']);
+                $password = md5($_REQUEST['clave']);
                 $password = mysqli_real_escape_string($conexion,$password);
                 
                 //Checking is user existing in the database or not
-                $query = "SELECT * FROM administrador WHERE Rut_administrador='$username' and Clave_ingreso='$password'";
-                $result = mysqli_query($conexion,$query) or die(mysql_error());
+                $query = "SELECT * FROM administrador WHERE Rut_administrador='$username' and Clave_administrador='$password'";
+                $result = mysqli_query($conexion,$query) or die(mysqli_error($conexion));
                 $rows = mysqli_num_rows($result);
                 if($rows==1){
                     $_SESSION['admin'] = $username;

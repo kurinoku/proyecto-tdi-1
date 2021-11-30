@@ -1,7 +1,7 @@
 <?php 
 require "conexion_p.php";
 $rut = $_GET["seleccionado"];
-$consulta = "SELECT * FROM ciudadano WHERE `Rut_persona`='$rut'";
+$consulta = "SELECT * FROM persona WHERE `Rut_persona`='$rut'";
 $resultado = mysqli_query($conexion, $consulta);
 $row = mysqli_fetch_assoc($resultado);
 $idMunicipalidad = $row["Id_municipalidad"];

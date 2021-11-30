@@ -14,7 +14,7 @@
     require('conexion_p.php'); 
 
     $user = $_SESSION['usuario'];
-    $consulta = "SELECT * FROM ciudadano WHERE Rut_persona = '$user'";
+    $consulta = "SELECT * FROM persona WHERE Rut_persona = '$user'";
     $resultado = mysqli_query($conexion, $consulta);
     $row = mysqli_fetch_assoc($resultado);
     $rut = $row['Rut_persona'];
