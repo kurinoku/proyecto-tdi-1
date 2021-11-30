@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2021 a las 01:09:45
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.12
+-- Tiempo de generación: 30-11-2021 a las 17:14:05
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `tdi_municipalidad_feedback`
+-- Base de datos: `tdi_municipalidad_feedback.sql`
 --
 
 -- --------------------------------------------------------
@@ -34,6 +34,11 @@ CREATE TABLE `administrador` (
   `Correo_trabajo` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `Clave_ingreso` varchar(14) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
 
 -- --------------------------------------------------------
 
@@ -54,8 +59,7 @@ CREATE TABLE `ciudadano` (
 -- Volcado de datos para la tabla `ciudadano`
 --
 
-INSERT INTO `ciudadano` (`Rut_persona`, `Id_municipalidad`, `Nombre_persona`, `Numero_persona`, `Correo_persona`, `Clave_persona`) VALUES
-('12345678', '111', 'aaa', '1234', 'asadad', '4444');
+
 
 -- --------------------------------------------------------
 
@@ -66,10 +70,36 @@ INSERT INTO `ciudadano` (`Rut_persona`, `Id_municipalidad`, `Nombre_persona`, `N
 CREATE TABLE `departamento` (
   `Codigo_dep` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
   `Id_municipalidad` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
+  `Rut_encargado` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
   `Rut_administrador` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
   `Nombre_dep` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Encargado_departamento` varchar(40) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `departamento`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `encargado`
+--
+
+CREATE TABLE `encargado` (
+  `Rut_encargado` varchar(8) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Nombre_encargado` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Numero_encargado` varchar(9) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Correo_encargado` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Clave_encargado` varchar(14) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `encargado`
+--
+
+
 
 -- --------------------------------------------------------
 
@@ -88,8 +118,6 @@ CREATE TABLE `municipalidad` (
 -- Volcado de datos para la tabla `municipalidad`
 --
 
-INSERT INTO `municipalidad` (`Id_municipalidad`, `Nombre_municipalidad`, `Direccion_municipalidad`, `Numero_municipalidad`) VALUES
-('111', 'aaaa', 'asdf', '123');
 
 -- --------------------------------------------------------
 
@@ -105,6 +133,11 @@ CREATE TABLE `solicitud` (
   `Descripcion` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `Estado_msg` varchar(15) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `solicitud`
+--
+
 
 --
 -- Índices para tablas volcadas
@@ -129,7 +162,14 @@ ALTER TABLE `ciudadano`
 ALTER TABLE `departamento`
   ADD PRIMARY KEY (`Codigo_dep`),
   ADD KEY `fk_departamento_rut_administrador` (`Rut_administrador`),
-  ADD KEY `fk_departamento_id_municipalidad` (`Id_municipalidad`);
+  ADD KEY `fk_departamento_id_municipalidad` (`Id_municipalidad`),
+  ADD KEY `fk_departamento_rut_encargado` (`Rut_encargado`);
+
+--
+-- Indices de la tabla `encargado`
+--
+ALTER TABLE `encargado`
+  ADD PRIMARY KEY (`Rut_encargado`);
 
 --
 -- Indices de la tabla `municipalidad`
@@ -153,7 +193,7 @@ ALTER TABLE `solicitud`
 -- AUTO_INCREMENT de la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
-  MODIFY `Codigo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Codigo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas
@@ -170,7 +210,8 @@ ALTER TABLE `ciudadano`
 --
 ALTER TABLE `departamento`
   ADD CONSTRAINT `fk_departamento_id_municipalidad` FOREIGN KEY (`Id_municipalidad`) REFERENCES `municipalidad` (`Id_municipalidad`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_departamento_rut_administrador` FOREIGN KEY (`Rut_administrador`) REFERENCES `administrador` (`Rut_administrador`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_departamento_rut_administrador` FOREIGN KEY (`Rut_administrador`) REFERENCES `administrador` (`Rut_administrador`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_departamento_rut_encargado` FOREIGN KEY (`Rut_encargado`) REFERENCES `encargado` (`Rut_encargado`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `solicitud`
@@ -183,3 +224,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
