@@ -1,6 +1,6 @@
 <?php
 session_start();
 if(!isset($_SESSION["admin"])){
-    header("Location: ../login_administrador.php");
+    header("Location: ../index.php");
 exit(); }
 ?>
