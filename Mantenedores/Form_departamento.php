@@ -39,16 +39,12 @@ require('conexion_p.php');
                                 <input type="text" name="Id_municipalidad" class="form-control" placeholder="12345" required>
                             </div>
                             <div class="form-group mt-2">
-                                <label>Rut administrador</label>
-                                <input type="text" name="Rut_administrador" class="form-control" placeholder="12345678 (Sin guión)" required>
+                                <label>Rut encargado</label>
+                                <input type="text" name="Rut_encargado" class="form-control" placeholder="12345678 (Sin guión)" required>
                             </div>
                             <div class="form-group mt-2">
                                 <label>Nombre departamento:</label>
                                 <input type="text" name="Nombre_dep" class="form-control" placeholder="Departamento las Rosas" required>
-                            </div>
-                            <div class="form-group mt-2">
-                                <label>Encargado</label>
-                                <input type="text" name="Encargado_departamento" class="form-control" placeholder="Juancho Poblete" required>
                             </div>
                     </fieldset>
                     <div class="text-center pb-1">
@@ -64,9 +60,8 @@ require('conexion_p.php');
                         <tr>
                             <th>Codigo</th>
                             <th>Id municipalidad</th>
-                            <th>Rut administrador</th>
+                            <th>Rut encargado</th>
                             <th>Nombre departamento</th>
-                            <th>Encargado</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
@@ -76,15 +71,13 @@ require('conexion_p.php');
                     while ($row = mysqli_fetch_assoc($resultado)) {
                         $Codigo = $row['Codigo_dep'];
                         $Id = $row['Id_municipalidad'];
-                        $Rut = $row['Rut_administrador'];
+                        $Rut = $row['Rut_encargado'];
                         $Nombre = $row['Nombre_dep'];
-                        $Encargado = $row['Encargado_departamento'];
                         echo "<tr>";
                         echo "<td>" . $Codigo . "</td>";
                         echo "<td>" . $Id . "</td>";
                         echo "<td>" . $Rut . "</td>";
                         echo "<td>" . $Nombre . "</td>";
-                        echo "<td>" . $Encargado . "</td>";
                         echo "<td><a href='eliminar_departamento.php?seleccionado=" . $Codigo . "'>Eliminar</a> <a href='editar_departamento.php?seleccionado=" . $Codigo . "'>Editar</a></td>";
                         echo "</tr>";
                     }

@@ -5,6 +5,7 @@ $consulta = "SELECT * FROM municipalidad WHERE `Id_municipalidad`='$id'";
 $resultado = mysqli_query($conexion, $consulta);
 $row = mysqli_fetch_assoc($resultado);
 $nombre = $row["Nombre_municipalidad"];
+$Rut = $row['Rut_administrador'];
 $direccion = $row["Direccion_municipalidad"];
 $numero = $row["Numero_municipalidad"];
 ?>
@@ -29,6 +30,8 @@ $numero = $row["Numero_municipalidad"];
                     <input name="Id_municipalidad" type="text" placeholder="" value="<?php echo ($id); ?>">
                     <label class="form-label d-block">Nombre Municipalidad:</label>
                     <input name="Nombre_municipalidad" type="text" placeholder="" value="<?php echo ($nombre); ?>">
+                    <label class="form-label d-block">Rut Administrador:</label>
+                    <input name="Rut_administrador" type="text" placeholder="" value="<?php echo ($Rut); ?>">
                     <label class="form-label d-block">Direccion Municipalidad:</label>
                     <input name="Direccion_municipalidad" type="text" placeholder="" value="<?php echo ($direccion); ?>">
                     <label class="form-label d-block">Numero Municipalidad:</label>

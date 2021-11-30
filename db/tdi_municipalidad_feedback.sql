@@ -31,7 +31,6 @@ CREATE TABLE `administrador` (
 -- Volcado de datos para la tabla `administrador`
 --
 
-
 -- --------------------------------------------------------
 
 --
@@ -58,15 +57,12 @@ CREATE TABLE `departamento` (
   `Codigo_dep` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
   `Id_municipalidad` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
   `Rut_encargado` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
-  `Rut_administrador` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
-  `Nombre_dep` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Encargado_departamento` varchar(40) COLLATE utf8_unicode_ci NOT NULL
+  `Nombre_dep` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `departamento`
 --
-
 
 -- --------------------------------------------------------
 
@@ -86,8 +82,6 @@ CREATE TABLE `encargado` (
 -- Volcado de datos para la tabla `encargado`
 --
 
-
-
 -- --------------------------------------------------------
 
 --
@@ -97,6 +91,7 @@ CREATE TABLE `encargado` (
 CREATE TABLE `municipalidad` (
   `Id_municipalidad` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
   `Nombre_municipalidad` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `Rut_administrador` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
   `Direccion_municipalidad` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `Numero_municipalidad` varchar(9) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -120,7 +115,6 @@ CREATE TABLE `solicitud` (
 -- Volcado de datos para la tabla `solicitud`
 --
 
-
 --
 -- Índices para tablas volcadas
 --
@@ -143,7 +137,6 @@ ALTER TABLE `persona`
 --
 ALTER TABLE `departamento`
   ADD PRIMARY KEY (`Codigo_dep`),
-  ADD KEY `fk_departamento_rut_administrador` (`Rut_administrador`),
   ADD KEY `fk_departamento_id_municipalidad` (`Id_municipalidad`),
   ADD KEY `fk_departamento_rut_encargado` (`Rut_encargado`);
 
@@ -157,7 +150,8 @@ ALTER TABLE `encargado`
 -- Indices de la tabla `municipalidad`
 --
 ALTER TABLE `municipalidad`
-  ADD PRIMARY KEY (`Id_municipalidad`);
+  ADD PRIMARY KEY (`Id_municipalidad`),
+  ADD KEY `fk_municipalidad_rut_administrador` (`Rut_administrador`);
 
 --
 -- Indices de la tabla `solicitud`
@@ -192,8 +186,13 @@ ALTER TABLE `persona`
 --
 ALTER TABLE `departamento`
   ADD CONSTRAINT `fk_departamento_id_municipalidad` FOREIGN KEY (`Id_municipalidad`) REFERENCES `municipalidad` (`Id_municipalidad`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_departamento_rut_administrador` FOREIGN KEY (`Rut_administrador`) REFERENCES `administrador` (`Rut_administrador`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_departamento_rut_encargado` FOREIGN KEY (`Rut_encargado`) REFERENCES `encargado` (`Rut_encargado`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `municipalidad`
+--
+ALTER TABLE `municipalidad`
+  ADD CONSTRAINT `fk_municipalidad_rut_administrador` FOREIGN KEY (`Rut_administrador`) REFERENCES `administrador` (`Rut_administrador`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `solicitud`
@@ -206,4 +205,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-

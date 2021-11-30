@@ -39,6 +39,10 @@ require('conexion_p.php');
                                 <input type="text" name="Nombre_municipalidad" class="form-control" placeholder="Municipalidad de Concepción" required>
                             </div>
                             <div class="form-group mt-2">
+                                <label>Rut Administrador</label>
+                                <input type="text" name="Rut_administrador" class="form-control" placeholder="12345678 (Sin guión)" required>
+                            </div>
+                            <div class="form-group mt-2">
                                 <label>Direccion municipalidad</label>
                                 <input type="text" name="Direccion_municipalidad" class="form-control" placeholder="Pasaje Barros Arana 332" required>
                             </div>
@@ -60,6 +64,7 @@ require('conexion_p.php');
                         <tr>
                             <th>Id municipalidad</th>
                             <th>Nombre municipalidad</th>
+                            <th>Rut Administrador</th>
                             <th>Direccion municipalidad</th>
                             <th>Numero municipalidad</th>
                             <th>Opciones</th>
@@ -71,11 +76,13 @@ require('conexion_p.php');
                     while ($row = mysqli_fetch_assoc($resultado)) {
                         $id = $row['Id_municipalidad'];
                         $nombre = $row['Nombre_municipalidad'];
+                        $Rut = $row['Rut_administrador'];
                         $direccion = $row['Direccion_municipalidad'];
                         $numero = $row['Numero_municipalidad'];
                         echo "<tr>";
                         echo "<td>" . $id . "</td>";
                         echo "<td>" . $nombre . "</td>";
+                        echo "<td>" . $Rut . "</td>";
                         echo "<td>" . $direccion . "</td>";
                         echo "<td>" . $numero . "</td>";
                         echo "<td> <a href='editar_municipalidad.php?seleccionado=" . $id . "'>Editar</a></td>";
