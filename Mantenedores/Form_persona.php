@@ -20,7 +20,7 @@ require('conexion_p.php');
     <div class="container-fluid">
         <!-- Barra de navegación -->
         <?php
-        require('Navbar.html');
+        require('Navbar_administrador.html');
         ?>
         <!-- Contenedor del Formulario y la Tabla -->
         <div class="row flex-lg-row">
