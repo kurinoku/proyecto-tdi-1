@@ -20,6 +20,7 @@ if (array_key_exists("Correo_persona", $_POST)) {
 }
 if (array_key_exists("Clave_persona", $_POST)) {
     $clavePersona = $_POST["Clave_persona"];
+    $clavePersona = md5($clavePersona);
     array_push($columns, "`Clave_persona`='$clavePersona'");
 }
 if (empty($columns)) {
@@ -28,6 +29,6 @@ if (empty($columns)) {
 }
 $pk = $_POST["Rut_persona"];
 $columns = implode(", ", $columns);
-$sql = "UPDATE ciudadano SET $columns WHERE `Rut_persona`='$pk'";
+$sql = "UPDATE persona SET $columns WHERE `Rut_persona`='$pk'";
 mysqli_query($conn, $sql);
 header("Location: Form_persona.php");

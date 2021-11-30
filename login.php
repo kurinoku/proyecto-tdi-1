@@ -11,10 +11,10 @@ if ($clave and $usuario and !($clave == "" or $usuario == "")) {
     if ($esLoginPersona)
     {
         $dest = "index.php"; // la idea es que vaya a la pagina principal para personas
-        $sql = "SELECT `Clave_persona` FROM ciudadano WHERE `Rut_persona`='$usuario'";
+        $sql = "SELECT `Clave_persona` FROM persona WHERE `Rut_persona`='$usuario'";
     } else {
         $dest = "Mantenedores/index_administrador.php"; // idem, tiene que ser cambiado despues
-        $sql = "SELECT `Clave_ingreso` FROM administrador WHERE `Rut_administrador`='$usuario'";
+        $sql = "SELECT `Clave_administrador` FROM administrador WHERE `Rut_administrador`='$usuario'";
     }
     
     $result = mysqli_query($conexion, $sql);

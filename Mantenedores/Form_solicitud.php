@@ -40,15 +40,15 @@ require('conexion_p.php');
                             </div>
                             <div class="form-group mt-2">
                                 <label>Tipo retroalimentacion:</label>
-                                <input type="text" name="Tipo_retroalimentacion" class="form-control" placeholder="Felicitación" required>
+                                <input type="text" name="Tipo_solicitud" class="form-control" placeholder="Felicitación" required>
                             </div>
                             <div class="form-group mt-2">
                                 <label>Descripcion</label>
-                                <textarea type="text" name="Descripcion" class="form-control" placeholder="Muy buena atención..." required></textarea>
+                                <textarea type="text" name="Descripcion_solicitud" class="form-control" placeholder="Muy buena atención..." required></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Estado</label>
-                                <input type="text" name="Estado_msg" class="form-control" placeholder="Pendiente de revisión" required>
+                                <input type="text" name="Estado_solicitud" class="form-control" placeholder="Pendiente de revisión" required>
                             </div>
                     </fieldset>
                     <div class="text-center pb-1">
@@ -75,12 +75,12 @@ require('conexion_p.php');
                     $consulta = "SELECT * FROM solicitud";
                     $resultado = mysqli_query($conexion, $consulta);
                     while ($row = mysqli_fetch_assoc($resultado)) {
-                        $Cod = $row['Codigo'];
+                        $Cod = $row['Codigo_solicitud'];
                         $Codigo = $row['Codigo_dep'];
                         $Rut = $row['Rut_persona'];
-                        $Tipo = $row['Tipo_retroalimentacion'];
-                        $Descripcion = $row['Descripcion'];
-                        $Estado = $row['Estado_msg'];
+                        $Tipo = $row['Tipo_solicitud'];
+                        $Descripcion = $row['Descripcion_solicitud'];
+                        $Estado = $row['Estado_solicitud'];
                         echo "<tr>";
                         echo "<td>" . $Cod . "</td>";
                         echo "<td>" . $Codigo . "</td>";

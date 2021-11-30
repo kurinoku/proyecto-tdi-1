@@ -75,7 +75,7 @@ require('conexion_p.php');
                         </tr>
                     </thead>
                     <?php
-                    $consulta = "SELECT * FROM ciudadano";
+                    $consulta = "SELECT * FROM persona";
                     $resultado = mysqli_query($conexion, $consulta);
                     while ($row = mysqli_fetch_assoc($resultado)) {
                         $rut = $row['Rut_persona'];
