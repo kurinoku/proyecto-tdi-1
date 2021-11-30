@@ -52,6 +52,13 @@ function validarTipoRetroalimentacion($tipo) {
             or strcmp($tipo, 'Sugerencia') == 0;
 }
 
+function validarEstadoSolicitud($estado) {
+    return strcmp($estado, 'Nuevo') == 0 
+        or strcmp($estado, 'Visto') == 0 
+        or strcmp($estado, 'Procesando') == 0
+        or strcmp($estado, 'Resuelto') == 0;
+}
+
 function validarDescripcion($desc) {
     return mb_strlen($desc) <= 500 and validarPatron('/^[A-Za-záéíóúÁÉÍÓÚ, \.]+$/u', $desc);
 }
