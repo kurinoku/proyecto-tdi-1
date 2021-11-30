@@ -2,10 +2,9 @@
 require('conexion_p.php');
 $Codigo = $_POST['Codigo_dep'];
 $Id = $_POST['Id_municipalidad'];
-$Rut = $_POST['Rut_administrador'];
+$Rut = $_POST['Rut_encargado'];
 $Nombre = $_POST['Nombre_dep'];
-$Encargado = $_POST['Encargado_departamento'];
-$sql = "INSERT INTO departamento VALUES ('$Codigo', '$Id', '$Rut', '$Nombre', '$Encargado')";
+$sql = "INSERT INTO departamento VALUES ('$Codigo', '$Id', '$Rut', '$Nombre')";
 $result = mysqli_query($conexion, $sql);
 header('Location: Form_departamento.php');
 ?>
