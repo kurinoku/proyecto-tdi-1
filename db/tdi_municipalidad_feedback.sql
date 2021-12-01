@@ -108,7 +108,8 @@ CREATE TABLE `solicitud` (
   `Rut_persona` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
   `Tipo_solicitud` enum('Reclamo','Sugerencia','Felicitaciones') COLLATE utf8_unicode_ci NOT NULL,
   `Descripcion_solicitud` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `Estado_solicitud` enum('Nuevo','Visto','Procesando','Resuelto') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Nuevo'
+  `Estado_solicitud` enum('Nuevo','Visto','Procesando','Resuelto') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Nuevo',
+  `Creada_solicitud` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
