@@ -42,6 +42,9 @@
                     <div class="d-grid gap-2 mt-3">
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
                     </div>
+                    <div class="mt-3">
+                        <a href="Mantenedores/Registro_persona.php">Registrate</a>
+                    </div>
             
                     <div class="mt-3">
                         <a href="login_administrador.php">Ingresar como administrador</a>
