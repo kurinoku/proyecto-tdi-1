@@ -1,5 +1,6 @@
 <?php
 require('conexion_p.php');
+require('../auth_usuario.php');
 ?>
 
 <!DOCTYPE html>
@@ -20,42 +21,78 @@ require('conexion_p.php');
     <div class="container-fluid">
         <!-- Barra de navegación -->
         <?php
-        require('Navbar_administrador.html');
+        
+        require('navbar_persona.html');
         ?>
         <!-- Contenedor del Formulario y la Tabla -->
         <div class="row flex-lg-row">
+
+            <?php
+
+                $user = $_SESSION['usuario'];
+                $consulta = "SELECT * FROM persona WHERE Rut_persona = '$user'";
+                $resultado = mysqli_query($conexion, $consulta);
+                $row = mysqli_fetch_assoc($resultado);
+                $rut = $row['Rut_persona'];              
+                $nombre = $row['Nombre_persona'];
+
+
+            ?>
+
             <!-- Formulario -->
             <div class="col-lg-6 col-md-12">
                 <form action="ingresar_solicitud.php" method="post">
                     <fieldset>
                         <legend class="text-center pt-3">Formulario para añadir Solicitud</legend>
                         <div class="form-group row">
-                            <div class="form-group">
-                                <label>Codigo departamento</label>
-                                <input type="text" name="Codigo_dep" class="form-control" placeholder="12345" required>
+                        <div class="form-group mt-2">
+                                <label>Nombre persona</label>
+                                <input type="text" name="" class="form-control" placeholder="<?php echo $nombre ?>" aria-label="Disabled input example" Disabled>
                             </div>
                             <div class="form-group mt-2">
                                 <label>Rut persona</label>
-                                <input type="text" name="Rut_persona" class="form-control" placeholder="11111111" required>
+                                <input type="text" name="Rut_persona" class="form-control" placeholder="<?php echo $rut ?>" aria-label="Disabled input example" Disabled>
                             </div>
+                            
+
+                            <div class="form-group">
+                                <label for="departamento">Departamento:</label>
+                                <select name="departamento" class="form-select" aria-label="Default select example">
+                                    <option value="" disabled selected>Selecciona el departamento</option>
+                                    <?php 
+                                    $consulta = "SELECT * FROM departamento";
+                                    $resultado = mysqli_query($conexion, $consulta);
+                                    while($row = mysqli_fetch_assoc($resultado)){
+                                        $nombredep = $row['Nombre_dep'];
+                                        $codigodep = $row['Codigo_dep'];
+                                        ?>
+                                        <option value="<?php echo $codigodep?>"><?php echo $nombredep?></option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                                                       
                             <div class="form-group mt-2">
-                                <label>Tipo retroalimentacion:</label>
-                                <input type="text" name="Tipo_solicitud" class="form-control" placeholder="Felicitación" required>
+                                <label for="retroalimentacion">Tipo de retroalimentación:</label>
+                                <select name="retroalimentacion" class="form-select" aria-label="Default select example">
+                                    <option value="" disabled selected>Selecciona el tipo de retroalimentacion</option>
+                                    <option value="Sugerencia">Sugerencia</option>
+                                    <option value="Reclamo">Reclamo</option>
+                                    <option value="Felicitacion">Felicitación</option>
+                                </select>
                             </div>
                             <div class="form-group mt-2">
                                 <label>Descripcion</label>
                                 <textarea type="text" name="Descripcion_solicitud" class="form-control" placeholder="Muy buena atención..." required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Estado</label>
-                                <input type="text" name="Estado_solicitud" class="form-control" placeholder="Pendiente de revisión" required>
-                            </div>
+                            </div>                         
                     </fieldset>
                     <div class="text-center pb-1">
                         <button type="submit" class="btn btn-primary mt-2">Registrar Solicitud</button>
                     </div>
                 </form>
             </div>
+
             <!-- Tabla -->
             <div class="col-lg-6 col-md-12 ps-1">
                 <legend class="text-center pt-3">Registro de las Solicitudes</legend>
@@ -68,11 +105,10 @@ require('conexion_p.php');
                             <th>Tipo retroalimentacion</th>
                             <th>Descripcion</th>
                             <th>Estado</th>
-                            <th>Opciones</th>
                         </tr>
                     </thead>
                     <?php
-                    $consulta = "SELECT * FROM solicitud";
+                    $consulta = "SELECT * FROM solicitud WHERE Rut_persona = '$user'";
                     $resultado = mysqli_query($conexion, $consulta);
                     while ($row = mysqli_fetch_assoc($resultado)) {
                         $Cod = $row['Codigo_solicitud'];
@@ -88,7 +124,6 @@ require('conexion_p.php');
                         echo "<td>" . $Tipo . "</td>";
                         echo "<td>" . $Descripcion . "</td>";
                         echo "<td>" . $Estado . "</td>";
-                        echo "<td><a href='editar_solicitud.php?seleccionado=" . $Cod . "'>Editar</a></td>";
                         echo "</tr>";
                     }
                     ?>
