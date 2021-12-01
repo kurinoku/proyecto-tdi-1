@@ -1,16 +1,34 @@
+
 <?php 
 
-require('conexion_p.php');
+require_once "conexion_p.php";
 require('../auth_usuario.php');
-
-$user = $_SESSION['usuario'];
-$rut=$_POST['rut'];
-$nombre=$_POST['nombre'];
-$numero=$_POST['numero'];
-$correo=$_POST['correo'];
-$clave=md5($_POST['clave']);
-$sql = "UPDATE persona SET Rut_persona = '$rut', Nombre_persona = '$nombre', Numero_persona = '$numero', Correo_persona = '$correo', Clave_persona = '$clave' WHERE Rut_persona = '$user'";
-$result = mysqli_query($conexion, $sql);
-$_SESSION['usuario'] = $rut;
-header('Location: perfil_persona.php');
+$conn = $conexion;
+$columns = array();
+if (array_key_exists("Nombre_persona", $_POST) && $_POST['Nombre_persona'] != "") {
+    $nombre = $_POST["Nombre_persona"];
+    array_push($columns, "`Nombre_persona`='$nombre'");
+}
+if (array_key_exists("Numero_persona", $_POST) && $_POST['Numero_persona'] != "") {
+    $numero = $_POST["Numero_persona"];
+    array_push($columns, "`Numero_persona`='$numero'");
+}
+if (array_key_exists("Correo_persona", $_POST) && $_POST['Correo_persona'] != "") {
+    $correo = $_POST["Correo_persona"];
+    array_push($columns, "`Correo_persona`='$correo'");
+}
+if (array_key_exists("Clave_persona", $_POST) && $_POST['Clave_persona'] != "") {
+    $clavePersona = $_POST["Clave_persona"];
+    $clavePersona = md5($clavePersona);
+    array_push($columns, "`Clave_persona`='$clavePersona'");
+}
+if (empty($columns)) {
+    header("HTTP/1.1 400 Bad Request", true, 400);
+    exit(0);
+}
+$pk = $_SESSION['usuario'];
+$columns = implode(", ", $columns);
+$sql = "UPDATE persona SET $columns WHERE `Rut_persona`='$pk'";
+mysqli_query($conn, $sql);
+header("Location: perfil_persona.php");
 ?>
