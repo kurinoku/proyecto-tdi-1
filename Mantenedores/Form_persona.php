@@ -34,7 +34,7 @@ require('head_form.php');
                         </div>
                         <div class="form-group">
                             <label>Correo</label>
-                            <input type="text" name="Correo_persona" class="form-control" placeholder="alguien@example.com" required>
+                            <input type="email" name="Correo_persona" class="form-control" placeholder="alguien@example.com" required>
                         </div>
                         <div class="form-group">
                             <label>Clave</label>
