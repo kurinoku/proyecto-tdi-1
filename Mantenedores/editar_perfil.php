@@ -22,7 +22,7 @@
     $nombre = $row['Nombre_persona'];
     $numero = $row['Numero_persona'];
     $correo = $row['Correo_persona'];
-    $clave = $row['Clave_persona'];
+
 ?>    
 
 <div class="container rounded bg-white mt-5 mb-5">
@@ -43,13 +43,12 @@
 
                 <form action="actualizar_perfil.php" method="post">
                     <div class="row mt-2">
-                        <div class="col-md-12"><label class="labels">Nombre</label><input name="nombre" type="text" class="form-control" placeholder="<?php echo $nombre ?>" value=""></div>
+                        <div class="col-md-12"><label class="labels">Nombre</label><input name="Nombre_persona" type="text" class="form-control" placeholder="<?php echo $nombre ?>" value=""></div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-12"><label class="labels">Numero de contacto</label><input name="numero" type="text" class="form-control" placeholder="<?php echo $numero ?>" value=""></div>
-                        <div class="col-md-12"><label class="labels">Correo</label><input name="correo" type="text" class="form-control" placeholder="<?php echo $correo ?>" value=""></div>
-                        <div class="col-md-12"><label class="labels">Rut</label><input name="rut" type="text" class="form-control" placeholder="<?php echo $rut ?>" value=""></div>
-                        <div class="col-md-12"><label class="labels">Clave de ingreso</label><input name="clave" type="password" class="form-control" placeholder="*****" value=""></div>
+                        <div class="col-md-12"><label class="labels">Numero de contacto</label><input name="Numero_persona" type="text" class="form-control" placeholder="<?php echo $numero ?>" value=""></div>
+                        <div class="col-md-12"><label class="labels">Correo</label><input name="Correo_persona" type="text" class="form-control" placeholder="<?php echo $correo ?>" value=""></div>
+                        <div class="col-md-12"><label class="labels">Clave de ingreso</label><input name="Clave_persona" type="password" class="form-control" placeholder="*****" value=""></div>
                     </div>
                     
                     <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
