@@ -71,11 +71,11 @@ CREATE TABLE `departamento` (
 --
 
 CREATE TABLE `encargado` (
-  `Rut_encargado` varchar(8) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Nombre_encargado` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Numero_encargado` varchar(9) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Correo_encargado` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Clave_encargado` varchar(14) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `Rut_encargado` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
+  `Nombre_encargado` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `Numero_encargado` varchar(9) COLLATE utf8_unicode_ci NOT NULL,
+  `Correo_encargado` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `Clave_encargado` char(32) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
