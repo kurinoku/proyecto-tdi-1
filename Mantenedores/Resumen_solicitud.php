@@ -29,11 +29,6 @@ require_once('../auth_admin.php');
                         <h1 class="h2">Resumen de solicitudes</h1>
                         
                     </div>
-
-                    <?php              
-                        require_once('Graficos_tipo.php');                     
-                        require_once('Graficos_estado.php');
-                    ?>
                     <h2>Grafica de estado de la solicitud</h2>
                     <canvas class="my-4" id="Grafico_Estado" width="900" height="380"></canvas>
                     <h2>Grafica del tipo de solicitud</h2>
