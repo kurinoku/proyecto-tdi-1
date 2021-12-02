@@ -1,4 +1,4 @@
-<?php require('../auth_usuario.php') ?>
+<?php require('../auth_encargado.php') ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -9,8 +9,8 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 <div class="container-fluid">
-    <?php require('navbar_persona.html'); ?>
-</div> 
+    <?php require('navbar_encargado.html'); ?>
+</div>    
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 

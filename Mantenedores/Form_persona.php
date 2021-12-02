@@ -1,6 +1,7 @@
 <?php
 $NOMBRE = 'Ciudadano';
 require('head_form.php');
+require('../auth_admin.php');
 ?>
 
 <div class="container-fluid">

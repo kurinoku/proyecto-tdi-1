@@ -26,7 +26,7 @@
                 if (strcmp($tipo, 'admin') == 0) {
                     header("Location: Mantenedores/index_administrador.php");
                 } elseif (strcmp($tipo, 'persona') == 0) {
-                    header("Location: Mantenedores/index_persona.php");
+                    header("Location: Mantenedores/perfil_persona.php");
                 } elseif (strcmp($tipo, 'encargado') == 0) {
                     header("Location: Mantenedores/index_encargado.php");
                 }
@@ -52,7 +52,7 @@
                         Usuario o clave incorrecta
                     </div>
                     <div class="d-grid gap-2 mt-3">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
                     </div>
                     <div class="mt-3">
                         <a href="Mantenedores/Registro_persona.php">Registrate</a>

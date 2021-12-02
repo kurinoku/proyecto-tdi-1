@@ -1,6 +1,7 @@
 <?php
 $NOMBRE = 'Municipalidad';
 require('head_form.php');
+require('../auth_admin.php');
 ?>
 <div class="container-fluid">
     <!-- Barra de navegación -->

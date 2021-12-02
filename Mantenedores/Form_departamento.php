@@ -1,6 +1,7 @@
 <?php
 $NOMBRE = 'Departamento';
 require('head_form.php');
+require('../auth_admin.php');
 ?>
 <!-- Barra de navegación -->
 <div class="container-fluid">
