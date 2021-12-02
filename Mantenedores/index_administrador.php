@@ -18,21 +18,11 @@ debe estar en la misma carpeta que mantenedores
     <title>Municipalidad</title>
 </head>
 
-<body>
-    <div class="row flex-nowrap justify-content-between p-5">
-        <h1 class="col me-auto d-inline-block">Municipalidad</h1>
-        <!--<div class="user-modal col p-4" id="user-modal">
-            <button type="button" class="btn btn-primary dropdown-toggle" 
-            aria-expanded="false" data-bs-toggle="dropdown">
-            mostrar</button>
-            <div class="dropdown-menu" id="collapse-user-modal">
-                <img src="usuario.svg" class="" alt="" srcset="">
-            </div>
-        </div> -->
-        <button type="button" class="col btn btn-primary" disabled>Log out</button>
-    </div>
+<body class="d-flex flex-column min-vh-100">
+<div class="container-fluid">
     <?php require "Navbar_administrador.html"; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</div>
 </body>
 
 </html>

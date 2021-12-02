@@ -26,7 +26,7 @@
                 if (strcmp($tipo, 'admin') == 0) {
                     header("Location: Mantenedores/index_administrador.php");
                 } elseif (strcmp($tipo, 'persona') == 0) {
-                    header("Location: Mantenedores/index_persona.php");
+                    header("Location: Mantenedores/perfil_persona.php");
                 } elseif (strcmp($tipo, 'encargado') == 0) {
                     header("Location: Mantenedores/index_encargado.php");
                 }

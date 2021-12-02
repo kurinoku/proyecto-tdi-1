@@ -25,10 +25,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div id="TipoLogin" class="collapse navbar-collapse">
-                    <button type="button" class="btn btn-secondary bg-dark ms-auto"
-                        onclick="location.href='login_administrador.php'">Ingresar como Administrador</button>
-                    <button type="button" class="btn btn-secondary ms-4 bg-dark"
-                        onclick="location.href='login_persona.php'">Ingresar como Ciudadano</button>
+                        <button type="button" class="btn btn-secondary bg-dark ms-auto"
+                        onclick="location.href='login_persona.php'">Iniciar Sesión</button>
                 </div>
             </div>
         </nav>
