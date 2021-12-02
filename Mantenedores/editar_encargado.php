@@ -51,7 +51,7 @@ $clave = $row["Clave_encargado"];
                         </div>
                         <div class="form-group mt-2">
                             <label>Contraseña</label>
-                            <input name="Clave_encargado" type="password" class="form-control" placeholder="" value="<?php echo ($clave); ?>">
+                            <input name="Clave_encargado" type="password" class="form-control" placeholder="" value="">
                 </fieldset>
                 <div class="text-center pb-1">
                     <button type="submit" class="btn btn-primary mt-2">Guardar Cambios</button>
@@ -61,5 +61,4 @@ $clave = $row["Clave_encargado"];
     </div>
 </div>
 <?php
-require('bottom_form.php');
-?>
+require('bottom_form_editar.php');

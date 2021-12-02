@@ -56,7 +56,7 @@ $clavePersona = $row["Clave_persona"];
                         </div>
                         <div class="form-group">
                             <label>Clave</label>
-                            <input name="Clave_persona" type="password" class="form-control" placeholder="" value="<?php echo ($clavePersona); ?>">
+                            <input name="Clave_persona" type="password" class="form-control" placeholder="" value="">
                         </div>
                 </fieldset>
                 <div class="text-center pb-1">
@@ -68,5 +68,4 @@ $clavePersona = $row["Clave_persona"];
 </div>
 
 <?php
-require('bottom_form.php');
-?>
+require('bottom_form_editar.php');

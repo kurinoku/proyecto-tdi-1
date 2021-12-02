@@ -50,7 +50,7 @@ $clave = $row["Clave_administrador"];
                         </div>
                         <div class="form-group mt-2">
                             <label>Contraseña</label>
-                            <input name="Clave_administrador" type="password" class="form-control" placeholder="" value="<?php echo ($clave); ?>">
+                            <input name="Clave_administrador" type="password" class="form-control" placeholder="" value="">
                         </div>
                 </fieldset>
                 <div class="text-center pb-1">
@@ -61,5 +61,4 @@ $clave = $row["Clave_administrador"];
     </div>
 </div>
 <?php
-require('bottom_form.php');
-?>
+require('bottom_form_editar.php');

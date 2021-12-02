@@ -62,5 +62,4 @@ $numero = $row["Numero_municipalidad"];
     </div>
 </div>
 <?php
-require('bottom_form.php');
-?>
+require('bottom_form_editar.php');
