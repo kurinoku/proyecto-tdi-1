@@ -11,9 +11,6 @@ require('../auth_usuario.php');
     <title>Registro de la Solicitud</title>
     <!-- Links -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/45eaee4fa2.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     <!-- Diseños -->
 </head>
 
@@ -57,7 +54,7 @@ require('../auth_usuario.php');
 
                             <div class="form-group">
                                 <label for="departamento">Departamento:</label>
-                                <select name="departamento" class="form-select" aria-label="Default select example">
+                                <select name="departamento" class="form-select" aria-label="Default select example" required>
                                     <option value="" disabled selected>Selecciona el departamento</option>
                                     <?php 
                                     $consulta = "SELECT * FROM departamento";
@@ -75,7 +72,7 @@ require('../auth_usuario.php');
                                                        
                             <div class="form-group mt-2">
                                 <label for="retroalimentacion">Tipo de retroalimentación:</label>
-                                <select name="retroalimentacion" class="form-select" aria-label="Default select example">
+                                <select name="retroalimentacion" class="form-select" aria-label="Default select example" required>
                                     <option value="" disabled selected>Selecciona el tipo de retroalimentacion</option>
                                     <option value="Sugerencia">Sugerencia</option>
                                     <option value="Reclamo">Reclamo</option>
@@ -135,6 +132,15 @@ require('../auth_usuario.php');
     <?php
     require('Footer.html');
     ?>
+    <script src="https://kit.fontawesome.com/45eaee4fa2.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <script src="../util/util.js"></script>
+    <script src="validacion.js"></script>
+    <script>
+        let valida = new ValidaPaginas();
+        valida.magia();
+    </script>
 </body>
 
 </html>

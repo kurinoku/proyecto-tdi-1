@@ -18,7 +18,7 @@ require('../auth_admin.php');
                     <div class="form-group row">
                         <div class="form-group">
                             <label>Codigo del departamento</label>
-                            <input type="text" name="Codigo_dep" class="form-control" placeholder="12345" required>
+                            <input type="text" name="Codigo_dep" class="form-control" placeholder="12345678" required>
                         </div>
                         <div class="form-group mt-2">
                             <label>Id municipalidad</label>

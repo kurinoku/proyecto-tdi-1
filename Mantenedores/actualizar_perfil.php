@@ -22,13 +22,10 @@ if (array_key_exists("Clave_persona", $_POST) && $_POST['Clave_persona'] != "") 
     $clavePersona = md5($clavePersona);
     array_push($columns, "`Clave_persona`='$clavePersona'");
 }
-if (empty($columns)) {
-    header("HTTP/1.1 400 Bad Request", true, 400);
-    exit(0);
+if (!empty($columns)) {
+    $pk = $_SESSION['usuario'];
+    $columns = implode(", ", $columns);
+    $sql = "UPDATE persona SET $columns WHERE `Rut_persona`='$pk'";
+    mysqli_query($conn, $sql);
 }
-$pk = $_SESSION['usuario'];
-$columns = implode(", ", $columns);
-$sql = "UPDATE persona SET $columns WHERE `Rut_persona`='$pk'";
-mysqli_query($conn, $sql);
 header("Location: perfil_persona.php");
-?>

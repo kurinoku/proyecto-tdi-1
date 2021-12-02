@@ -14,7 +14,7 @@ if (array_key_exists("Correo_encargado", $_POST)) {
     $correo = $_POST["Correo_encargado"];
     array_push($columns, "`Correo_encargado`='$correo'");
 }
-if (array_key_exists("Clave_encargado", $_POST)) {
+if (array_key_exists("Clave_encargado", $_POST) and $_POST["Clave_encargado"] != "") {
     $clave = $_POST["Clave_encargado"];
     $clave = md5($clave);
     array_push($columns, "`Clave_encargado`='$clave'");
