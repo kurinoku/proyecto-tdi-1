@@ -1,5 +1,6 @@
 <?php 
 require "conexion_p.php";
+require('../auth_admin.php');
 $codigo = $_GET["seleccionado"];
 $consulta = "SELECT * FROM departamento WHERE `Codigo_dep`='$codigo'";
 $resultado = mysqli_query($conexion, $consulta);

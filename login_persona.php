@@ -52,7 +52,7 @@
                         Usuario o clave incorrecta
                     </div>
                     <div class="d-grid gap-2 mt-3">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
                     </div>
                     <div class="mt-3">
                         <a href="Mantenedores/Registro_persona.php">Registrate</a>

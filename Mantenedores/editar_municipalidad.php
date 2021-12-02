@@ -1,5 +1,6 @@
 <?php 
 require "conexion_p.php";
+require('../auth_admin.php');
 $id = $_GET["seleccionado"];
 $consulta = "SELECT * FROM municipalidad WHERE `Id_municipalidad`='$id'";
 $resultado = mysqli_query($conexion, $consulta);

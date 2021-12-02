@@ -1,5 +1,6 @@
 <?php 
 require "conexion_p.php";
+require('../auth_admin.php');
 $rut = $_GET["seleccionado"];
 $consulta = "SELECT * FROM administrador WHERE `Rut_administrador`='$rut'";
 $resultado = mysqli_query($conexion, $consulta);
