@@ -1,33 +1,48 @@
 <?php
 
 require_once('./Mantenedores/conexion_p.php');
+session_start();
 
-$esLoginPersona = !array_key_exists("adminLogin", $_POST);
+if (isset($_SESSION['usuario'])) {
+    header("Location: login_persona.php");
+}
+
+function tratarLoguear($usuario, $claveMd5, $tipo, $tabla, $rutColumna, $claveColumna) {
+    global $conexion;
+    $usuario = stripslashes($usuario);
+    $usuario = mysqli_real_escape_string($conexion, $usuario);
+
+    $sql = "SELECT * FROM `$tabla` WHERE `$rutColumna`='$usuario' and `$claveColumna`='$claveMd5' LIMIT 1";
+    $result = mysqli_query($conexion, $sql);
+    if (!$result) {
+        return false;
+    }
+
+    $rows = mysqli_num_rows($result);
+
+    if ($rows == 1) {
+        $_SESSION['tipo'] = $tipo;
+        $_SESSION['usuario'] = $usuario;
+        return true;
+    }
+    return false;
+}
 
 $clave = $_POST["clave"];
 $usuario = $_POST["usuario"];
 $mensaje = array( "estado" => "error" );
 if ($clave and $usuario and !($clave == "" or $usuario == "")) {
-    if ($esLoginPersona)
-    {
-        $dest = "index.php"; // la idea es que vaya a la pagina principal para personas
-        $sql = "SELECT `Clave_persona` FROM persona WHERE `Rut_persona`='$usuario'";
-    } else {
-        $dest = "Mantenedores/index_administrador.php"; // idem, tiene que ser cambiado despues
-        $sql = "SELECT `Clave_administrador` FROM administrador WHERE `Rut_administrador`='$usuario'";
-    }
+    $clave = md5($clave);
+    $logueado = (
+        tratarLoguear($usuario, $clave, 'admin', 'administrador', 'Rut_administrador', 'Clave_administrador')
+        or tratarLoguear($usuario, $clave, 'encargado', 'encargado', 'Rut_encargado', 'Clave_encargado')
+        or tratarLoguear($usuario, $clave, 'persona', 'persona', 'Rut_persona', 'Clave_persona')
+    );
     
-    $result = mysqli_query($conexion, $sql);
-    if ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
-        $claveObtenida = $row[0];
-        if (strcmp($claveObtenida, $clave) == 0) {
-            $mensaje["estado"] = "success";
-            $mensaje["location"] = $dest;
-        } else {
-            $mensaje["razon"] = "Clave no coincide";
-        }
+    if ($logueado) {
+        $mensaje['estado'] = 'success';
     } else {
-        $mensaje["razon"] = "Usuario no encontrado";
+        $mensaje["razon"] = "Usuario o contraseña incorrecta";
     }
 } else {
     $mensaje["razon"] = "Usuario o clave en blanco";
