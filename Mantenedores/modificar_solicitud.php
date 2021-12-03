@@ -54,7 +54,7 @@ require('../auth_encargado.php');
                                     $Descripcion = $row['Descripcion_solicitud'];
                                     $Estado = $row['Estado_solicitud'];
                                     $Fecha = $row['Creada_solicitud'];
-                                    echo "<tr>";
+                                    echo "<tr x-codigo='$Cod'>";
                                     echo "<td>" . $Cod . "</td>";
                                     echo "<td>" . $Codigo . "</td>";
                                     echo "<td>" . $Rut . "</td>";
@@ -62,7 +62,7 @@ require('../auth_encargado.php');
                                     echo "<td>" . $Descripcion . "</td>";
                                     echo "<td>" . $Estado . "</td>";
                                     echo "<td>" . $Fecha . "</td>";
-                                    echo "<td> <button x-codigo='$Cod' type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#infoModal'>Ver</button></td>";
+                                    echo "<td> <button x-codigo='$Cod' type='button' class='btn btn-primary ver-btn' data-bs-toggle='modal' data-bs-target='#infoModal'>Ver</button></td>";
                                     echo "</tr>";
                                 }
                                 ?>
@@ -107,66 +107,7 @@ require('../auth_encargado.php');
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
                         
-    <script>
-        (function() {
-            "use strict";
-
-            let currentId = -1;
-
-            function requestUpdate() {
-                let req = new XMLHttpRequest();
-                let data = new FormData();
-                data.append('codigo', currentId);
-                req.onload = function(evt) {
-                    updateModal(req.response);
-                };
-                req.responseType = 'json';
-                
-                req.open("POST", "actualizar_solicitud_encargado.php");
-                req.send(data);
-            }
-
-            function stepRequest() {
-                let req = new XMLHttpRequest();
-                let data = new FormData();
-                data.append('codigo', currentId.toString());
-                data.append('siguienteEstado', '');
-                req.onload = function(evt) {
-                    updateModal(req.response);
-                };
-                req.responseType = 'json';
-                
-                req.open("POST", "actualizar_solicitud_encargado.php");
-                req.send(data);
-            }
-
-            function updateModal(response) {
-                if (response.estado === 'Nuevo') {
-                    stepRequest();
-                }
-                document.getElementById('btnActualizar').disabled = response.estado === 'Resuelto';
-                document.getElementById('estadoModal').innerText = response.estado;
-            }
-
-            function makeUpdateId(el) {
-                return function(evt) {
-                    currentId = parseInt(el.getAttribute('x-codigo'));
-                    requestUpdate();
-                };
-            }
-
-            Array.prototype.forEach.call(
-                document.querySelectorAll('button[x-codigo]'),
-                function(x) {
-                    x.addEventListener('click', makeUpdateId(x));
-                }
-            );
-            document.getElementById('btnActualizar').addEventListener('click', function(evt) {
-                stepRequest();
-            });
-
-        })();
-    </script>
+    <script src="modificar_solicitud.js"></script>
 </body>
 
 </html>
