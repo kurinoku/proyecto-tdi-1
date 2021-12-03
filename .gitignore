@@ -22,6 +22,5 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 
-# Fix temporal para la conexion de la db
-.DB_NOMBRE
+DB.ini
 
