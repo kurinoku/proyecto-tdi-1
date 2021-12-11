@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-12-2021 a las 23:29:17
+-- Tiempo de generación: 11-12-2021 a las 01:41:19
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -60,6 +60,18 @@ CREATE TABLE `encargado` (
   `Numero_encargado` varchar(9) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Correo_encargado` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Clave_encargado` char(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `foto`
+--
+
+CREATE TABLE `foto` (
+  `Id_foto` int(8) NOT NULL,
+  `Id_noticia` int(8) NOT NULL,
+  `Nombre_foto` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -145,6 +157,13 @@ ALTER TABLE `encargado`
   ADD PRIMARY KEY (`Rut_encargado`);
 
 --
+-- Indices de la tabla `foto`
+--
+ALTER TABLE `foto`
+  ADD PRIMARY KEY (`Id_foto`),
+  ADD KEY `fk_foto_id_noticia` (`Id_noticia`);
+
+--
 -- Indices de la tabla `municipalidad`
 --
 ALTER TABLE `municipalidad`
@@ -178,6 +197,12 @@ ALTER TABLE `solicitud`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `foto`
+--
+ALTER TABLE `foto`
+  MODIFY `Id_foto` int(8) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
@@ -199,6 +224,12 @@ ALTER TABLE `solicitud`
 ALTER TABLE `departamento`
   ADD CONSTRAINT `fk_departamento_id_municipalidad` FOREIGN KEY (`Id_municipalidad`) REFERENCES `municipalidad` (`Id_municipalidad`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_departamento_rut_encargado` FOREIGN KEY (`Rut_encargado`) REFERENCES `encargado` (`Rut_encargado`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `foto`
+--
+ALTER TABLE `foto`
+  ADD CONSTRAINT `fk_foto_id_noticia` FOREIGN KEY (`Id_noticia`) REFERENCES `noticia` (`Id_noticia`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `municipalidad`
