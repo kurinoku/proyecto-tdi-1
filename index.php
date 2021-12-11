@@ -104,6 +104,12 @@
                                     <a class="nav-link active ms-5" href="#">Noticias</a>
                                 </li>
                             </div>
+                            <div class="col">
+                                <!-- Botón de Ubicación -->
+                                <li class="nav-item">
+                                    <a class="nav-link active ms-5" href="Mantenedores/mapa.php">Ubicación</a>
+                                </li>
+                            </div>
                         </ul>
                     </div>
                 </div>
