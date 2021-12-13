@@ -49,7 +49,7 @@ require('../auth_admin.php');
         <!-- Tabla -->
         <div class="col-lg-6 col-md-12 ps-1">
             <legend class="text-center pt-3">Registro de los administradores</legend>
-            <table class="table table-striped table-hover">
+            <table id="table" class="table table-striped table-hover">
                 <thead class="bg-dark text-light">
                     <tr>
                         <th>RUT</th>

@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . "/../conexion_p.php" ;
+require_once __DIR__ . "/../conexion_p.php";
 
-const DIR_MAIL_PATH = __DIR__."/../../.MAIL";
+const DIR_MAIL_PATH = __DIR__ . "\..\..\.MAIL";
 $DIRECCION_MAIL = trim(file_get_contents(DIR_MAIL_PATH));
 
 /*
@@ -11,7 +11,8 @@ $DIRECCION_MAIL = trim(file_get_contents(DIR_MAIL_PATH));
     el mensaje que se envia, por ejemplo municipalidad@example.com
 */
 
-function enviarCorreo($codigo, $extra='') {
+function enviarCorreo($codigo, $extra = '')
+{
     global $conexion, $DIRECCION_MAIL;
     $codigoEsc = mysqli_real_escape_string($conexion, stripslashes($codigo));
     echo $codigoEsc;
@@ -35,7 +36,8 @@ function enviarCorreo($codigo, $extra='') {
     if (!$row) {
         throw new Exception(
             "departamento no encontrada con Codigo_dep '$codigoDep'"
-            . " supuestamente asociado a la solicitud con Codigo '$codigo'.");
+                . " supuestamente asociado a la solicitud con Codigo '$codigo'."
+        );
     }
 
     $nombreDep = $row['Nombre_dep'];
@@ -48,7 +50,8 @@ function enviarCorreo($codigo, $extra='') {
     if (!$row) {
         throw new Exception(
             "persona no encontrada con Rut_persona '$rut'"
-            . " supuestamente asociado a la solicitud con Codigo '$codigo'.");
+                . " supuestamente asociado a la solicitud con Codigo '$codigo'."
+        );
     }
 
     $nombre = $row['Nombre_persona'];
@@ -65,18 +68,19 @@ function enviarCorreo($codigo, $extra='') {
     */
 
     $mensaje = "Estimado señor(a) $nombre:\r\n"
-             . "Le enviamos este correo para comunicarle que su $tipo\r\n"
-             . "para el departamento $nombreDep\r\n"
-             . "ha cambiado de estado a $estado.\r\n"
-             . "$extra"
-             . "Atentamente,\r\n"
-             . "  Municipalidad de Concepción\r\n";
+        . "Le enviamos este correo para comunicarle que su $tipo\r\n"
+        . "para el departamento $nombreDep\r\n"
+        . "ha cambiado de estado a $estado.\r\n"
+        . "$extra"
+        . "Atentamente,\r\n"
+        . "  Municipalidad de Concepción\r\n";
     $to = $email;
     $headers = "From: $DIRECCION_MAIL\r\n"
-             . "Reply-To: $DIRECCION_MAIL\r\n"
-             . "X-Mailer: PHP/" . phpversion() . "\r\n";
-    
+        . "Reply-To: $DIRECCION_MAIL\r\n"
+        . "X-Mailer: PHP/" . phpversion() . "\r\n";
+
     $subject = "Noticias sobre su $tipo";
+
 
     $enviado = mail($to, $subject, $mensaje, $headers);
 

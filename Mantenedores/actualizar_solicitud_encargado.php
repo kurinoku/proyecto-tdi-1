@@ -2,7 +2,6 @@
 require_once 'conexion_p.php';
 require_once 'solicitud/enviar_correo.php';
 
-
 // modificado de https://stackoverflow.com/a/16296170
 // necesario para enviar el mensaje y el correo
 // debido a que el codigo del correo puede tardar mucho tiempo

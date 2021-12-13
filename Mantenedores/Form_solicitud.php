@@ -18,7 +18,7 @@ require('../auth_usuario.php');
     <div class="container-fluid">
         <!-- Barra de navegación -->
         <?php
-        
+
         require('navbar_persona.html');
         ?>
         <!-- Contenedor del Formulario y la Tabla -->
@@ -26,12 +26,12 @@ require('../auth_usuario.php');
 
             <?php
 
-                $user = $_SESSION['usuario'];
-                $consulta = "SELECT * FROM persona WHERE Rut_persona = '$user'";
-                $resultado = mysqli_query($conexion, $consulta);
-                $row = mysqli_fetch_assoc($resultado);
-                $rut = $row['Rut_persona'];              
-                $nombre = $row['Nombre_persona'];
+            $user = $_SESSION['usuario'];
+            $consulta = "SELECT * FROM persona WHERE Rut_persona = '$user'";
+            $resultado = mysqli_query($conexion, $consulta);
+            $row = mysqli_fetch_assoc($resultado);
+            $rut = $row['Rut_persona'];
+            $nombre = $row['Nombre_persona'];
 
 
             ?>
@@ -42,7 +42,7 @@ require('../auth_usuario.php');
                     <fieldset>
                         <legend class="text-center pt-3">Formulario para añadir Solicitud</legend>
                         <div class="form-group row">
-                        <div class="form-group mt-2">
+                            <div class="form-group mt-2">
                                 <label>Nombre persona</label>
                                 <input type="text" name="" class="form-control" placeholder="<?php echo $nombre ?>" aria-label="Disabled input example" Disabled>
                             </div>
@@ -50,26 +50,23 @@ require('../auth_usuario.php');
                                 <label>Rut persona</label>
                                 <input type="text" name="Rut_persona" class="form-control" placeholder="<?php echo $rut ?>" aria-label="Disabled input example" Disabled>
                             </div>
-                            
-
                             <div class="form-group">
                                 <label for="departamento">Departamento:</label>
                                 <select name="departamento" class="form-select" aria-label="Default select example" required>
                                     <option value="" disabled selected>Selecciona el departamento</option>
-                                    <?php 
+                                    <?php
                                     $consulta = "SELECT * FROM departamento";
                                     $resultado = mysqli_query($conexion, $consulta);
-                                    while($row = mysqli_fetch_assoc($resultado)){
+                                    while ($row = mysqli_fetch_assoc($resultado)) {
                                         $nombredep = $row['Nombre_dep'];
                                         $codigodep = $row['Codigo_dep'];
-                                        ?>
-                                        <option value="<?php echo $codigodep?>"><?php echo $nombredep?></option>
-                                        <?php
+                                    ?>
+                                        <option value="<?php echo $codigodep ?>"><?php echo $nombredep ?></option>
+                                    <?php
                                     }
                                     ?>
                                 </select>
                             </div>
-                                                       
                             <div class="form-group mt-2">
                                 <label for="retroalimentacion">Tipo de retroalimentación:</label>
                                 <select name="retroalimentacion" class="form-select" aria-label="Default select example" required>
@@ -82,7 +79,7 @@ require('../auth_usuario.php');
                             <div class="form-group mt-2">
                                 <label>Descripcion</label>
                                 <textarea type="text" name="Descripcion_solicitud" class="form-control" placeholder="Muy buena atención..." required></textarea>
-                            </div>                         
+                            </div>
                     </fieldset>
                     <div class="text-center pb-1">
                         <button type="submit" class="btn btn-primary mt-2">Registrar Solicitud</button>
@@ -93,7 +90,7 @@ require('../auth_usuario.php');
             <!-- Tabla -->
             <div class="col-lg-6 col-md-12 ps-1">
                 <legend class="text-center pt-3">Registro de las Solicitudes</legend>
-                <table class="table table-striped table-hover">
+                <table id="table" class="table table-striped table-hover">
                     <thead class="bg-dark text-light">
                         <tr>
                             <th>Codigo</th>
@@ -137,9 +134,20 @@ require('../auth_usuario.php');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     <script src="../util/util.js"></script>
     <script src="validacion.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <script src="cdn.datatables.net/plug-ins/1.11.3/i18n/es-cl.json"></script>
     <script>
         let valida = new ValidaPaginas();
         valida.magia();
+        $(document).ready(function() {
+            $('#table').DataTable({
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.11.3/i18n/es-cl.json"
+                }
+            }); {}
+        });
     </script>
 </body>
 

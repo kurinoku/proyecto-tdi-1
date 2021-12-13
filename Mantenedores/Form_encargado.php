@@ -48,7 +48,7 @@ require('../auth_admin.php');
         <!-- Tabla -->
         <div class="col-lg-6 col-md-12 ps-1">
             <legend class="text-center pt-3">Registro de los encargados</legend>
-            <table class="table table-striped table-hover">
+            <table id="table" class="table table-striped table-hover">
                 <thead class="bg-dark text-light">
                     <tr>
                         <th>RUT</th>
@@ -61,14 +61,12 @@ require('../auth_admin.php');
                 <?php
                 $consulta = "SELECT * FROM encargado";
                 $resultado = mysqli_query($conexion, $consulta);
-
                 while ($row = mysqli_fetch_assoc($resultado)) {
                     $Rut = $row['Rut_encargado'];
                     $Nombre = $row['Nombre_encargado'];
                     $Numero = $row['Numero_encargado'];
                     $Correo = $row['Correo_encargado'];
                     $Clave = $row['Clave_encargado'];
-
                     echo "<tr>";
                     echo "<td>" . $Rut . "</td>";
                     echo "<td>" . $Nombre . "</td>";
