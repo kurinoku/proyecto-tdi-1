@@ -1,23 +1,30 @@
 <?php
 require_once 'conexion_p.php';
-require_once('../auth_admin.php');
+require_once '_init.php';
+authUser('admin');
 ?>
 
 <!doctype html>
 <html lang="es">
 
-    <head>
-        <meta charset="utf-8">
-        <title>Resumen de solicitudes</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link href="../css/Resumen_solicitud.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
-    </head>
+
+<head>
+    <meta charset="utf-8">
+    <title>Resumen de solicitudes</title>
+    <?php
+        bootstrapHead();
+        echoCSSLink("css/Resumen_solicitud.css");
+    ?>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+
+  </head>
+
+  <body class="d-flex flex-column min-vh-100">
 
     <body class="d-flex flex-column min-vh-100">
         <div class="container-fluid">
             <?php
-            require('Navbar_administrador.html');
+            require('Navbar_administrador.php');
             ?>
             <div class="row">
                 <div>
@@ -219,10 +226,12 @@ require_once('../auth_admin.php');
                 </div>
             </div>
         </div>
-        
+    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <script src="resumen_solicitud.js"></script>
+        <?php
+            bootstrapBody();
+            echoScript("Mantenedores/resumen_solicitud.js");
+        ?>
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
@@ -236,6 +245,6 @@ require_once('../auth_admin.php');
                     }); {}
                 });
         </script>
+        
     </body>
-
 </html>

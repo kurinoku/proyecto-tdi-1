@@ -1,6 +1,7 @@
 <?php 
+require_once "_init.php";
+authUser('admin');
 require "conexion_p.php";
-require('../auth_admin.php');
 $rut = $_GET["seleccionado"];
 $consulta = "SELECT * FROM persona WHERE `Rut_persona`='$rut'";
 $resultado = mysqli_query($conexion, $consulta);
@@ -17,20 +18,22 @@ $clavePersona = $row["Clave_persona"];
 <head>
     <meta charset="UTF-8">
     <title>Editar Persona</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <?php
+        bootstrapHead();
+    ?>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
 <div class="container-fluid">
     <!-- Barra de navegación -->
     <?php
-    require('Navbar_administrador.html');
+    require_once "Navbar_administrador.php";
     ?>
     <!-- Contenedor del Formulario-->
     <div class="row flex-lg-row">
         <!-- Formulario -->
         <div class="col-lg-6 col-md-12">
-            <form action="actualizar_persona.php" method="post">
+            <form action=<?php echoRutaComillas("Mantenedores/actualizar_persona.php"); ?> method="post">
                 <fieldset>
                     <legend class="text-center pt-3">Formulario para editar una persona</legend>
                     <div class="form-group row">

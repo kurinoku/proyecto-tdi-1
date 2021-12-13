@@ -1,4 +1,7 @@
-<?php require('../auth_encargado.php') ?>
+<?php 
+require_once "_init.php";
+authUser('encargado');
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -6,14 +9,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Editar perfil</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/editar_perfil.css">
+    <?php
+    bootstrapHead();
+    echoCSSLink('css/editar_perfil.css');
+    ?>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
     <div class="container-fluid">
         <?php
-        require('navbar_encargado.html');
+        require "navbar_encargado.php";
         require('conexion_p.php');
 
         $user = $_SESSION['usuario'];
@@ -43,7 +48,7 @@
                             <h4 class="text-right">Datos de cuenta</h4>
                         </div>
 
-                        <form action="actualizar_perfil_encargado.php" method="post">
+                        <form action=<?php echoRutaComillas("Mantenedores/actualizar_perfil_encargado.php"); ?> method="post">
                             <div class="row mt-2">
                                 <div class="col-md-12"><label class="labels">Nombre</label><input name="Nombre_encargado" maxlength="40" type="text" class="form-control" placeholder="<?php echo $nombre ?>" value="">
                                     <div class="invalid-feedback">El nombre ingresado no es válido</div>
@@ -68,9 +73,11 @@
 
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-<script src="../util/util.js"></script>
-<script src="validacion.js"></script>
+<?php
+    bootstrapBody();
+    echoScript("util/util.js");
+    echoScript("Mantenedores/validacion.js");
+?>
 <script>
     let valida = new ValidaPaginas();
     valida.magia();

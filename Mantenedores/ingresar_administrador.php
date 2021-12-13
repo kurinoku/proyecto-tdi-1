@@ -1,4 +1,5 @@
 <?php
+require_once "_init.php";
 require('conexion_p.php');
 $Rut=$_POST['Rut_administrador'];
 $Nombre=$_POST['Nombre_administrador'];
@@ -7,5 +8,4 @@ $Correo=$_POST['Correo_administrador'];
 $Clave=md5($_POST['Clave_administrador']);
 $sql = "INSERT INTO administrador VALUES ('$Rut', '$Nombre', '$Numero', '$Correo', '$Clave')";
 $result = mysqli_query($conexion, $sql);
-header('Location: Form_administrador.php');
-?>
+sendLocationHeader("Mantenedores/Form_administrador.php");

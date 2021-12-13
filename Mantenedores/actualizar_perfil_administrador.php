@@ -1,7 +1,7 @@
 <?php 
-
+require_once "_init.php";
+authUser('admin');
 require_once "conexion_p.php";
-require('../auth_admin.php');
 $conn = $conexion;
 $columns = array();
 if (array_key_exists("Nombre_administrador", $_POST) && $_POST['Nombre_administrador'] != "") {
@@ -27,4 +27,4 @@ if (!empty($columns)) {
     $sql = "UPDATE administrador SET $columns WHERE `Rut_administrador`='$pk'";
     mysqli_query($conn, $sql);
 }
-header("Location: perfil_administrador.php");
+sendLocationHeader("Mantenedores/perfil_administrador.php");

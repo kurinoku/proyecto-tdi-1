@@ -1,6 +1,6 @@
 <nav class="row navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="../index.php">Municipalidad de Concepción</a>
+      <a class="navbar-brand" href=<?php echoRutaComillas("index.php"); ?>>Municipalidad de Concepción</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#MenuEdicion">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -10,15 +10,17 @@
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
               aria-haspopup="true" aria-expanded="false">Administrar</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="perfil_persona.php">Perfil</a>
-              <a class="dropdown-item" href="Form_solicitud.php">Solicitudes</a>
+              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/perfil_encargado.php"); ?>>Perfil</a>
+              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/modificar_solicitud.php"); ?>>Solicitudes</a>
+              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/crear_noticia.php"); ?>>Noticias</a>
+              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/crear_foto.php"); ?>>Ingresar fotos</a>
             </div>
           </li>
         </ul>
       </div>
       <div id="TipoLogin" class="collapse navbar-collapse">
         <button type="button" class="btn btn-secondary bg-dark ms-auto"
-        onclick="location.href='../logout.php'">Cerrar Sesión</button>
+        onclick=<?php echo "\"location.href='" . buildRuta('logout.php') . "'\""; ?>>Cerrar Sesión</button>
       </div>
     </div>
   </nav>

@@ -1,6 +1,7 @@
 <?php
 require_once 'conexion_p.php';
-require_once('../auth_admin.php');
+require_once '_init.php';
+authUser('admin');
 
 function obtenerStatsAnualSolicitud($columna, $alias) {
     global $conexion;

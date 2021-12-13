@@ -1,6 +1,10 @@
 <?php
+require_once "_init.php";
+
 header('Content-type: text/html; charset=UTF-8');
 require('conexion_p.php');
+
+
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +14,9 @@ require('conexion_p.php');
     <meta charset="UTF-8">
     <title>Registro de <?php echo $NOMBRE; ?></title>
     <!-- Links -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <?php
+    bootstrapHead();
+    ?>
     <!-- Diseños -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
 </head>

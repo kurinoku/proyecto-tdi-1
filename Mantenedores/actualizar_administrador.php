@@ -1,4 +1,5 @@
 <?php
+require_once "_init.php";
 require_once "conexion_p.php";
 $conn = $conexion;
 $columns = array();
@@ -27,4 +28,4 @@ $pk = $_POST["Rut_administrador"];
 $columns = implode(", ", $columns);
 $sql = "UPDATE administrador SET $columns WHERE `Rut_administrador`='$pk'";
 mysqli_query($conn, $sql);
-header("Location: Form_administrador.php");
+sendLocationHeader("Mantenedores/Form_administrador.php");

@@ -1,6 +1,8 @@
 <?php
+require_once "_init.php";
 require('conexion_p.php');
-require('../auth_usuario.php');
+
+authUser('persona');
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +12,9 @@ require('../auth_usuario.php');
     <meta charset="UTF-8">
     <title>Registro de la Solicitud</title>
     <!-- Links -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <?php
+    bootstrapHead();
+    ?>
     <!-- Diseños -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
     <script src="https://kit.fontawesome.com/45eaee4fa2.js" crossorigin="anonymous"></script>
@@ -21,8 +25,8 @@ require('../auth_usuario.php');
     <div class="container-fluid">
         <!-- Barra de navegación -->
         <?php
-
-        require('navbar_persona.html');
+        
+        require "navbar_persona.php";
         ?>
         <!-- Contenedor del Formulario y la Tabla -->
         <div class="row flex-lg-row">
@@ -36,7 +40,7 @@ require('../auth_usuario.php');
             ?>
             <!-- Formulario -->
             <div class="col-lg-3 col-md-12">
-                <form action="ingresar_solicitud.php" method="post">
+                <form action=<?php echoRutaComillas("Mantenedores/ingresar_solicitud.php"); ?> method="post">
                     <fieldset>
                         <legend class="text-center pt-3">Formulario para añadir Solicitud</legend>
                         <div class="form-group row">
@@ -128,12 +132,13 @@ require('../auth_usuario.php');
     <!-- Footer -->
     <?php
     require('Footer.html');
+
+    kitFontBody();
+    bootstrapBody();
+    echoScript('util/util.js');
+    echoScript('Mantenedores/validacion.js');
+
     ?>
-    <script src="https://kit.fontawesome.com/45eaee4fa2.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    <script src="../util/util.js"></script>
-    <script src="validacion.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
