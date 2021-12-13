@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-12-2021 a las 01:41:19
+-- Tiempo de generación: 13-12-2021 a las 19:46:50
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -71,7 +71,8 @@ CREATE TABLE `encargado` (
 CREATE TABLE `foto` (
   `Id_foto` int(8) NOT NULL,
   `Id_noticia` int(8) NOT NULL,
-  `Nombre_foto` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `Nombre_foto` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Portada` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
