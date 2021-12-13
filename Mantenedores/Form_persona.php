@@ -12,7 +12,7 @@ require('../auth_admin.php');
     <!-- Contenedor del Formulario y la Tabla -->
     <div class="row flex-lg-row">
         <!-- Formulario -->
-        <div class="col-lg-6 col-md-12">
+        <div class="col-lg-3 col-md-12">
             <form action="ingresar_persona.php" method="post">
                 <fieldset>
                     <legend class="text-center pt-3">Formulario para añadir persona</legend>
@@ -48,7 +48,7 @@ require('../auth_admin.php');
             </form>
         </div>
         <!-- Tabla -->
-        <div class="col-lg-6 col-md-12 ps-1">
+        <div class="col-lg-9 col-md-12 ps-1">
             <legend class="text-center pt-3">Registro de las Personas</legend>
             <table id="table" class="table table-striped table-hover">
                 <thead class="bg-dark text-light">

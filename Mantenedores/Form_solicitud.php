@@ -12,6 +12,7 @@ require('../auth_usuario.php');
     <!-- Links -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Diseños -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -23,21 +24,16 @@ require('../auth_usuario.php');
         ?>
         <!-- Contenedor del Formulario y la Tabla -->
         <div class="row flex-lg-row">
-
             <?php
-
             $user = $_SESSION['usuario'];
             $consulta = "SELECT * FROM persona WHERE Rut_persona = '$user'";
             $resultado = mysqli_query($conexion, $consulta);
             $row = mysqli_fetch_assoc($resultado);
             $rut = $row['Rut_persona'];
             $nombre = $row['Nombre_persona'];
-
-
             ?>
-
             <!-- Formulario -->
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-3 col-md-12">
                 <form action="ingresar_solicitud.php" method="post">
                     <fieldset>
                         <legend class="text-center pt-3">Formulario para añadir Solicitud</legend>
@@ -86,9 +82,8 @@ require('../auth_usuario.php');
                     </div>
                 </form>
             </div>
-
             <!-- Tabla -->
-            <div class="col-lg-6 col-md-12 ps-1">
+            <div class="col-lg-9 col-md-12 ps-1 pb-5">
                 <legend class="text-center pt-3">Registro de las Solicitudes</legend>
                 <table id="table" class="table table-striped table-hover">
                     <thead class="bg-dark text-light">
