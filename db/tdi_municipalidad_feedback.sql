@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-12-2021 a las 19:46:50
+-- Tiempo de generación: 14-12-2021 a las 20:51:11
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -70,9 +70,10 @@ CREATE TABLE `encargado` (
 
 CREATE TABLE `foto` (
   `Id_foto` int(8) NOT NULL,
-  `Id_noticia` int(8) NOT NULL,
-  `Nombre_foto` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Portada` int(1) NOT NULL
+  `Nombre_foto` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Ruta_foto` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Fecha` date NOT NULL,
+  `Codigo_dep` varchar(8) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -99,6 +100,9 @@ CREATE TABLE `noticia` (
   `Id_noticia` int(8) NOT NULL,
   `Nombre_noticia` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Cuerpo_noticia` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Ruta_portada` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Ruta_foto` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Fecha` date NOT NULL,
   `Codigo_dep` varchar(8) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -162,7 +166,7 @@ ALTER TABLE `encargado`
 --
 ALTER TABLE `foto`
   ADD PRIMARY KEY (`Id_foto`),
-  ADD KEY `fk_foto_id_noticia` (`Id_noticia`);
+  ADD KEY `fk_noticia_codigo_dep_foto` (`Codigo_dep`);
 
 --
 -- Indices de la tabla `municipalidad`
@@ -230,7 +234,7 @@ ALTER TABLE `departamento`
 -- Filtros para la tabla `foto`
 --
 ALTER TABLE `foto`
-  ADD CONSTRAINT `fk_foto_id_noticia` FOREIGN KEY (`Id_noticia`) REFERENCES `noticia` (`Id_noticia`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_noticia_codigo_dep_foto` FOREIGN KEY (`Codigo_dep`) REFERENCES `departamento` (`Codigo_dep`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `municipalidad`

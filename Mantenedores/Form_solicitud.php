@@ -13,6 +13,8 @@ require('../auth_usuario.php');
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Diseños -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+    <script src="https://kit.fontawesome.com/45eaee4fa2.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -74,7 +76,8 @@ require('../auth_usuario.php');
                             </div>
                             <div class="form-group mt-2">
                                 <label>Descripcion</label>
-                                <textarea type="text" name="Descripcion_solicitud" class="form-control" placeholder="Muy buena atención..." required></textarea>
+                                <textarea onkeyup="contarCaracteres(this);" maxlength="500" type="text" name="Descripcion_solicitud" class="form-control" placeholder="Muy buena atención..." required></textarea>
+                                <p id="charNum"></p>
                             </div>
                     </fieldset>
                     <div class="text-center pb-1">
@@ -94,6 +97,7 @@ require('../auth_usuario.php');
                             <th>Tipo retroalimentacion</th>
                             <th>Descripcion</th>
                             <th>Estado</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <?php
@@ -106,14 +110,15 @@ require('../auth_usuario.php');
                         $Tipo = $row['Tipo_solicitud'];
                         $Descripcion = $row['Descripcion_solicitud'];
                         $Estado = $row['Estado_solicitud'];
-                        echo "<tr>";
-                        echo "<td>" . $Cod . "</td>";
-                        echo "<td>" . $Codigo . "</td>";
-                        echo "<td>" . $Rut . "</td>";
-                        echo "<td>" . $Tipo . "</td>";
-                        echo "<td>" . $Descripcion . "</td>";
-                        echo "<td>" . $Estado . "</td>";
-                        echo "</tr>";
+                        echo '<tr>';
+                        echo '<td id="cod">' . $Cod . '</td>';
+                        echo '<td id="cod_dep">' . $Codigo . '</td>';
+                        echo '<td id="rut">' . $Rut . '</td>';
+                        echo '<td id="tipo">' . $Tipo . '</td>';
+                        echo '<td id="descripcion">' . $Descripcion . '</td>';
+                        echo '<td id="estado">' . $Estado . '</td>';
+                        echo '<td class="ps-3"><a href="pdf.php?codigo=' . $Cod . '" class="btn btn-dark"><i class="fas fa-file-pdf"></i></a></td>';
+                        echo '</tr>';
                     }
                     ?>
                 </table>
@@ -143,6 +148,16 @@ require('../auth_usuario.php');
                 }
             }); {}
         });
+
+        function contarCaracteres(obj) {
+            var maxLength = 500;
+            var strLength = obj.value.length;
+            if (strLength < 2) {
+                document.getElementById("charNum").innerHTML = strLength + ' caracter de ' + maxLength + ' caracteres.';
+            } else if (strLength > 1 && strLength <= 500) {
+                document.getElementById("charNum").innerHTML = strLength + ' caracteres de ' + maxLength + ' caracteres.';
+            }
+        }
     </script>
 </body>
 
