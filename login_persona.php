@@ -33,11 +33,11 @@
                         if (isset($_SESSION['usuario'])) {
                             $tipo = $_SESSION['tipo'];
                             if (strcmp($tipo, 'admin') == 0) {
-                                header("Location: Mantenedores/index_administrador.php");
+                                header("Location: Mantenedores/perfil_administrador.php");
                             } elseif (strcmp($tipo, 'persona') == 0) {
                                 header("Location: Mantenedores/perfil_persona.php");
                             } elseif (strcmp($tipo, 'encargado') == 0) {
-                                header("Location: Mantenedores/index_encargado.php");
+                                header("Location: Mantenedores/perfil_encargado.php");
                             }
                         } else {
                         ?>
