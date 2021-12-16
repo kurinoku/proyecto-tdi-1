@@ -95,7 +95,7 @@
                             <div class="col">
                                 <!-- Botón de Fotos -->
                                 <li class="nav-item">
-                                    <a class="nav-link active ms-5" href="#">Fotos</a>
+                                    <a class="nav-link active ms-5" href="Mantenedores/mostrar_galeria.php">Fotos</a>
                                 </li>
                             </div>
                             <div class="col">
