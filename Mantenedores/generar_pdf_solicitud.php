@@ -1,13 +1,13 @@
 <?php
-header("Content-Type: text/html;charset=utf-8");
-require("fpdf/fpdf.php");
+require_once "_init.php";
+require_once __DIR__ . "/../lib/fpdf/fpdf.php";
 require("conexion_p.php");
 
 class PDF extends FPDF
 {
     function Header()
     {
-        $this->Image('fpdf/municipalidad1.png', 80, 10, 30);
+        $this->Image(buildRuta('img/municipalidad1.png'), 80, 10, 30);
         $this->Ln(20);
         $this->SetFont('Courier', 'B', 40);
         $this->Cell(190, 40, 'Reporte de Solicitud', 0, 1, 'C');
@@ -56,5 +56,5 @@ while ($row = mysqli_fetch_assoc($resultado)) {
     $pdf->Ln(10);
     $pdf->Cell(45, 10, $pdf->Write(10,utf8_decode("Descripción: " . $row['Descripcion_solicitud'])), 0, 0, 'L', 0);
 }
-$pdf->Image('fpdf/firma.png', 55, 220, 100);
+$pdf->Image(buildRuta('img/firma.png'), 55, 220, 100);
 $pdf->Output();
