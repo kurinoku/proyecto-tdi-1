@@ -11,13 +11,9 @@ authUser('persona');
 <head>
     <meta charset="UTF-8">
     <title>Registro de la Solicitud</title>
-    <!-- Links -->
     <?php
     bootstrapHead();
     ?>
-    <!-- Diseños -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
-    <script src="https://kit.fontawesome.com/45eaee4fa2.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -121,7 +117,7 @@ authUser('persona');
                         echo '<td id="tipo">' . $Tipo . '</td>';
                         echo '<td id="descripcion">' . $Descripcion . '</td>';
                         echo '<td id="estado">' . $Estado . '</td>';
-                        echo '<td class="ps-3"><a href="pdf.php?codigo=' . $Cod . '" class="btn btn-dark"><i class="fas fa-file-pdf"></i></a></td>';
+                        echo '<td class="ps-3"><a href="' .   buildRuta('Mantenedores/generar_pdf_solicitud.php?codigo=' . $Cod) . '" class="btn btn-dark"><i class="fas fa-file-pdf"></i></a></td>';
                         echo '</tr>';
                     }
                     ?>

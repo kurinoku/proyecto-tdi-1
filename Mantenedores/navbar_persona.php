@@ -11,8 +11,7 @@
               aria-haspopup="true" aria-expanded="false">Administrar</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/perfil_persona.php"); ?>>Perfil</a>
-              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/modificar_solicitud.php"); ?>>Solicitudes</a>
-              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/crear_noticia.php"); ?>>Noticias</a>
+              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/Form_solicitud.php"); ?>>Solicitudes</a>
             </div>
           </li>
         </ul>
