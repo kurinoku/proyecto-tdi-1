@@ -14,7 +14,7 @@ require('conexion_p.php');
     ?>
     </head>
 <body>
-    <?php require('navbar_encargado.html');?>    
+    <?php require('navbar_encargado.php');?>    
 
     <div class="container px-5 my-5">
         <div class="row justify-content-center">
