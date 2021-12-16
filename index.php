@@ -101,7 +101,7 @@
                             <div class="col">
                                 <!-- Botón de Noticias -->
                                 <li class="nav-item">
-                                    <a class="nav-link active ms-5" href="#">Noticias</a>
+                                    <a class="nav-link active ms-5" href="Mantenedores/mostrar_noticia.php">Noticias</a>
                                 </li>
                             </div>
                             <div class="col">
