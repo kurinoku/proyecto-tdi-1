@@ -46,17 +46,21 @@
 
                         <form action="actualizar_perfil.php" method="post">
                             <div class="row mt-2">
-                                <div class="col-md-12"><label class="labels">Nombre</label><input name="Nombre_persona" maxlength="40" type="text" class="form-control" placeholder="<?php echo $nombre ?>" value=""></div>
+                                <div class="col-md-12"><label class="labels">Nombre</label><input name="Nombre_persona" maxlength="40" type="text" class="form-control" placeholder="<?php echo $nombre ?>" value="">
+                                    <div class="invalid-feedback">El nombre ingresado no es válido</div>
+                                </div>
+                                <div class="col-md-12"><label class="labels">Numero de contacto</label><input name="Numero_persona" maxlength="9" type="text" class="form-control" placeholder="<?php echo $numero ?>" value="">
+                                    <div class="invalid-feedback">El número ingresado no es válido</div>
+                                </div>
+                                <div class="col-md-12"><label class="labels">Correo</label><input name="Correo_persona" type="email" class="form-control" placeholder="<?php echo $correo ?>" value="">
+                                    <div class="invalid-feedback">El correo ingresado no es válido</div>
+                                </div>
+                                <div class="col-md-12"><label class="labels">Clave de ingreso</label><input maxlength="14" name="Clave_persona" type="password" class="form-control" placeholder="*****" value="">
+                                    <div class="invalid-feedback">La contraseña debe contener entre 8 y 14 carácteres; Debe incluir al menos una mayúscula, una minúscula y un número</div></div>
+                                </div>
+                                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
                             </div>
-                            <div class="row mt-3">
-                                <div class="col-md-12"><label class="labels">Numero de contacto</label><input name="Numero_persona" maxlength="9" type="text" class="form-control" placeholder="<?php echo $numero ?>" value=""></div>
-                                <div class="col-md-12"><label class="labels">Correo</label><input name="Correo_persona" type="email" class="form-control" placeholder="<?php echo $correo ?>" value=""></div>
-                                <div class="col-md-12"><label class="labels">Clave de ingreso</label><input maxlength="14" name="Clave_persona" type="password" class="form-control" placeholder="*****" value=""></div>
-                            </div>
-
-                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
                         </form>
-
                     </div>
                 </div>
             </div>
