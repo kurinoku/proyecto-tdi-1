@@ -1,18 +1,18 @@
 <?php
 $NOMBRE = 'Encargado';
 require('head_form.php');
-require('../auth_admin.php');
+authUser('admin');
 ?>
 <div class="container-fluid">
     <!-- Barra de navegación -->
     <?php
-    require('Navbar_administrador.html');
+    require_once "Navbar_administrador.php";
     ?>
     <!-- Contenedor del Formulario y la Tabla -->
     <div class="row flex-lg-row">
         <!-- Formulario -->
         <div class="col-lg-3 col-md-12">
-            <form action="ingresar_encargado.php" method="post">
+            <form action=<?php echoRutaComillas("Mantenedores/ingresar_encargado.php"); ?> method="post">
                 <fieldset>
                     <legend class="text-center pt-3">Formulario para añadir Encargado</legend>
                     <div class="form-group row">
@@ -72,7 +72,7 @@ require('../auth_admin.php');
                     echo "<td>" . $Nombre . "</td>";
                     echo "<td>" . $Numero . "</td>";
                     echo "<td>" . $Correo . "</td>";
-                    echo "<td><a href='eliminar_encargado.php?seleccionado=" . $Rut . "'>Eliminar</a> <a href='editar_encargado.php?seleccionado=" . $Rut . "'>Editar</a></td>";
+                    echo "<td><a href=\"" . buildRuta("Mantenedores/eliminar_encargado.php?seleccionado=" . $Rut ) . "\">Eliminar</a> <a href=\"" . buildRuta("Mantenedores/editar_encargado.php?seleccionado=" . $Rut ) . "\">Editar</a></td>";
                     echo "</tr>";
                 }
                 ?>

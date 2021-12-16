@@ -1,6 +1,7 @@
 <?php
+require_once "_init.php";
+authUser('encargado');
 require('conexion_p.php');
-require('../auth_encargado.php');
 
 $titulo=$_POST['Titulo'];
 $Foto1=$_POST['Foto1'];

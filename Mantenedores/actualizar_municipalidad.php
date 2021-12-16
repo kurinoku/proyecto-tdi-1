@@ -1,4 +1,5 @@
 <?php
+require_once "_init.php";
 require_once "conexion_p.php";
 $conn = $conexion;
 $columns = array();
@@ -22,4 +23,4 @@ $pk = $_POST["Id_municipalidad"];
 $columns = implode(", ", $columns);
 $sql = "UPDATE municipalidad SET $columns WHERE `Id_municipalidad`='$pk'";
 mysqli_query($conn, $sql);
-header("Location: Form_municipalidad.php");
+sendLocationHeader("Mantenedores/Form_municipalidad.php");

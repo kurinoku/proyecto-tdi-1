@@ -1,6 +1,6 @@
 <?php
 require_once 'conexion_p.php';
-require_once('../auth_admin.php');
+authUser('admin');
 ?>
 
 <!doctype html>

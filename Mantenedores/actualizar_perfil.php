@@ -1,8 +1,8 @@
 
 <?php 
-
+require_once "_init.php";
+authUser('persona');
 require_once "conexion_p.php";
-require('../auth_usuario.php');
 $conn = $conexion;
 $columns = array();
 if (array_key_exists("Nombre_persona", $_POST) && $_POST['Nombre_persona'] != "") {
@@ -28,4 +28,4 @@ if (!empty($columns)) {
     $sql = "UPDATE persona SET $columns WHERE `Rut_persona`='$pk'";
     mysqli_query($conn, $sql);
 }
-header("Location: perfil_persona.php");
+sendLocationHeader("Mantenedores/perfil_persona.php");

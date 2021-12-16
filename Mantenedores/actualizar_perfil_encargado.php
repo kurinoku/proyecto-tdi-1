@@ -1,7 +1,7 @@
 <?php 
-
+require_once "_init.php";
+authUser('encargado');
 require_once "conexion_p.php";
-require('../auth_encargado.php');
 $conn = $conexion;
 $columns = array();
 if (array_key_exists("Nombre_encargado", $_POST) && $_POST['Nombre_encargado'] != "") {
@@ -27,4 +27,4 @@ if (!empty($columns)) {
     $sql = "UPDATE encargado SET $columns WHERE `Rut_encargado`='$pk'";
     mysqli_query($conn, $sql);
 }
-header("Location: perfil_encargado.php");
+sendLocationHeader("Mantenedores/perfil_encargado.php");

@@ -1,4 +1,5 @@
 <?php
+require_once "_init.php";
 require('conexion_p.php');
 $Rut=$_POST['Rut_encargado'];
 $Nombre=$_POST['Nombre_encargado'];
@@ -7,5 +8,4 @@ $Correo=$_POST['Correo_encargado'];
 $Clave=md5($_POST['Clave_encargado']);
 $sql = "INSERT INTO encargado VALUES ('$Rut', '$Nombre', '$Numero', '$Correo', '$Clave')";
 $result = mysqli_query($conexion, $sql);
-header('Location: Form_encargado.php');
-?>
+sendLocationHeader("Mantenedores/Form_encargado.php");

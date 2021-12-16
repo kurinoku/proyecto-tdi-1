@@ -1,3 +1,7 @@
+<?php
+require_once "_init.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,13 +9,9 @@
     <meta charset="UTF-8">
     <title>Municipalidad de Concepción</title>
     <!-- Links -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/45eaee4fa2.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <?php
+    bootstrapHead();
+    ?>
     <!-- Diseños -->
 </head>
 
@@ -20,12 +20,12 @@
         <!-- Barra de navegación primaria-->
         <nav class="row navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand ms-5" href="../index.php">Municipalidad de Concepción</a>
+                <a class="navbar-brand ms-5" href=<?php echoRutaComillas("index.php"); ?>>Municipalidad de Concepción</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#TipoLogin">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div id="TipoLogin" class="collapse navbar-collapse">
-                        <button type="button" class="btn btn-secondary bg-dark ms-auto"onclick="location.href='../login_persona.php'">
+                        <button type="button" class="btn btn-secondary bg-dark ms-auto" onclick=<?php echo "\"location.href='" . buildRuta("login_persona.php") . "'\""; ?>>
                             <?php session_start();if (isset($_SESSION['tipo'])){
                                 echo "Ir a cuenta";
                                 }else{
@@ -107,7 +107,7 @@
                             <div class="col">
                                 <!-- Botón de Ubicación -->
                                 <li class="nav-item">
-                                    <a class="nav-link active ms-5" href="mapa.php">Ubicación</a>
+                                    <a class="nav-link active ms-5" href=<? echoRutaComillas("Mantenedores/mapa.php") ?>>Ubicación</a>
                                 </li>
                             </div>
                         </ul>
@@ -129,6 +129,9 @@
     <!-- Footer -->
     <?php
     require('Footer.html');
+
+    bootstrapBody();
+    kitFontBody();
     ?>
 </body>
 

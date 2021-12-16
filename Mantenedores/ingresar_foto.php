@@ -1,6 +1,7 @@
 <?php
+require_once "_init.php";
+authUser('encargado');
 require('conexion_p.php');
-require('../auth_encargado.php');
 
 $titulo = $_POST['Titulo'];
 $ruta = $_POST['Ruta'];
@@ -15,4 +16,4 @@ $sql = "INSERT INTO foto (Nombre_foto, Ruta_foto, Fecha, Codigo_dep)
 VALUES ('$titulo', 'img/galeria/$ruta.jpg', CURDATE(), '$cod')";
 $result = mysqli_query($conexion, $sql);
 
-header('Location: crear_foto.php');
+sendLocationHeader('Mantenedores/crear_foto.php');
