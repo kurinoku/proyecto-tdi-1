@@ -42,12 +42,12 @@ require('conexion_p.php');
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card h-100 shadow-lg">
                     <?php
-                    echo "<a href=" . echoRutaComillas("ver_noticia.php?seleccionado=" . $id) . "><img class=\"card-img-top\" src=" . echoRutaComillas($foto1 . ".jpg") . " alt=\"\"></a>";
+                    echo '<a href="' . buildRuta("ver_noticia.php?seleccionado=" . $id) . '"><img class="card-img-top" src="' . buildRuta($foto1 . ".jpg") . '" alt=""></a>';
                     ?>
                     <div class="card-body">
                         <h4 class="card-title">
                     <?php
-                    echo "<a href=" . echoRutaComillas("ver_noticia.php?seleccionado=" . $id) . ">" . $nombre . "</a>";
+                    echo '<a href="' . buildRuta("ver_noticia.php?seleccionado=" . $id) . '">' . $nombre . '</a>';
                     ?>
                         </h4>
                         <p class="card-text text-truncate"><?php echo $cuerpo ?></p>

@@ -31,7 +31,7 @@ require('conexion_p.php');
 
           <div class="col-lg-3 col-md-6 mb-4 mt-2">
             <div class="card border-0 shadow h-100">
-              <img src="../<?php echo $ruta ?>" class="card-img-top" alt="...">
+              <img src=<?php echoRutaComillas($ruta);  ?> class="card-img-top" alt="...">
               <div class="card-body text-center">
                 <h5 class="card-title mb-0"><?php echo $nombre ?></h5>
                 <div class="card-text text-black-50"><?php echo $fecha ?></div>
