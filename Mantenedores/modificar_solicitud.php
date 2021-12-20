@@ -8,6 +8,7 @@ authUser('encargado');
 <html lang="es">
 
 <head>
+    <link rel="shortcut icon" href="../img/municipalidad1.png" />
     <meta charset="UTF-8">
     <title>Registro de la Solicitud</title>
     <!-- Links -->
@@ -86,7 +87,7 @@ authUser('encargado');
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Visualización de estado</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -105,10 +106,10 @@ authUser('encargado');
     <!-- Footer -->
 
     <?php
-        require('Footer.html');
-        kitFontBody();
-        bootstrapBody();
-        echoScript("Mantenedores/modificar_solicitud.js");
+    require('Footer.html');
+    kitFontBody();
+    bootstrapBody();
+    echoScript("Mantenedores/modificar_solicitud.js");
     ?>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>

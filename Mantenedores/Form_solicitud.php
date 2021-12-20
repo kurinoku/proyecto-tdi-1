@@ -1,7 +1,6 @@
 <?php
 require_once "_init.php";
 require('conexion_p.php');
-
 authUser('persona');
 ?>
 
@@ -9,19 +8,19 @@ authUser('persona');
 <html lang="es">
 
 <head>
+    <link rel="shortcut icon" href="../img/municipalidad1.png" />
     <meta charset="UTF-8">
     <title>Registro de la Solicitud</title>
     <?php
     bootstrapHead();
+    require 'head_form.php';
     ?>
-
 </head>
 
 <body class="d-flex flex-column min-vh-100">
     <div class="container-fluid">
         <!-- Barra de navegación -->
         <?php
-        
         require "navbar_persona.php";
         ?>
         <!-- Contenedor del Formulario y la Tabla -->
@@ -117,7 +116,7 @@ authUser('persona');
                         echo '<td id="tipo">' . $Tipo . '</td>';
                         echo '<td id="descripcion">' . $Descripcion . '</td>';
                         echo '<td id="estado">' . $Estado . '</td>';
-                        echo '<td class="ps-3"><a href="' .   buildRuta('Mantenedores/generar_pdf_solicitud.php?codigo=' . $Cod) . '" class="btn btn-dark"><i class="fas fa-file-pdf"></i></a></td>';
+                        echo '<td class="ps-3"><a href="' .   buildRuta('Mantenedores/generar_pdf_solicitud.php?codigo=' . $Cod) . '" class="btn btn-primary"><i class="fas fa-file-pdf"></i></a></td>';
                         echo '</tr>';
                     }
                     ?>
@@ -128,12 +127,10 @@ authUser('persona');
     <!-- Footer -->
     <?php
     require('Footer.html');
-
     kitFontBody();
     bootstrapBody();
     echoScript('util/util.js');
     echoScript('Mantenedores/validacion.js');
-
     ?>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>

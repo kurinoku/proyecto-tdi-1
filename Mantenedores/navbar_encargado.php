@@ -10,9 +10,9 @@
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
               aria-haspopup="true" aria-expanded="false">Administrar</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/perfil_encargado.php"); ?>>Perfil</a>
-              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/modificar_solicitud.php"); ?>>Solicitudes</a>
-              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/crear_noticia.php"); ?>>Noticias</a>
+              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/perfil_encargado.php"); ?>>Ver perfil</a>
+              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/modificar_solicitud.php"); ?>>Ver solicitudes</a>
+              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/crear_noticia.php"); ?>>Ingresar noticias</a>
               <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/crear_foto.php"); ?>>Ingresar fotos</a>
             </div>
           </li>

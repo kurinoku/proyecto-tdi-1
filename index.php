@@ -10,7 +10,7 @@ require_once "_init.php";
     <title>Municipalidad de Concepción</title>
     <!-- Links -->
     <?php
-        bootstrapHead();
+    bootstrapHead();
     ?>
     <!-- Diseños -->
 </head>
@@ -25,8 +25,7 @@ require_once "_init.php";
             <div class="row mt-4">
                 <div class="col-4">
                     <div class="text-center">
-                        <img class="rounded" src="img/mision-cumplida.png" alt="Generic placeholder image"
-                            width="140" height="140">
+                        <img class="rounded" src="img/mision-cumplida.png" alt="Generic placeholder image" width="140" height="140">
                         <h2>Misión</h2>
                     </div class="text-center">
                     <p>Como municipalidad buscamos trabajar arduamente para satisfacer, por medio de sus servicios y
@@ -38,8 +37,7 @@ require_once "_init.php";
                 </div>
                 <div class="col-4">
                     <div class="text-center">
-                        <img class="rounded" src="img/vision-compartida.png" alt="Generic placeholder image"
-                            width="140" height="140">
+                        <img class="rounded" src="img/vision-compartida.png" alt="Generic placeholder image" width="140" height="140">
                         <h2>Visión</h2>
                     </div class="text-center">
                     <p>Ser un municipio líder, innovador e impulsor del desarrollo sostenible e inclusivo, promotor del
@@ -49,8 +47,7 @@ require_once "_init.php";
                 </div>
                 <div class="col-4">
                     <div class="text-center">
-                        <img class="rounded" src="img/municipalidad.png" alt="Generic placeholder image" width="140"
-                            height="140">
+                        <img class="rounded" src="img/municipalidad.png" alt="Generic placeholder image" width="140" height="140">
                         <h2>Valores</h2>
                     </div class="text-center">
                     <p>Para el cumplimiento del Plan, la Municipalidad de "XXXXXX" priorizará sus acciones y políticas
@@ -69,12 +66,9 @@ require_once "_init.php";
                     <h2 class="text-black text-center">Campañas y Talleres</h2>
                     <div id="CarouselMuni" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#CarouselMuni" data-bs-slide-to="0" class="active"
-                                aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#CarouselMuni" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#CarouselMuni" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#CarouselMuni" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#CarouselMuni" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#CarouselMuni" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -103,28 +97,23 @@ require_once "_init.php";
                                 </div>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#CarouselMuni"
-                            data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#CarouselMuni" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Anterior</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#CarouselMuni"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#CarouselMuni" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Siguiente</span>
                         </button>
                     </div>
                 </div>
                 <div class="col-6">
-                    <h2 class="text-black text-center">Noticias</h2>
+                <h2 class="text-black text-center">Anuncios</h2>
                     <div id="CarouselNoti" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#CarouselNoti" data-bs-slide-to="0" class="active"
-                                aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#CarouselNoti" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#CarouselNoti" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#CarouselNoti" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#CarouselNoti" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#CarouselNoti" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -152,13 +141,11 @@ require_once "_init.php";
                                 </div>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#CarouselNoti"
-                            data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#CarouselNoti" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Anterior</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#CarouselNoti"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#CarouselNoti" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Siguiente</span>
                         </button>
@@ -171,7 +158,6 @@ require_once "_init.php";
     <?php
     bootstrapBody();
     kitFontBody();
-
     require('Mantenedores/Footer.html');
     ?>
 </body>

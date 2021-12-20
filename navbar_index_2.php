@@ -7,50 +7,6 @@
             <div class="collapse navbar-collapse" id="Seccion">
                 <ul class="navbar-nav me-auto mx-auto">
                     <div class="col">
-                        <!-- Botón de Inicio -->
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Inicio</a>
-                        </li>
-                    </div>
-                    <div class="col">
-                        <!-- Botón de despliegue sección de Municipalidad -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle ms-5" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Municipalidad</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Direcciones Municipales</a>
-                                <a class="dropdown-item" href="#">Concejo Municipal</a>
-                                <a class="dropdown-item" href="#">Juzgados de Policía Local</a>
-                                <a class="dropdown-item" href="#">Misión y Visión</a>
-                                <a class="dropdown-item" href="#">Palabras del Alcalde</a>
-                                <a class="dropdown-item" href="#">Himno</a>
-                                <a class="dropdown-item" href="#">Participación Ciudadana</a>
-                                <a class="dropdown-item" href="#">Plan Regulador</a>
-                            </div>
-                        </li>
-                    </div>
-                    <div class="col">
-                        <!-- Botón de despliegue sección de Tramites -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle ms-5" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Trámites</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">En Linea</a>
-                                <a class="dropdown-item" href="#">Oficina de Partes</a>
-                                <a class="dropdown-item" href="#">Trámites Jurídicos</a>
-                                <a class="dropdown-item" href="#">Consulta de Documentos electrónicos</a>
-                                <a class="dropdown-item" href="#">Actos y resoluciones con efectos sobre
-                                    terceras personas</a>
-                                <a class="dropdown-item" href="#">Formularios</a>
-                                <a class="dropdown-item" href="#">Otros Servicios</a>
-                            </div>
-                        </li>
-                    </div>
-                    <div class="col">
-                        <!-- Botón de Servicios -->
-                        <li class="nav-item">
-                            <a class="nav-link active ms-5" href="#">Servicios</a>
-                        </li>
-                    </div>
-                    <div class="col">
                         <!-- Botón de Fotos -->
                         <li class="nav-item">
                             <a class="nav-link active ms-5" href=<?php echoRutaComillas("Mantenedores/mostrar_galeria.php"); ?>>Fotos</a>

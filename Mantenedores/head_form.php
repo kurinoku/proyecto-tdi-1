@@ -11,6 +11,7 @@ require('conexion_p.php');
 <html lang="es">
 
 <head>
+<link rel="shortcut icon" href="../img/municipalidad1.png" />
     <meta charset="UTF-8">
     <title>Registro de <?php echo $NOMBRE; ?></title>
     <!-- Links -->

@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "_init.php";
 authUser('admin');
 ?>
@@ -7,12 +7,12 @@ authUser('admin');
 <html lang="es">
 
 <head>
+    <link rel="shortcut icon" href="../img/municipalidad1.png" />
     <meta charset="UTF-8">
     <title>Editar perfil</title>
     <?php
-        bootstrapHead();
+    bootstrapHead();
     ?>
-    <link rel="stylesheet" href="../css/editar_perfil.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -50,37 +50,44 @@ authUser('admin');
 
                         <form action=<?php echoRutaComillas("Mantenedores/actualizar_perfil_administrador.php"); ?> method="post">
                             <div class="row mt-2">
-                            <div class="col-md-12"><label class="labels">Nombre</label><input name="Nombre_administrador" maxlength="40" type="text" class="form-control" placeholder="<?php echo $nombre ?>" value="">
-                                <div class="invalid-feedback">El nombre ingresado no es válido</div>
+                                <div class="col-md-12"><label class="labels">Nombre</label>
+                                    <input name="Nombre_administrador" maxlength="40" type="text" class="form-control mb-3" placeholder="<?php echo $nombre ?>" value="">
+                                    <div class="invalid-feedback">El nombre ingresado no es válido</div>
+                                </div>
+                                <div class="col-md-12"><label class="labels">Numero de contacto</label>
+                                    <input name="Numero_administrador" maxlength="9" type="text" class="mb-3 form-control" placeholder="<?php echo $numero ?>" value="">
+                                    <div class="invalid-feedback">El número ingresado no es válido</div>
+                                </div>
+                                <div class="col-md-12"><label class="labels">Correo</label>
+                                    <input name="Correo_administrador" type="email" class="mb-3 form-control" placeholder="<?php echo $correo ?>" value="">
+                                    <div class="invalid-feedback">El correo ingresado no es válido</div>
+                                </div>
+                                <div class="col-md-12"><label class="labels">Clave de ingreso</label>
+                                    <input maxlength="14" name="Clave_administrador" type="password" class="mb-3 form-control" placeholder="*****" value="">
+                                    <div class="invalid-feedback">La contraseña debe contener entre 8 y 14 carácteres; Debe incluir al menos una mayúscula, una minúscula y un número</div>
+                                </div>
                             </div>
-                            <div class="col-md-12"><label class="labels">Numero de contacto</label><input name="Numero_administrador" maxlength="9" type="text" class="form-control" placeholder="<?php echo $numero ?>" value="">
-                            <div class="invalid-feedback">El número ingresado no es válido</div>
+                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Editar</button>
                             </div>
-                            <div class="col-md-12"><label class="labels">Correo</label><input name="Correo_administrador" type="email" class="form-control" placeholder="<?php echo $correo ?>" value="">
-                                <div class="invalid-feedback">El correo ingresado no es válido</div>
-                            </div>
-                                <div class="col-md-12"><label class="labels">Clave de ingreso</label><input maxlength="14" name="Clave_administrador" type="password" class="form-control" placeholder="*****" value="">
-                                <div class="invalid-feedback">La contraseña debe contener entre 8 y 14 carácteres; Debe incluir al menos una mayúscula, una minúscula y un número</div></div>
-                            </div>
-                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button>
-                        </div>
                         </form>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
+    <?php
+    require('Footer.html');
+    kitFontBody();
+    ?>
 </body>
 <?php
-    bootstrapBody();
-    echoScript("util/util.js");
-    echoScript("Mantenedores/validacion.js");
+bootstrapBody();
+echoScript("util/util.js");
+echoScript("Mantenedores/validacion.js");
 ?>
 <script>
     let valida = new ValidaPaginas();
     valida.magia();
 </script>
+
 </html>

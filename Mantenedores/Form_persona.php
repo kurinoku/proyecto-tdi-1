@@ -77,7 +77,7 @@ authUser('admin');
                     echo "<td>" . $nombre . "</td>";
                     echo "<td>" . $numero . "</td>";
                     echo "<td>" . $correo . "</td>";
-                    echo "<td><a href=\"" . buildRuta("eliminar_persona.php?seleccionado=" . $rut) .  "\">Eliminar</a> <a href=\"" . buildRuta("Mantenedores/editar_persona.php?seleccionado=" . $rut) . "\">Editar</a></td>";
+                    echo "<td>"."<a class='btn btn-primary' href=\"" . buildRuta("Mantenedores/eliminar_persona.php?seleccionado=" . $rut) .  "\">Eliminar</a> <a class='btn btn-primary' href=\"" . buildRuta("Mantenedores/editar_persona.php?seleccionado=" . $rut) . "\">Editar</a>"."</td>";
                     echo "</tr>";
                 }
                 ?>
