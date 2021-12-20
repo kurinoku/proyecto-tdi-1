@@ -72,7 +72,7 @@ authUser('admin');
                     echo "<td>" . $Nombre . "</td>";
                     echo "<td>" . $Numero . "</td>";
                     echo "<td>" . $Correo . "</td>";
-                    echo "<td><a href=\"" . buildRuta("Mantenedores/eliminar_encargado.php?seleccionado=" . $Rut ) . "\">Eliminar</a> <a href=\"" . buildRuta("Mantenedores/editar_encargado.php?seleccionado=" . $Rut ) . "\">Editar</a></td>";
+                    echo "<td><a class='btn btn-primary' href=\"" . buildRuta("Mantenedores/eliminar_encargado.php?seleccionado=" . $Rut ) . "\">Eliminar</a> <a class='btn btn-primary' href=\"" . buildRuta("Mantenedores/editar_encargado.php?seleccionado=" . $Rut ) . "\">Editar</a></td>";
                     echo "</tr>";
                 }
                 ?>

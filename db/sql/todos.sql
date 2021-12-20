@@ -103,6 +103,3 @@ INSERT INTO `solicitud` VALUES (47, 'hxK20uNV', '15280778', 'Reclamo', 'Lorem ip
 INSERT INTO `solicitud` VALUES (48, 'hxK20uNV', '16011528', 'Felicitaciones', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Procesando', '2021-02-06 19:19:00');
 INSERT INTO `solicitud` VALUES (49, 'rGNZLL5t', '20650020', 'Sugerencia', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Visto', '2021-04-03 11:53:00');
 INSERT INTO `solicitud` VALUES (50, 'rGNZLL5t', '19891318', 'Reclamo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Procesando', '2021-08-15 09:13:00');
-
-
-

@@ -6,6 +6,7 @@ require_once "_init.php";
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="../img/municipalidad1.png" />
     <meta charset="UTF-8">
     <title>Municipalidad de Concepción</title>
     <!-- Links -->

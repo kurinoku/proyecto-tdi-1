@@ -71,7 +71,7 @@ authUser('admin');
                     echo "<td>" . $Rut . "</td>";
                     echo "<td>" . $direccion . "</td>";
                     echo "<td>" . $numero . "</td>";
-                    echo "<td> <a href=\"" . buildRuta("Mantenedores/editar_municipalidad.php?seleccionado=" . $id ) . "\">Editar</a></td>";
+                    echo "<td> <a class='btn btn-primary' href=\"" . buildRuta("Mantenedores/editar_municipalidad.php?seleccionado=" . $id ) . "\">Editar</a></td>";
                     echo "</tr>";
                 }
                 ?>

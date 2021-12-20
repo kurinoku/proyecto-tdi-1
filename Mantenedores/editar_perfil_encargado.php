@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "_init.php";
 authUser('encargado');
 ?>
@@ -7,11 +7,11 @@ authUser('encargado');
 <html lang="es">
 
 <head>
+    <link rel="shortcut icon" href="../img/municipalidad1.png" />
     <meta charset="UTF-8">
     <title>Editar perfil</title>
     <?php
     bootstrapHead();
-    echoCSSLink('css/editar_perfil.css');
     ?>
 </head>
 
@@ -20,7 +20,6 @@ authUser('encargado');
         <?php
         require "navbar_encargado.php";
         require('conexion_p.php');
-
         $user = $_SESSION['usuario'];
         $consulta = "SELECT * FROM encargado WHERE Rut_encargado = '$user'";
         $resultado = mysqli_query($conexion, $consulta);
@@ -29,9 +28,7 @@ authUser('encargado');
         $nombre = $row['Nombre_encargado'];
         $numero = $row['Numero_encargado'];
         $correo = $row['Correo_encargado'];
-
         ?>
-
         <div class="container rounded bg-white mt-5 mb-5">
             <div class="row">
                 <div class="col-md-5 border-right">
@@ -47,22 +44,26 @@ authUser('encargado');
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h4 class="text-right">Datos de cuenta</h4>
                         </div>
-
                         <form action=<?php echoRutaComillas("Mantenedores/actualizar_perfil_encargado.php"); ?> method="post">
                             <div class="row mt-2">
-                                <div class="col-md-12"><label class="labels">Nombre</label><input name="Nombre_encargado" maxlength="40" type="text" class="form-control" placeholder="<?php echo $nombre ?>" value="">
+                                <div class="col-md-12 mb-3"><label class="labels">Nombre</label>
+                                    <input name="Nombre_encargado" maxlength="40" type="text" class="form-control" placeholder="<?php echo $nombre ?>" value="">
                                     <div class="invalid-feedback">El nombre ingresado no es válido</div>
                                 </div>
-                                <div class="col-md-12"><label class="labels">Numero de contacto</label><input name="Numero_encargado" maxlength="9" type="text" class="form-control" placeholder="<?php echo $numero ?>" value="">
+                                <div class="col-md-12 mb-3"><label class="labels">Numero de contacto</label>
+                                    <input name="Numero_encargado" maxlength="9" type="text" class="form-control" placeholder="<?php echo $numero ?>" value="">
                                     <div class="invalid-feedback">El número ingresado no es válido</div>
                                 </div>
-                                <div class="col-md-12"><label class="labels">Correo</label><input name="Correo_encargado" type="email" class="form-control" placeholder="<?php echo $correo ?>" value="">
+                                <div class="col-md-12 mb-3"><label class="labels">Correo</label>
+                                    <input name="Correo_encargado" type="email" class="form-control" placeholder="<?php echo $correo ?>" value="">
                                     <div class="invalid-feedback">El correo ingresado no es válido</div>
                                 </div>
-                                    <div class="col-md-12"><label class="labels">Clave de ingreso</label><input maxlength="14" name="Clave_encargado" type="password" class="form-control" placeholder="*****" value="">
-                                    <div class="invalid-feedback">La contraseña debe contener entre 8 y 14 carácteres; Debe incluir al menos una mayúscula, una minúscula y un número</div></div>
+                                <div class="col-md-12 mb-3"><label class="labels">Clave de ingreso</label>
+                                    <input maxlength="14" name="Clave_encargado" type="password" class="form-control" placeholder="*****" value="">
+                                    <div class="invalid-feedback">La contraseña debe contener entre 8 y 14 carácteres; Debe incluir al menos una mayúscula, una minúscula y un número</div>
                                 </div>
-                                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button>
+                            </div>
+                            <div class="mt-2 text-center"><button class="btn btn-dark profile-button" type="submit">Guardar cambios</button>
                             </div>
                         </form>
                     </div>
@@ -70,16 +71,19 @@ authUser('encargado');
             </div>
         </div>
     </div>
-
-
+    <?php
+    kitFontBody();
+    require('Footer.html');
+    ?>
 </body>
 <?php
-    bootstrapBody();
-    echoScript("util/util.js");
-    echoScript("Mantenedores/validacion.js");
+bootstrapBody();
+echoScript("util/util.js");
+echoScript("Mantenedores/validacion.js");
 ?>
 <script>
     let valida = new ValidaPaginas();
     valida.magia();
 </script>
+
 </html>
