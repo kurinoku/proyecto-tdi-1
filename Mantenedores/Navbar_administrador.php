@@ -10,13 +10,13 @@
 					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
 						aria-haspopup="true" aria-expanded="false">Administrar</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/perfil_administrador.php"); ?>>Perfil</a>
-						<a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/Form_persona.php"); ?>>Ciudadano</a>
-						<a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/Form_departamento.php"); ?>>Departamento</a>
-						<a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/Resumen_solicitud.php"); ?>>Solicitud</a>
-						<a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/Form_administrador.php"); ?>>Administrador</a>
-						<a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/Form_encargado.php"); ?>>Encargado</a>
-						<a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/Form_municipalidad.php"); ?>>Municipalidad</a>
+						<a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/perfil_administrador.php"); ?>>Ver Perfil</a>
+						<a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/Form_persona.php"); ?>>Ver Ciudadanos</a>
+						<a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/Form_departamento.php"); ?>>Ver Departamentos</a>
+						<a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/Resumen_solicitud.php"); ?>>Ver Solicitudes</a>
+						<a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/Form_administrador.php"); ?>>Ver Administradores</a>
+						<a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/Form_encargado.php"); ?>>Ver Encargados</a>
+						<a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/Form_municipalidad.php"); ?>>Ver Municipalidad</a>
 					</div>
 				</li>
 			</ul>

@@ -12,7 +12,6 @@ authUser('persona');
     <title>Editar perfil</title>
     <?php
     bootstrapHead();
-    echoScript('css/editar_perfil.css');
     ?>
 </head>
 
@@ -51,7 +50,8 @@ authUser('persona');
                         </div>
                         <form action=<?php echoRutaComillas("Mantenedores/actualizar_perfil.php"); ?> method="post">
                             <div class="row mt-2">
-                                <div class="col-md-12 mb-3"><label class="labels">Nombre</label><input name="Nombre_persona" maxlength="40" type="text" class="form-control" placeholder="<?php echo $nombre ?>" value="">
+                                <div class="col-md-12 mb-3"><label class="labels">Nombre</label>
+                                    <input name="Nombre_persona" maxlength="40" type="text" class="form-control" placeholder="<?php echo $nombre ?>" value="">
                                     <div class="invalid-feedback">El nombre ingresado no es válido</div>
                                 </div>
                                 <div class="col-md-12 mb-3"><label class="labels">Numero de contacto</label><input name="Numero_persona" maxlength="9" type="text" class="form-control" placeholder="<?php echo $numero ?>" value="">
@@ -80,7 +80,7 @@ authUser('persona');
 <?php
 bootstrapBody();
 echoScript('util/util.js');
-echoScript('validacion.js');
+echoScript("Mantenedores/validacion.js");
 ?>
 <script>
     let valida = new ValidaPaginas();
