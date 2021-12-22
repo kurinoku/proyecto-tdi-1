@@ -15,7 +15,10 @@ require_once "_init.php";
 <body>
 
     
-    <?php require __DIR__ . "/../navbar_index_1.php" ?>
+        <!-- Barra de navegación primaria-->
+        <?php require __DIR__ . "/../navbar_index_1.php" ?>
+        <!-- Barra de navegación secundaria -->
+        <?php require __DIR__ . "/../navbar_index_2.php" ?>
 
     <?php
         require('conexion_p.php');
@@ -34,7 +37,7 @@ require_once "_init.php";
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <img class="img-fluid pt-1 w-100" src=<?php echoRutaComillas($foto1 . ".jpg") ?> alt="">
+                <img class="img-fluid pt-1 w-100" src=<?php echoRutaComillas($foto1) ?> alt="">
             </div>
         </div>
 
@@ -46,7 +49,7 @@ require_once "_init.php";
 
         <div class="row mb-5 mt-4 ">
             <div class="">
-                <img class="img-fluid img-thumbnail m-3 w-50 shadow-lg" style="float:right;" src=<?php echoRutaComillas($foto2 . ".jpg") ?> alt="">
+                <img class="img-fluid img-thumbnail m-3 w-50 shadow-lg" style="float:right;" src=<?php echoRutaComillas($foto2 ) ?> alt="">
                 <h5 class=" font-weight-light text-muted" style ="text-align:justify"><?php echo $cuerpo ?></h5>
             </div>
 
@@ -60,7 +63,8 @@ require_once "_init.php";
     </div>
 
     <?php
-    bootstrapBody();
-    ?>
+     bootstrapBody();
+     require('Footer.html');
+     ?>
 </body>
 </html>
