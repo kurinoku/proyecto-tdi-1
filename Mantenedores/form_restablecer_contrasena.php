@@ -13,7 +13,7 @@ if(!empty($_GET)){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/municipalidad1.png" />
-    <title>restablecer Contraseña</title>
+    <title>Restablecer contraseña</title>
     <!-- Links -->
     <?php
     bootstrapHead();

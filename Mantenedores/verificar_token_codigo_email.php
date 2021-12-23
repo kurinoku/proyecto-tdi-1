@@ -31,10 +31,11 @@ if (mysqli_num_rows($resultado) > 0) {
     ?>
 
     <head>
+        <link rel="shortcut icon" href="../img/municipalidad1.png" />
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Recuperar contraseña</title>
         <!-- Links -->
         <?php
         bootstrapHead();

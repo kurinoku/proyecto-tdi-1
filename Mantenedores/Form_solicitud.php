@@ -70,7 +70,7 @@ authUser('persona');
                                     <option value="" disabled selected>Selecciona el tipo de retroalimentacion</option>
                                     <option value="Sugerencia">Sugerencia</option>
                                     <option value="Reclamo">Reclamo</option>
-                                    <option value="Felicitacion">Felicitación</option>
+                                    <option value="Felicitaciones">Felicitación</option>
                                 </select>
                             </div>
                             <div class="form-group mt-2">
