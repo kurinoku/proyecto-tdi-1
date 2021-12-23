@@ -33,9 +33,10 @@ authUser('encargado');
         <div class="row">
             <div>
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-12 pt-3 px-4">
-                    <div class="table-responsive">
-                        <div class="col-lg-12 col-md-12 ps-1">
-                            <legend class="text-center pt-3">Tabla de Solicitudes</legend>
+                        <div class="table-responsive">
+                            <div class="text-center flex-wrap flex-md-nowrap pb-2 mb-3 border-bottom">
+                                <h1>Tabla de solicitudes</h1>
+                            </div>
                             <table id="table" class="table table-striped table-hover">
                                 <thead class="bg-dark text-light">
                                     <tr>
@@ -74,7 +75,6 @@ authUser('encargado');
                                 ?>
                             </table>
                         </div>
-                    </div>
                 </main>
             </div>
         </div>
@@ -118,6 +118,13 @@ authUser('encargado');
     <script>
         $(document).ready(function() {
             $('#table').DataTable({
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.11.3/i18n/es-cl.json"
+                }
+            }); {}
+        });
+        $(document).ready(function() {
+            $('#table2').DataTable({
                 "language": {
                     "url": "https://cdn.datatables.net/plug-ins/1.11.3/i18n/es-cl.json"
                 }
