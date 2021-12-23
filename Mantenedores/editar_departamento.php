@@ -49,6 +49,7 @@ $nombre = $row["Nombre_dep"];
                             <div class="form-group mt-2">
                                 <label>Nombre:</label>
                                 <input name="Nombre_dep" type="text" class="form-control" placeholder="" value="<?php echo ($nombre); ?>">
+                                <div class="invalid-feedback">El nombre ingresado no es válido</div>
                             </div>
                     </fieldset>
                     <div class="text-center pb-1">

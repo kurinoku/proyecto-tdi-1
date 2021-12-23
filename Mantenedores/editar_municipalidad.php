@@ -44,18 +44,22 @@ $numero = $row["Numero_municipalidad"];
                             <div class="form-group mt-2">
                                 <label>Nombre municipalidad</label>
                                 <input name="Nombre_municipalidad" type="text" class="form-control" placeholder="" value="<?php echo ($nombre); ?>">
+                                <div class="invalid-feedback">El nombre ingresado no es válido</div>
                             </div>
                             <div class="form-group mt-2">
                                 <label>Rut Administrador</label>
                                 <input name="Rut_administrador" type="text" class="form-control" placeholder="" value="<?php echo ($Rut); ?>">
+                                <div class="invalid-feedback">El rut ingresado no es válido</div>
                             </div>
                             <div class="form-group mt-2">
                                 <label>Direccion municipalidad</label>
                                 <input name="Direccion_municipalidad" type="text" class="form-control" placeholder="" value="<?php echo ($direccion); ?>">
+                                <div class="invalid-feedback">La dirección ingresada no es válida</div>
                             </div>
                             <div class="form-group mt-2">
                                 <label>Numero municipalidad:</label>
                                 <input name="Numero_municipalidad" type="text" class="form-control" placeholder="" value="<?php echo ($numero); ?>">
+                                <div class="invalid-feedback">El número ingresado no es válido</div>
                             </div>
                     </fieldset>
                     <div class="text-center pb-1">

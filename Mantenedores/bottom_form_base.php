@@ -6,8 +6,6 @@ function insertBottom1() {
     
     kitFontBody();
     bootstrapBody();
-    echoScript('util/util.js');
-    echoScript('Mantenedores/validacion.js');
 }
 
 function insertBottom2() {
@@ -29,6 +27,14 @@ function insertBottom2() {
         });
     </script>
     </body>
+    <?php
+    echoScript('util/util.js');
+    echoScript("Mantenedores/validacion.js");
+    ?>
+    <script>
+        let valida = new ValidaPaginas();
+        valida.magia();
+    </script>
 
     </html>
 
