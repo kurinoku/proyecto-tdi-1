@@ -17,7 +17,7 @@ $cod = $row['Codigo_dep'];
 $sql = "INSERT INTO noticia (Nombre_noticia, Cuerpo_noticia, Ruta_portada, Ruta_foto, Fecha, Codigo_dep) 
 VALUES ('$titulo', '$Cuerpo', 'img/noticia/$Foto1.jpg', 'img/noticia/$Foto2.jpg', CURDATE(), '$cod')";
 $result = mysqli_query($conexion, $sql);
-sendLocationHeader("Mantenedores/crear_noticia.php");
+sendLocationHeader("Mantenedores/mostrar_noticia.php");
 // $consulta2 = "SELECT * FROM noticia WHERE Codigo_dep = '$cod' AND Nombre_noticia = '$titulo' ";
 // $resultado2 = mysqli_query($conexion, $consulta2);
 // $row2 = mysqli_fetch_assoc($resultado2);
