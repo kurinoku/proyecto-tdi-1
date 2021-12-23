@@ -14,6 +14,7 @@
               <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/modificar_solicitud.php"); ?>>Ver solicitudes</a>
               <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/crear_noticia.php"); ?>>Ingresar noticias</a>
               <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/crear_foto.php"); ?>>Ingresar fotos</a>
+              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/resumen_encargado.php"); ?>>Ver Estadísticas</a>
             </div>
           </li>
         </ul>
