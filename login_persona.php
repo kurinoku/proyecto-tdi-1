@@ -63,6 +63,7 @@ require_once "_init.php";
                                     </div>
                                 </div>
                                 <p class="mt-4">¿No tienes una cuenta? <a href=<?php echoRutaComillas("Mantenedores/Registro_persona.php"); ?> class="link-info">¡Registrate aquí!</a></p>
+                                <p class="mt-4">¿Ovidaste tu contraseña? <a href=<?php echoRutaComillas("Mantenedores/form_restablecer_contrasena.php"); ?> class="link-info">¡Restablecela aquí!</a></p>
                                 <div class="text-muted mt-2 d-none" id="no-connect">
                                     No se pudo conectar
                                 </div>

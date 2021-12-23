@@ -24,4 +24,4 @@
         onclick=<?php echo "\"location.href='" . buildRuta('logout.php') . "'\""; ?>>Cerrar Sesión</button>
       </div>
     </div>
-  </nav>
+</nav>
