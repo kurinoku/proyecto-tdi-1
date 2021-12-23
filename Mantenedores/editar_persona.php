@@ -31,46 +31,45 @@ $clavePersona = $row["Clave_persona"];
         require_once "Navbar_administrador.php";
         ?>
         <!-- Contenedor del Formulario-->
-        <div class="container">
-            <div class="row flex-lg-row">
-                <!-- Formulario -->
-                <div class="col-lg-12 col-md-12">
-                    <form action=<?php echoRutaComillas("Mantenedores/actualizar_persona.php"); ?> method="post">
-                        <fieldset>
-                            <legend class="text-center pt-3">Formulario para editar una persona</legend>
-                            <div class="form-group row">
-                                <div class="form-group">
-                                    <label>RUT Persona</label>
-                                    <input name="Rut_persona" type="text" class="form-control" placeholder="" value="<?php echo ($rut); ?>">
-                                </div>
-                                <div class="form-group mt-2">
-                                    <label>Id municipalidad</label>
-                                    <input name="Id_municipalidad" type="text" class="form-control" placeholder="" value="<?php echo ($idMunicipalidad); ?>">
-                                </div>
-                                <div class="form-group mt-2">
-                                    <label>Nombre de la Persona</label>
-                                    <input name="Nombre_persona" type="text" class="form-control" placeholder="" value="<?php echo ($nombre); ?>">
-                                </div>
-                                <div class="form-group mt-2">
-                                    <label>Número</label>
-                                    <input name="Numero_persona" type="text" class="form-control" placeholder="" value="<?php echo ($numero); ?>">
-                                </div>
-                                <div class="form-group">
-                                    <label>Correo</label>
-                                    <input name="Correo_persona" type="email" class="form-control" placeholder="" value="<?php echo ($correo); ?>">
-                                </div>
-                                <div class="form-group">
-                                    <label>Clave</label>
-                                    <input name="Clave_persona" type="password" class="form-control" placeholder="" value="">
-                                </div>
-                        </fieldset>
-                        <div class="text-center pb-1">
-                            <button type="submit" class="btn btn-primary mt-2">Guardar Cambios</button>
-                        </div>
-                    </form>
-                </div>
+        <div class="container w-50 flex-lg-row">
+            <!-- Formulario -->
+            <div class="col-lg-12 col-md-12">
+                <form action=<?php echoRutaComillas("Mantenedores/actualizar_persona.php"); ?> method="post">
+                    <fieldset>
+                        <legend class="text-center pt-3">Formulario para editar una persona</legend>
+                        <div class="form-group row">
+                            <div class="form-group">
+                                <label>RUT</label>
+                                <input name="Rut_persona" type="text" class="form-control" placeholder="" value="<?php echo ($rut); ?>">
+                            </div>
+                            <div class="form-group mt-2">
+                                <label>Id municipalidad</label>
+                                <input name="Id_municipalidad" type="text" class="form-control" placeholder="" value="<?php echo ($idMunicipalidad); ?>">
+                            </div>
+                            <div class="form-group mt-2">
+                                <label>Nombre</label>
+                                <input name="Nombre_persona" type="text" class="form-control" placeholder="" value="<?php echo ($nombre); ?>">
+                            </div>
+                            <div class="form-group mt-2">
+                                <label>Número</label>
+                                <input name="Numero_persona" type="text" class="form-control" placeholder="" value="<?php echo ($numero); ?>">
+                            </div>
+                            <div class="form-group">
+                                <label>Correo</label>
+                                <input name="Correo_persona" type="email" class="form-control" placeholder="" value="<?php echo ($correo); ?>">
+                            </div>
+                            <div class="form-group">
+                                <label>Clave</label>
+                                <input name="Clave_persona" type="password" class="form-control" placeholder="" value="">
+                            </div>
+                    </fieldset>
+                    <div class="text-center pb-1">
+                        <button type="submit" class="btn btn-primary mt-2">Guardar Cambios</button>
+                    </div>
+                </form>
             </div>
         </div>
+
     </div>
 
     <?php
