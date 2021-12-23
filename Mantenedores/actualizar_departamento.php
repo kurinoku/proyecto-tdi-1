@@ -21,6 +21,6 @@ if (empty($columns)) {
 }
 $pk = $_POST["Codigo_dep"];
 $columns = implode(", ", $columns);
-$sql = "UPDATE departamento SET $columns WHERE `Codigo_dep`='$pk'";
-mysqli_query($conn, $sql);
+$sql = "UPDATE departamento SET $columns WHERE Codigo_dep='$pk'";
+$conn->query($sql);
 sendLocationHeader("Mantenedores/Form_departamento.php");
