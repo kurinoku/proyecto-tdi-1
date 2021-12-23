@@ -12,6 +12,7 @@
             <div class="dropdown-menu">
               <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/perfil_persona.php"); ?>>Ver Perfil</a>
               <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/Form_solicitud.php"); ?>>Administrar Solicitudes</a>
+              <a class="dropdown-item" href=<?php echoRutaComillas("Mantenedores/resumen_persona.php"); ?>>Estadísticas Solicitudes</a>
             </div>
           </li>
         </ul>

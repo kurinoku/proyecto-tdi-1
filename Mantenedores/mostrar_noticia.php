@@ -41,7 +41,7 @@ require('conexion_p.php');
                             <img src=<?php echoRutaComillas($foto1);  ?> class="card-img-top" alt="...">
                             <h4 class="card-title">
                                 <?php
-                                echo '<a class="link-dark" href="' . buildRuta("ver_noticia.php?seleccionado=" . $id) . '">' . $nombre . '</a>';
+                                echo '<a class="link-dark" href="' . buildRuta("Mantenedores/ver_noticia.php?seleccionado=" . $id) . '">' . $nombre . '</a>';
                                 ?>
                             </h4>
                             <p class="card-text text-truncate"><?php echo $cuerpo ?></p>
