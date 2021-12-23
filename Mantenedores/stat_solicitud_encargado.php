@@ -3,7 +3,6 @@
 require_once 'conexion_p.php';
 require_once '_init.php';
 authUser('encargado');
-session_start();
 $usuario = $_SESSION['usuario'];
 error_log("usuario: $usuario");
 $sql = "SELECT solicitud.Tipo_solicitud, COUNT(*) AS cantidad FROM solicitud "
