@@ -20,7 +20,10 @@ require('conexion_p.php');
         <?php require __DIR__ . "/../navbar_index_1.php" ?>
         <!-- Barra de navegación secundaria -->
         <?php require __DIR__ . "/../navbar_index_2.php" ?>
-        <div class="row ms-4 me-">
+        <div class="text-center">
+            <h1 class="my-4">Galeria de fotos</h1>
+        </div>
+        <div class="row my-4 ms-5 me-5">
             <?php
             require('conexion_p.php');
             $consulta = "SELECT * FROM foto";

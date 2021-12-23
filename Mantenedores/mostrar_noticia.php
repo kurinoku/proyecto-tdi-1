@@ -22,7 +22,9 @@ require('conexion_p.php');
         <!-- Barra de navegación secundaria -->
         <?php require __DIR__ . "/../navbar_index_2.php" ?>
         <!-- Page Heading -->
-        <h1 class="my-4">Noticias</h1>
+        <div class="text-center">
+            <h1 class="my-4">Noticias</h1>
+        </div>
         <div class="row">
             <!-- Tarjetas de noticias -->
             <?php
