@@ -92,15 +92,22 @@ authUser('encargado');
                 </main>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <h3 class="text-center">Grafica cantidad de solicitudes</h3>
+                <canvas class="my-4" id="Grafico" width="100%" height="70%"></canvas>
+            </div>
+        </div>
 
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <!-- Footer -->
     <?php
     require('Footer.html');
     kitFontBody();
     bootstrapBody();
-    echoScript("Mantenedores/modificar_solicitud.js");
+    echoScript("Mantenedores/resumen_encargado.js");
     ?>
 </body>
 
