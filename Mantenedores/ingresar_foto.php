@@ -16,4 +16,4 @@ $sql = "INSERT INTO foto (Nombre_foto, Ruta_foto, Fecha, Codigo_dep)
 VALUES ('$titulo', 'img/galeria/$ruta.jpg', CURDATE(), '$cod')";
 $result = mysqli_query($conexion, $sql);
 
-sendLocationHeader('Mantenedores/crear_foto.php');
+sendLocationHeader('Mantenedores/mostrar_galeria.php');
