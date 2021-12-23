@@ -30,19 +30,19 @@ require_once "_init.php";
                     <form action=<?php echoRutaComillas("Mantenedores/ingresar_persona.php"); ?> method="post">
                         <div class="row mt-3">
                                 <div class="col-md-12 mb-3"><label class="labels">Nombre</label>
-                                    <input name="Nombre_persona" maxlength="40" type="text" class="form-control" placeholder="Pablo" value="">
+                                    <input name="Nombre_persona" maxlength="40" type="text" class="form-control" placeholder="Pablo" value="" required>
                                     <div class="invalid-feedback">El nombre ingresado no es válido</div>
                                 </div>
-                                <div class="col-md-12 mb-3"><label class="labels">Rut</label><input maxlength="8" name="Rut_persona" type="text" class="form-control" placeholder="12345678" value="">
-                                    <div class="invalid-feedback">La contraseña debe contener entre 8 y 14 carácteres; Debe incluir al menos una mayúscula, una minúscula y un número</div>
+                                <div class="col-md-12 mb-3"><label class="labels">Rut</label><input maxlength="8" name="Rut_persona" type="text" class="form-control" placeholder="12345678" value="" required>
+                                    <div class="invalid-feedback">El rut ingresado no es válido</div>
                                 </div>
-                                <div class="col-md-12 mb-3"><label class="labels">Numero de contacto</label><input name="Numero_persona" maxlength="9" type="text" class="form-control" placeholder="111111111" value="">
+                                <div class="col-md-12 mb-3"><label class="labels">Numero de contacto</label><input name="Numero_persona" maxlength="9" type="text" class="form-control" placeholder="111111111" value="" required>
                                     <div class="invalid-feedback">El número ingresado no es válido</div>
                                 </div>
-                                <div class="col-md-12 mb-3"><label class="labels">Correo</label><input name="Correo_persona" type="email" class="form-control" placeholder="ejemplo@gmail.com" value="">
+                                <div class="col-md-12 mb-3"><label class="labels">Correo</label><input name="Correo_persona" type="email" class="form-control" placeholder="ejemplo@gmail.com" value="" required>
                                     <div class="invalid-feedback">El correo ingresado no es válido</div>
                                 </div>
-                                <div class="col-md-12 mb-3"><label class="labels">Clave de ingreso</label><input maxlength="14" name="Clave_persona" type="password" class="form-control" placeholder="*****" value="">
+                                <div class="col-md-12 mb-3"><label class="labels">Clave de ingreso</label><input maxlength="14" name="Clave_persona" type="password" class="form-control" placeholder="*****" value="" required>
                                     <div class="invalid-feedback">La contraseña debe contener entre 8 y 14 carácteres; Debe incluir al menos una mayúscula, una minúscula y un número</div>
                                 </div>
                             
@@ -64,7 +64,7 @@ require_once "_init.php";
                                     ?>
                                 </select>
                             </div>
-                            <div class="mt-3 text-center"><button class="btn btn-primary profile-button" type="submit">Guardar cambios</button></div>
+                            <div class="mt-3 text-center"><button class="btn btn-primary profile-button" type="submit">Registrarse</button></div>
                         </div>
                     </form>
                 </div>
