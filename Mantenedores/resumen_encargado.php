@@ -10,7 +10,7 @@ authUser('encargado');
 <head>
     <link rel="shortcut icon" href="../img/municipalidad1.png" />
     <meta charset="UTF-8">
-    <title>Registro de la Solicitud</title>
+    <title>Estadísticas de las Solicitudes</title>
     <!-- Links -->
     <?php
     bootstrapHead();
@@ -38,7 +38,7 @@ authUser('encargado');
                     </div>
                         <div class="table-responsive">
                             <div class="col-lg-12 col-md-12 ps-1">
-                                <table id="table2" class="table table-striped table-hover">
+                                <table class="table table-striped table-hover">
                                     <thead class="bg-dark text-light">
                                         <tr>
                                             <th>Nombre</th>
@@ -102,19 +102,6 @@ authUser('encargado');
     bootstrapBody();
     echoScript("Mantenedores/modificar_solicitud.js");
     ?>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
-    <script src="cdn.datatables.net/plug-ins/1.11.3/i18n/es-cl.json"></script>
-    <script>
-        $(document).ready(function() {
-            $('#table2').DataTable({
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.11.3/i18n/es-cl.json"
-                }
-            }); {}
-        });
-    </script>
 </body>
 
 </html>

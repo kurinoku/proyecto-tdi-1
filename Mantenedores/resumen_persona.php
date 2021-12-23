@@ -10,7 +10,7 @@ authUser('persona');
 <head>
     <link rel="shortcut icon" href="../img/municipalidad1.png" />
     <meta charset="UTF-8">
-    <title>Registro de la Solicitud</title>
+    <title>Estadísticas de la Solicitud</title>
     <!-- Links -->
     <?php
     bootstrapHead();
@@ -49,7 +49,7 @@ authUser('persona');
                                     </thead>
                                     <div style="position:center">
                                         <?php
-                                            $consulta = "SELECT Rut_persona, count(*) AS cantidadS FROM solicitud WHERE Rut_persona='$user' GROUP BY Rut_persona ASC HAVING COUNT(*)>=1 ORDER BY `cantidadS` DESC LIMIT 5;";
+                                            $consulta = "SELECT Rut_persona, count(*) AS cantidadS FROM solicitud WHERE Rut_persona='$user'";
                                             $resultado = mysqli_query($conexion, $consulta);
                                             $row = mysqli_fetch_assoc($resultado);
                                             $cantS = $row['cantidadS'];
@@ -259,19 +259,6 @@ authUser('persona');
     bootstrapBody();
     echoScript("Mantenedores/modificar_solicitud.js");
     ?>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
-    <script src="cdn.datatables.net/plug-ins/1.11.3/i18n/es-cl.json"></script>
-    <script>
-        $(document).ready(function() {
-            $('#table2').DataTable({
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.11.3/i18n/es-cl.json"
-                }
-            }); {}
-        });
-    </script>
 </body>
 
 </html>

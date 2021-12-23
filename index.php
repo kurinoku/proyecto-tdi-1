@@ -118,53 +118,30 @@ require('Mantenedores/conexion_p.php');
                         </div>
                         <div class="carousel-inner">
 
-                        <?php
-                            $i = 0;
-                            $consulta = "SELECT * FROM noticia ORDER BY Id_noticia DESC";
-                            $resultado = mysqli_query($conexion, $consulta);
-                            while ($row = mysqli_fetch_assoc($resultado) and $i < 3) {
-                                
-                                $nombre = $row['Nombre_noticia'];
-                                $cuerpo = $row['Cuerpo_noticia'];
-                                $id = $row['Id_noticia'];
-                                $foto1 = $row['Ruta_portada'];
-
-                                if($i == 0){
-                                ?>
-
-                                    <div class="carousel-item active">
-                                        <a href="#"><img src=<?php echoRutaComillas($foto1);  ?> class="d-block w-100" alt="..."></a>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <h3>
-                                                <?php
-                                                    echo '<a class="link-light" href="' . buildRuta("Mantenedores/ver_noticia.php?seleccionado=" . $id) . '">' . $nombre . '</a>';
-                                                ?>
-                                            </h3>
-                                            <p><?php echo $cuerpo ?></p>
-                                        </div>
-                                    </div>
-
-                                <?php
-                                }else{
-                                ?>
-                                    <div class="carousel-item">
-                                        <a href="#"><img src=<?php echoRutaComillas($foto1);  ?> class="d-block w-100" alt="..."></a>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <h3>
-                                                <?php
-                                                    echo '<a class="link-light" href="' . buildRuta("Mantenedores/ver_noticia.php?seleccionado=" . $id) . '">' . $nombre . '</a>';
-                                                ?>
-                                            </h3>
-                                            <p class="text-truncate"><?php echo $cuerpo ?></p>
-                                        </div>
-                                    </div>
-                                
-                                <?php
-                                }
-
-                                $i += 1;
-                            }
-                        ?>
+                            <div class="carousel-item active">
+                                <a href="#"><img src="img/4.jpg" class="d-block w-100" alt="..."></a>
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>Vacunas contra el COVID.</h3>
+                                    <p>Arriban más de 10000 vacunas contra el COVID, se busca que éstas se puedan
+                                        distribuir en un tiempo de 2 semanas.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#"><img src="img/5.jpg" class="d-block w-100" alt="..."></a>
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>Camillas e implementación para el hospital de la Comuna.</h3>
+                                    <p>Se renueva el hospital de la comuna con nueva implementación, en donde se
+                                        incluyen camas, toma de temperatura y presión, etc.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#"><img src="img/6.jpg" class="d-block w-100" alt="..."></a>
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>Instauración de nueva escuela.</h3>
+                                    <p>Nueva escuela para los niños de la comuna, en donde en un plazo de 1 mes, esta
+                                        busca ya estar operativa para la gente de la comuna.</p>
+                                </div>
+                            </div>
 
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#CarouselNoti" data-bs-slide="prev">

@@ -6,7 +6,7 @@ require_once "_init.php";
 
 <head>
     <meta charset="UTF-8">
-    <title>Editar perfil</title>
+    <title>Registrarse</title>
     <link rel="shortcut icon" href="../img/municipalidad1.png" />
     <?php
     bootstrapHead();
@@ -29,11 +29,23 @@ require_once "_init.php";
                     </div>
                     <form action=<?php echoRutaComillas("Mantenedores/ingresar_persona.php"); ?> method="post">
                         <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Nombre</label><input name="Nombre_persona" type="text" class="form-control" placeholder="Pablo" value="" required></div>
-                            <div class="col-md-12"><label class="labels">Rut</label><input name="Rut_persona" type="text" class="form-control" placeholder="11222333" value="" required></div>
-                            <div class="col-md-12"><label class="labels">Numero de contacto</label><input name="Numero_persona" type="text" class="form-control" placeholder="123456789" value=""></div>
-                            <div class="col-md-12"><label class="labels">Correo</label><input name="Correo_persona" type="text" class="form-control" placeholder="abc@gmail.com" value=""></div>
-                            <div class="col-md-12"><label class="labels">Clave de ingreso</label><input name="Clave_persona" type="password" class="form-control" placeholder="*****" value="" required></div>
+                                <div class="col-md-12 mb-3"><label class="labels">Nombre</label>
+                                    <input name="Nombre_persona" maxlength="40" type="text" class="form-control" placeholder="Pablo" value="">
+                                    <div class="invalid-feedback">El nombre ingresado no es válido</div>
+                                </div>
+                                <div class="col-md-12 mb-3"><label class="labels">Rut</label><input maxlength="8" name="Rut_persona" type="text" class="form-control" placeholder="12345678" value="">
+                                    <div class="invalid-feedback">La contraseña debe contener entre 8 y 14 carácteres; Debe incluir al menos una mayúscula, una minúscula y un número</div>
+                                </div>
+                                <div class="col-md-12 mb-3"><label class="labels">Numero de contacto</label><input name="Numero_persona" maxlength="9" type="text" class="form-control" placeholder="111111111" value="">
+                                    <div class="invalid-feedback">El número ingresado no es válido</div>
+                                </div>
+                                <div class="col-md-12 mb-3"><label class="labels">Correo</label><input name="Correo_persona" type="email" class="form-control" placeholder="ejemplo@gmail.com" value="">
+                                    <div class="invalid-feedback">El correo ingresado no es válido</div>
+                                </div>
+                                <div class="col-md-12 mb-3"><label class="labels">Clave de ingreso</label><input maxlength="14" name="Clave_persona" type="password" class="form-control" placeholder="*****" value="">
+                                    <div class="invalid-feedback">La contraseña debe contener entre 8 y 14 carácteres; Debe incluir al menos una mayúscula, una minúscula y un número</div>
+                                </div>
+                            
                             <div class="form-group">
                                 <label class="labels" for="Id_municipalidad">Municipalidad:</label>
                                 <select name="Id_municipalidad" class="form-select" aria-label="Default select example" required>
@@ -52,7 +64,7 @@ require_once "_init.php";
                                     ?>
                                 </select>
                             </div>
-                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Registrar</button></div>
+                            <div class="mt-3 text-center"><button class="btn btn-primary profile-button" type="submit">Guardar cambios</button></div>
                         </div>
                     </form>
                 </div>
@@ -61,10 +73,17 @@ require_once "_init.php";
     </div>
     <!-- Footer -->
     <?php
-    bootstrapBody();
-    kitFontBody();
     require('Footer.html');
+    kitFontBody();
     ?>
 </body>
-
+<?php
+bootstrapBody();
+echoScript('util/util.js');
+echoScript("Mantenedores/validacion.js");
+?>
+<script>
+    let valida = new ValidaPaginas();
+    valida.magia();
+</script>
 </html>
