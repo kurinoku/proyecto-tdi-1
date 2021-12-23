@@ -19,25 +19,30 @@ authUser('admin');
                         <div class="form-group">
                             <label>RUT</label>
                             <input type="text" name="Rut_encargado" class="form-control" placeholder="12345678 (Sin guión)" required>
+                            <div class="invalid-feedback">El rut ingresado no es válido</div>
                         </div>
                         <div class="form-group mt-2">
                             <label>Nombre</label>
                             <input type="text" name="Nombre_encargado" class="form-control" placeholder="Nombre completo" required>
+                            <div class="invalid-feedback">El nombre ingresado no es válido</div>
                         </div>
                         <div class="form-group mt-2">
                             <label>Número de celular</label>
                             <input type="text" name="Numero_encargado" class="form-control" placeholder="991738264" required>
                             <small class="form-text text-muted">Utiliza un número de celular que ocupes de manera recurrente.</small>
+                            <div class="invalid-feedback">El número ingresado no es válido</div>
                         </div>
                         <div class="form-group mt-2">
                             <label>E-mail</label>
                             <input type="email" name="Correo_encargado" class="form-control" placeholder="alguien@example.com" required>
                             <small class="form-text text-muted">Utiliza un correo principal y no lo compartas con nadie.</small>
+                            <div class="invalid-feedback">El correo ingresado no es válido</div>
                         </div>
                         <div class="form-group mt-2">
                             <label>Contraseña</label>
                             <input type="password" name="Clave_encargado" class="form-control" placeholder="********" required>
                             <small class="form-text text-muted">Utiliza contraseña segura entre 8 y 16 caracteres.</small>
+                            <div class="invalid-feedback">La contraseña debe contener entre 8 y 14 carácteres; Debe incluir al menos una mayúscula, una minúscula y un número</div>
                         </div>
                 </fieldset>
                 <div class="text-center pb-1">

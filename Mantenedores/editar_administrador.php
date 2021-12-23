@@ -43,18 +43,22 @@ $clave = $row["Clave_administrador"];
                             <div class="form-group mt-2">
                                 <label>Nombre</label>
                                 <input name="Nombre_administrador" type="text" class="form-control" placeholder="" value="<?php echo ($nombre); ?>">
+                                <div class="invalid-feedback">El nombre ingresado no es válido</div>
                             </div>
                             <div class="form-group mt-2">
                                 <label>Número de celular</label>
                                 <input name="Numero_administrador" type="text" class="form-control" placeholder="" value="<?php echo ($numero); ?>">
+                                <div class="invalid-feedback">El número ingresado no es válido</div>
                             </div>
                             <div class="form-group mt-2">
                                 <label>E-mail</label>
                                 <input name="Correo_administrador" type="email" class="form-control" placeholder="" value="<?php echo ($correo); ?>">
+                                <div class="invalid-feedback">El correo ingresado no es válido</div>
                             </div>
                             <div class="form-group mt-2">
                                 <label>Contraseña</label>
                                 <input name="Clave_administrador" type="password" class="form-control" placeholder="" value="">
+                                <div class="invalid-feedback">La contraseña debe contener entre 8 y 14 carácteres; Debe incluir al menos una mayúscula, una minúscula y un número</div>
                             </div>
                     </fieldset>
                     <div class="text-center pb-1">

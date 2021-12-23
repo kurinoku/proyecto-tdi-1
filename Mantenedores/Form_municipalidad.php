@@ -19,22 +19,27 @@ authUser('admin');
                         <div class="form-group">
                             <label>Id municipalidad</label>
                             <input type="text" name="Id_municipalidad" class="form-control" placeholder="12345" required>
+                            <div class="invalid-feedback">El Id ingresado no es válido</div>
                         </div>
                         <div class="form-group mt-2">
                             <label>Nombre municipalidad</label>
                             <input type="text" name="Nombre_municipalidad" class="form-control" placeholder="Municipalidad de Concepción" required>
+                            <div class="invalid-feedback">El nombre ingresado no es válido</div>
                         </div>
                         <div class="form-group mt-2">
                             <label>Rut Administrador</label>
                             <input type="text" name="Rut_administrador" class="form-control" placeholder="12345678 (Sin guión)" required>
+                            <div class="invalid-feedback">El rut ingresado no es válido</div>
                         </div>
                         <div class="form-group mt-2">
                             <label>Direccion municipalidad</label>
                             <input type="text" name="Direccion_municipalidad" class="form-control" placeholder="Pasaje Barros Arana 332" required>
+                            <div class="invalid-feedback">La dirección ingresada no es válida</div>
                         </div>
                         <div class="form-group mt-2">
                             <label>Numero municipalidad:</label>
                             <input type="text" name="Numero_municipalidad" class="form-control" placeholder="978451232" required>
+                            <div class="invalid-feedback">El número ingresado no es válido</div>
                         </div>
                 </fieldset>
                 <div class="text-center pb-1">

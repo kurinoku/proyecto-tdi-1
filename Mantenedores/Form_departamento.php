@@ -19,18 +19,36 @@ authUser('admin');
                         <div class="form-group">
                             <label>Codigo del departamento</label>
                             <input type="text" name="Codigo_dep" class="form-control" placeholder="12345678" required>
+                            <div class="invalid-feedback">El código ingresado no es válido</div>
+
                         </div>
                         <div class="form-group mt-2">
-                            <label>Id municipalidad</label>
-                            <input type="text" name="Id_municipalidad" class="form-control" placeholder="12345" required>
+                        <label class="labels" for="Id_municipalidad">Municipalidad:</label>
+                        <select name="Id_municipalidad" class="form-select" aria-label="Default select example" required>
+                            <option value="" disabled selected>Selecciona la municipalidad</option>
+                            <?php
+                            require('conexion_p.php');
+                            $consulta = "SELECT * FROM municipalidad";
+                            $resultado = mysqli_query($conexion, $consulta);
+                            while ($row = mysqli_fetch_assoc($resultado)) {
+                                $nombremuni = $row['Nombre_municipalidad'];
+                                $codigomuni = $row['Id_municipalidad'];
+                            ?>
+                                <option value="<?php echo $codigomuni ?>"><?php echo $nombremuni ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
                         </div>
                         <div class="form-group mt-2">
                             <label>Rut encargado</label>
                             <input type="text" name="Rut_encargado" class="form-control" placeholder="12345678 (Sin guión)" required>
+                            <div class="invalid-feedback">El rut ingresado no es válido</div>
                         </div>
                         <div class="form-group mt-2">
                             <label>Nombre departamento:</label>
                             <input type="text" name="Nombre_dep" class="form-control" placeholder="Departamento las Rosas" required>
+                            <div class="invalid-feedback">El nombre ingresado no es válido</div>
                         </div>
                 </fieldset>
                 <div class="text-center pb-1">

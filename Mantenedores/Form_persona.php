@@ -14,36 +14,44 @@ authUser('admin');
         <!-- Formulario -->
         <div class="col-lg-3 col-md-12">
             <form action=<?php echoRutaComillas("Mantenedores/ingresar_persona.php"); ?> method="post">
-                <fieldset>
+                <div class="row mt-3">
                     <legend class="text-center pt-3">Formulario para añadir persona</legend>
-                    <div class="form-group row">
-                        <div class="form-group">
-                            <label>RUT Persona</label>
-                            <input type="text" name="Rut_persona" class="form-control" placeholder="11111111" required>
+                        <div class="col-md-12 mb-3"><label class="labels">Nombre</label>
+                            <input name="Nombre_persona" maxlength="40" type="text" class="form-control" placeholder="Pablo" value="" required>
+                            <div class="invalid-feedback">El nombre ingresado no es válido</div>
                         </div>
-                        <div class="form-group mt-2">
-                            <label>Id municipalidad</label>
-                            <input type="text" name="Id_municipalidad" class="form-control" placeholder="12345" required>
+                        <div class="col-md-12 mb-3"><label class="labels">Rut</label><input maxlength="8" name="Rut_persona" type="text" class="form-control" placeholder="12345678" value="" required>
+                            <div class="invalid-feedback">El rut ingresado no es válido</div>
                         </div>
-                        <div class="form-group mt-2">
-                            <label>Nombre de la Persona</label>
-                            <input type="text" name="Nombre_persona" class="form-control" placeholder="Juan Quiroga Sánchez" required>
+                        <div class="col-md-12 mb-3"><label class="labels">Numero de contacto</label><input name="Numero_persona" maxlength="9" type="text" class="form-control" placeholder="111111111" value="" required>
+                            <div class="invalid-feedback">El número ingresado no es válido</div>
                         </div>
-                        <div class="form-group mt-2">
-                            <label>Número</label>
-                            <input type="text" name="Numero_persona" class="form-control" placeholder="978451232" required>
+                        <div class="col-md-12 mb-3"><label class="labels">Correo</label><input name="Correo_persona" type="email" class="form-control" placeholder="ejemplo@gmail.com" value="" required>
+                            <div class="invalid-feedback">El correo ingresado no es válido</div>
                         </div>
-                        <div class="form-group">
-                            <label>Correo</label>
-                            <input type="email" name="Correo_persona" class="form-control" placeholder="alguien@example.com" required>
+                        <div class="col-md-12 mb-3"><label class="labels">Clave de ingreso</label><input maxlength="14" name="Clave_persona" type="password" class="form-control" placeholder="*****" value="" required>
+                            <div class="invalid-feedback">La contraseña debe contener entre 8 y 14 carácteres; Debe incluir al menos una mayúscula, una minúscula y un número</div>
                         </div>
-                        <div class="form-group">
-                            <label>Clave</label>
-                            <input type="text" name="Clave_persona" class="form-control" placeholder="********" required>
-                        </div>
-                </fieldset>
-                <div class="text-center pb-1">
-                    <button type="submit" class="btn btn-primary mt-2">Registrar Persona</button>
+                    
+                    <div class="form-group">
+                        <label class="labels" for="Id_municipalidad">Municipalidad:</label>
+                        <select name="Id_municipalidad" class="form-select" aria-label="Default select example" required>
+                            <option value="" disabled selected>Selecciona la municipalidad</option>
+                            <?php
+                            require('conexion_p.php');
+                            $consulta = "SELECT * FROM municipalidad";
+                            $resultado = mysqli_query($conexion, $consulta);
+                            while ($row = mysqli_fetch_assoc($resultado)) {
+                                $nombremuni = $row['Nombre_municipalidad'];
+                                $codigomuni = $row['Id_municipalidad'];
+                            ?>
+                                <option value="<?php echo $codigomuni ?>"><?php echo $nombremuni ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="mt-3 text-center"><button class="btn btn-primary profile-button" type="submit">Registrarse</button></div>
                 </div>
             </form>
         </div>
@@ -85,6 +93,7 @@ authUser('admin');
         </div>
     </div>
 </div>
+
 <?php
 require('bottom_form.php');
 ?>
