@@ -37,7 +37,6 @@ require_once "_init.php";
             <div class="row mt-5 mb-5">
                     <h1 class="text-center "><?php echo $nombre ?></h1>
                     <h6 class="text-center"><?php echo $fecha ?></h6>
-                
             </div>
             <div class="row">
                 <div class="col-lg-6 text-center">

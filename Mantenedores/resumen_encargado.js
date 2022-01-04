@@ -4,15 +4,11 @@
     let req = new XMLHttpRequest();
     function onLoad(evt) {
         let response = req.response;
-
         function makeChart(id, data) {
             let ctx;
-
             ctx = document.getElementById(id);
             let order = ['Reclamo', 'Sugerencia', 'Felicitaciones'];
-
             let dataDefinitive = order.map(x => (x in data) ? data[x] : 0);
-
             let chart = new Chart(ctx, {
                 type: 'pie',
                 data: {
